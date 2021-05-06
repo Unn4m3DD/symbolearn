@@ -1,10 +1,10 @@
 <div class="top_tab_container">
-  <img id="logo" src="/assets/logo.svg" />
+  <img (click)="current_page_emitter.emit('initial')" id="logo" src="/assets/logo.svg" />
   <div>
-    <div class="top_tab_item_container"><a class="top_tab_text" href="#">Exercises</a></div>
-    <div class="top_tab_item_container"><a class="top_tab_text" href="#">Learn Sign<br>Language</a></div>
-    <div class="top_tab_item_container"><a class="top_tab_text" href="#">Learn Morse<br>Code</a></div>
-    <div class="top_tab_item_container top_tab_button top_tab_button_blue"><a class="top_tab_text" href="#">Sign In</a></div>
-    <div class="top_tab_item_container top_tab_button top_tab_button_orange"><a class="top_tab_text" href="#">Sign Up</a></div>
+    <div (click)="current_page_emitter.emit('')" class="top_tab_item_container"><a class="top_tab_text" href="#">Exercises</a></div>
+    <div (click)="current_page_emitter.emit('')" class="top_tab_item_container"><a class="top_tab_text" href="#">Learn Sign<br>Language</a></div>
+    <div (click)="current_page_emitter.emit('')" class="top_tab_item_container"><a class="top_tab_text" href="#">Learn Morse<br>Code</a></div>
+    <div (click)="current_page_emitter.emit('sign-in')" class="top_tab_item_container top_tab_button top_tab_button_blue"><a class="top_tab_text" href="#">Sign In</a></div>
+    <div (click)="current_page_emitter.emit('sign-up')" class="top_tab_item_container top_tab_button top_tab_button_orange"><a class="top_tab_text" href="#">Sign Up</a></div>
   </div>
 </div>

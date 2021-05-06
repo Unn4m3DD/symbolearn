@@ -1,6 +1,20 @@
-.content_container{
+.content_container {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+app-top-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+app-bottom-tab {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
