@@ -1,0 +1,19 @@
+.text_input_container {
+  width: 100vw;
+  height: 10vh;
+  background: #FFFFFF;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  clip-path: inset(0 25% 0  25%);  
+}
+.text_input{
+  flex: 1;
+  background-color: #0000;
+  clip-path: inset(0 0 0 10%);  
+  height: 100%;
+  width: 50%;
+  outline:none;
+  border: 0;
+  font-size: 50pt;
+  caret-color: transparent;
+  font-family: Rubik, sans-serif;
+}

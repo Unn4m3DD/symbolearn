@@ -1,6 +1,24 @@
-.content_container{
+.content_container {
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100vh;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+app-top-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+app-bottom-nav {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
 }

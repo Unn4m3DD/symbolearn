@@ -8,7 +8,11 @@ import { BottomNavComponent } from './bottom-nav/bottom-nav.component';
 import { InitialComponent } from './initial/initial.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
-
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ExercisesComponent } from './exercises/exercises.component';
+import { SettingsComponent } from './settings/settings.component';
+import { LearnMorseComponent } from './learn-morse/learn-morse.component';
+import { FormsModule } from "@angular/forms"
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,11 +20,16 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     BottomNavComponent,
     InitialComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    DashboardComponent,
+    ExercisesComponent,
+    SettingsComponent,
+    LearnMorseComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

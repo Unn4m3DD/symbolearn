@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-top-nav',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-nav.component.css']
 })
 export class TopNavComponent implements OnInit {
-
-  constructor() { }
-
+  @Output() current_page_emitter = new EventEmitter<string>();
+  constructor() { 
+  }
   ngOnInit(): void {
+  }
+  changePage(page_name: string){
+    console.log(page_name)
+    this.current_page_emitter.emit(page_name)
   }
 
 }

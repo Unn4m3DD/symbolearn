@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  page = "initial"
+  current_page = "initial"
+  changePage(event: string){
+    console.log(event)
+    this.current_page = event;
+  }
 }

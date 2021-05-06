@@ -1,10 +1,12 @@
 <div class="top_tab_container">
-  <img id="logo" src="/assets/logo.svg" />
+  <img (click)="changePage('initial')" id="logo" src="/assets/logo.svg" />
   <div>
-    <div class="top_tab_item_container"><a class="top_tab_text" href="#">Exercises</a></div>
-    <div class="top_tab_item_container"><a class="top_tab_text" href="#">Learn Sign<br>Language</a></div>
-    <div class="top_tab_item_container"><a class="top_tab_text" href="#">Learn Morse<br>Code</a></div>
-    <div class="top_tab_item_container top_tab_button top_tab_button_blue"><a class="top_tab_text" href="#">Sign In</a></div>
-    <div class="top_tab_item_container top_tab_button top_tab_button_orange"><a class="top_tab_text" href="#">Sign Up</a></div>
+    <div (click)="changePage('exercises')" class="top_tab_item_container"><a class="top_tab_text" href="#">Exercises</a></div>
+    <div (click)="changePage('')" class="top_tab_item_container"><a class="top_tab_text" href="#">Learn Sign<br>Language</a></div>
+    <div (click)="changePage('learn-morse')" class="top_tab_item_container"><a class="top_tab_text" href="#">Learn Morse<br>Code</a></div>
+    <div (click)="changePage('settings')" class="top_tab_item_container top_tab_button top_tab_button_blue"><a class="top_tab_text" href="#">Config</a></div>
+    <div (click)="changePage('dashboard')" class="top_tab_item_container top_tab_button top_tab_button_orange"><a class="top_tab_text" href="#">Profile</a></div>
+    <div (click)="changePage('sign-in')" class="top_tab_item_container top_tab_button top_tab_button_blue"><a class="top_tab_text" href="#">Sign In</a></div>
+    <div (click)="changePage('sign-up')" class="top_tab_item_container top_tab_button top_tab_button_orange"><a class="top_tab_text" href="#">Sign Up</a></div>
   </div>
 </div>
