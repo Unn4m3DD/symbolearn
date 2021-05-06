@@ -6,11 +6,13 @@ div{
 .top_tab_container{
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 #logo {
 	width: 180px;
 	height: 180px;
+  margin: 20px;
 }
 .top_tab_item_container{
   align-items: center;
@@ -33,6 +35,9 @@ div{
 }
 .top_tab_button_blue{
   background: #172A3A;
+}
+.top_tab_button_blue:hover{
+  background: #080f14;
 }
 .top_tab_button_orange{
   background: #CA9100;
