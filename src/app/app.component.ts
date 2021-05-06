@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   current_page = "learn-morse"
   changePage(event: string){
+    console.log(event)
     this.current_page = event;
   }
 }

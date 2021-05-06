@@ -7,8 +7,13 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class TopNavComponent implements OnInit {
   @Output() current_page_emitter = new EventEmitter<string>();
-  constructor() { }
+  constructor() { 
+  }
   ngOnInit(): void {
+  }
+  changePage(page_name: string){
+    console.log(page_name)
+    this.current_page_emitter.emit(page_name)
   }
 
 }
