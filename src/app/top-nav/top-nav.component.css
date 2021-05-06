@@ -1,0 +1,39 @@
+div{
+  display: flex;
+  margin: 30px;
+}
+
+.top_tab_container{
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#logo {
+	width: 180px;
+	height: 180px;
+}
+.top_tab_item_container{
+  align-items: center;
+  justify-content: center;
+}
+
+.top_tab_text{
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-family: rubik;
+  text-decoration: none;
+}
+.top_tab_button{
+  width: 144.16px;
+  height: 67.54px;
+  left: 1494.26px;
+  top: 109px;
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.top_tab_button_blue{
+  background: #172A3A;
+}
+.top_tab_button_orange{
+  background: #CA9100;
+}
