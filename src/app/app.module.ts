@@ -8,6 +8,9 @@ import { BottomNavComponent } from './bottom-nav/bottom-nav.component';
 import { InitialComponent } from './initial/initial.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ExercisesComponent } from './exercises/exercises.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     BottomNavComponent,
     InitialComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    DashboardComponent,
+    ExercisesComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
