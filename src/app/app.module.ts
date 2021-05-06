@@ -12,7 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ExercisesComponent } from './exercises/exercises.component';
 import { SettingsComponent } from './settings/settings.component';
 import { LearnMorseComponent } from './learn-morse/learn-morse.component';
-
+import { FormsModule } from "@angular/forms"
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +28,8 @@ import { LearnMorseComponent } from './learn-morse/learn-morse.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
