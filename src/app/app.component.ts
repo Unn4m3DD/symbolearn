@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  current_page = "sign-in"
+  current_page = "learn-morse"
   changePage(event: string){
     this.current_page = event;
   }

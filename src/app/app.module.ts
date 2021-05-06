@@ -11,6 +11,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ExercisesComponent } from './exercises/exercises.component';
 import { SettingsComponent } from './settings/settings.component';
+import { LearnMorseComponent } from './learn-morse/learn-morse.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SettingsComponent } from './settings/settings.component';
     SignUpComponent,
     DashboardComponent,
     ExercisesComponent,
-    SettingsComponent
+    SettingsComponent,
+    LearnMorseComponent
   ],
   imports: [
     BrowserModule,
