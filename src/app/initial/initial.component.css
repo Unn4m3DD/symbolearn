@@ -1,0 +1,60 @@
+.try_button {
+    position: absolute;
+    width: 214.37px;
+    height: 100px;
+    left: 675px;
+    top: 635px;
+    background: #172A3A;
+}
+
+.join_button {
+    position: absolute;
+    width: 214.37px;
+    height: 100px;
+    left: 1030.53px;
+    top: 635px;
+    background: #CA9100;
+}
+
+.button_text {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.text_div {
+    display: flex;
+}
+
+.title {
+    position: absolute;
+    width: 821px;
+    height: 83px;
+    left: 549px;
+    top: 362px;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 70px;
+    line-height: 83px;
+    color: #FFFFFF;
+}
+
+.sub_title {
+    position: absolute;
+    width: 739px;
+    height: 38px;
+    left: 590px;
+    top: 510px;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 38px;
+    color: #FFFFFF;
+}
