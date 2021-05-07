@@ -34,7 +34,8 @@
 .text_div {
     flex: 2;
     justify-content: center;
-    padding-bottom: 5rem;
+    padding-bottom: 10rem;
+    padding-left: 8rem;
 }
 
 .sign_up_box {
@@ -47,7 +48,7 @@
     padding-top: 1rem;
     margin-right: 8rem;
     margin-left: 2rem;
-    margin-top: 5rem;
+    margin-top: 10rem;
 }
 
 .box_item {
@@ -93,7 +94,6 @@
     font-family: Rubik;
     font-style: normal;
     font-weight: normal;
-    padding-left: 8rem;
     text-align: left;
     font-size: 70px;
     color: #FFFFFF;
@@ -106,6 +106,5 @@
     text-align: left;
     font-size: 32px;
     line-height: 38px;
-    padding-left: 8rem;
     color: #FFFFFF;
 }

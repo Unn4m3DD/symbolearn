@@ -33,8 +33,9 @@
 
 .text_div {
     flex: 2;
-    justify-content: center;
+    padding-left: 8rem;
     padding-bottom: 5rem;
+    justify-content: center;
 }
 
 .sign_in_box {
@@ -89,7 +90,6 @@
     font-family: Rubik;
     font-style: normal;
     font-weight: normal;
-    padding-left: 8rem;
     text-align: left;
     font-size: 70px;
     color: #FFFFFF;
@@ -102,6 +102,5 @@
     text-align: left;
     font-size: 32px;
     line-height: 38px;
-    padding-left: 8rem;
     color: #FFFFFF;
 }
