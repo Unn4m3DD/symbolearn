@@ -6,6 +6,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./learn-morse.component.css']
 })
 export class LearnMorseComponent implements OnInit {
+  @ViewChild('morse_div') morse_div: ElementRef | undefined;
+
   correct_counter: number = 0;
   encodeMorse(morseCode: string): string {
     let ref: { [key: string]: string } = {
@@ -52,7 +54,7 @@ export class LearnMorseComponent implements OnInit {
 
   user_input: string = ""
   to_type_render: { char: string, index: number }[][] = []
-  to_type = "Hello World"
+  to_type = "As armas e os baroes assinalados Que da ocidental praia Lusitana Por mares nunca de antes navegados Passaram ainda alem da Taprobana Em perigos e guerras esforcados Mais do que prometia a forca humana E entre gente remota edificaram Novo Reino que tanto sublimaram"
   constructor() {
     let g_index = 0;
     for (let i = 0; i < this.to_type.split(" ").length; i++) {
@@ -64,10 +66,10 @@ export class LearnMorseComponent implements OnInit {
       }
     }
     window.onkeyup = (e: KeyboardEvent) => this.onUserInput(e);
-    console.log(this.to_type)
   }
   last_wrong = false;
   current_char = "";
+  current_offset = 0
   onUserInput(event: KeyboardEvent) {
     event.preventDefault()
     if (event.key.length == 1) {
@@ -77,8 +79,11 @@ export class LearnMorseComponent implements OnInit {
       }
       if (this.current_char.toLowerCase() == this.to_type.charAt(this.correct_counter).toLowerCase()) {
         this.correct_counter++
-        console.log(this.correct_counter)
         this.user_input += this.current_char
+        if (this.current_char == " " && this.morse_div) {
+          this.current_offset += 100 / this.to_type.split(" ").length
+          this.morse_div.nativeElement.style.transform = `translate(0, -${this.current_offset}%)`;
+        }
       }
       this.current_char = event.key
       if (this.user_input.length > 20)
