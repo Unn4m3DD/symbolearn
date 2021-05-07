@@ -17,3 +17,30 @@
   caret-color: transparent;
   font-family: Rubik, sans-serif;
 }
+
+.morse_container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 50vw;
+}
+.morse_char{
+  flex: 1;
+  text-align: center;
+  height: 60px;
+  margin: 0;
+  width: 10px;
+  font-size: 30pt;
+  font-weight: bold;
+}
+.centered_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.grey{
+  color: grey;
+}
