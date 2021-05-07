@@ -2,22 +2,34 @@
     flex: 1;
     margin-top: 2rem;
     margin-right: 8rem;
-    padding-right: 2rem;
-    padding-left: 2rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
     background: #172A3A;
+    border-radius: 5%;
+}
+
+.try_button:hover {
+    background: #080f14;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .join_button {
     flex: 1;
     margin-top: 2rem;
     margin-left: 8rem;
-    padding-right: 2rem;
-    padding-left: 2rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    background: #d49903;
+    border-radius: 5%;
+}
+
+.join_button:hover {
     background: #CA9100;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .outer_div {
@@ -61,6 +73,6 @@
     font-family: Rubik;
     font-style: normal;
     font-weight: normal;
-    font-size: 32px;
+    font-size: 35px;
     color: #FFFFFF;
 }
