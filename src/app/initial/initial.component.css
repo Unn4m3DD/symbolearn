@@ -1,6 +1,8 @@
-.blue_button{
-  background: #172A3A;
+.blue_button {
+    background: #172A3A;
+    white-space: nowrap;
 }
+
 .button {
     flex: 1;
     margin-top: 2rem;
@@ -32,8 +34,10 @@
 }
 
 .buttons_div {
+    display: flex;
     flex-direction: row;
-    flex: 3;
+    align-items: center;
+    justify-content: center;
 }
 
 .button_text {
