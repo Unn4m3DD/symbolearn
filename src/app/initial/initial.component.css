@@ -12,6 +12,7 @@
 
 .try_button:hover {
     background: #080f14;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .join_button {
@@ -28,6 +29,7 @@
 
 .join_button:hover {
     background: #CA9100;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .outer_div {
