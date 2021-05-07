@@ -1,46 +1,66 @@
 .text_input_container {
+  display: flex;
   width: 100vw;
-  height: 10vh;
+  height: 50pt;
   background: #FFFFFF;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-  clip-path: inset(0 25% 0  25%);  
+  clip-path: inset(0 25% 0 25%);
+  flex-direction: row;
+  align-items: center;
 }
-.text_input{
+
+.text_input {
   flex: 1;
   background-color: #0000;
-  clip-path: inset(0 0 0 10%);  
+  clip-path: inset(0 0 0 10%);
   height: 100%;
   width: 50%;
-  outline:none;
+  outline: none;
   border: 0;
   font-size: 50pt;
   caret-color: transparent;
   font-family: Rubik, sans-serif;
 }
 
-.morse_container{
+.morse_container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
   width: 50vw;
+  margin-bottom: 10px;
 }
-.morse_char{
+
+.morse_char {
   flex: 1;
   text-align: center;
-  height: 60px;
+  height: 70px;
   margin: 0;
   width: 10px;
   font-size: 30pt;
   font-weight: bold;
 }
-.centered_container{
+
+.centered_container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.grey{
+.grey {
   color: grey;
+}
+.green {
+  color: green;
+}
+.red {
+  color: red;
+}
+
+.current_char {
+  flex: 1;
+  text-align: left;
+  font-size: 50pt;
+  font-family: Rubik, sans-serif;
 }

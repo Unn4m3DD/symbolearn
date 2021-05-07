@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-learn-morse',
@@ -9,41 +9,41 @@ export class LearnMorseComponent implements OnInit {
   correct_counter: number = 0;
   encodeMorse(morseCode: string): string {
     let ref: { [key: string]: string } = {
-      'a': '.-',
-      'b': '-...',
-      'c': '-.-.',
-      'd': '-..',
-      'e': '.',
-      'f': '..-.',
-      'g': '--.',
-      'h': '....',
-      'i': '..',
-      'j': '.---',
-      'k': '-.-',
-      'l': '.-..',
+      'a': '·-',
+      'b': '-···',
+      'c': '-·-·',
+      'd': '-··',
+      'e': '·',
+      'f': '··-·',
+      'g': '--·',
+      'h': '····',
+      'i': '··',
+      'j': '·---',
+      'k': '-·-',
+      'l': '·-··',
       'm': '--',
-      'n': '-.',
+      'n': '-·',
       'o': '---',
-      'p': '.--.',
-      'q': '--.-',
-      'r': '.-.',
-      's': '...',
+      'p': '·--·',
+      'q': '--·-',
+      'r': '·-·',
+      's': '···',
       't': '-',
-      'u': '..-',
-      'v': '...-',
-      'w': '.--',
-      'x': '-..-',
-      'y': '-.--',
-      'z': '--..',
-      '1': '.----',
-      '2': '..---',
-      '3': '...--',
-      '4': '....-',
-      '5': '.....',
-      '6': '-....',
-      '7': '--...',
-      '8': '---..',
-      '9': '----.',
+      'u': '··-',
+      'v': '···-',
+      'w': '·--',
+      'x': '-··-',
+      'y': '-·--',
+      'z': '--··',
+      '1': '·----',
+      '2': '··---',
+      '3': '···--',
+      '4': '····-',
+      '5': '·····',
+      '6': '-····',
+      '7': '--···',
+      '8': '---··',
+      '9': '----·',
       '0': '-----',
       ' ': '\n'
     };
@@ -63,15 +63,33 @@ export class LearnMorseComponent implements OnInit {
         g_index++
       }
     }
+    window.onkeyup = (e: KeyboardEvent) => this.onUserInput(e);
+    console.log(this.to_type)
   }
+  last_wrong = false;
+  current_char = "";
   onUserInput(event: KeyboardEvent) {
+    event.preventDefault()
     if (event.key.length == 1) {
-      this.user_input += event.key;
-      if (event.key == this.to_type.charAt(this.correct_counter).toLowerCase()) this.correct_counter++
+      if (this.current_char == "") {
+        this.current_char = event.key
+        return
+      }
+      if (this.current_char.toLowerCase() == this.to_type.charAt(this.correct_counter).toLowerCase()) {
+        this.correct_counter++
+        console.log(this.correct_counter)
+        this.user_input += this.current_char
+      }
+      this.current_char = event.key
       if (this.user_input.length > 20)
         this.user_input = this.user_input.substring(1);
     }
     console.log(this.correct_counter)
+  }
+  preventDelete(e: KeyboardEvent, text_input: HTMLInputElement) {
+    if (e.key == "Backspace" && text_input == document.activeElement) {
+      e.preventDefault();
+    }
   }
   ngOnInit(): void {
   }
