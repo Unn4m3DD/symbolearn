@@ -3,10 +3,11 @@
     <div class="morse_container_container" #morse_div>
       <div class="morse_container" *ngFor='let _ of to_type_render; let i=index;'>
         <div class="morse_char"></div>
-        <div [ngClass]="{'grey' : item.index <= 1+ correct_counter}" class="morse_char"
-          *ngFor='let item of to_type_render[i];'>
+        <div
+          [ngClass]="{'grey' : item.index <= 1 + correct_counter, 'red' : item.index <= 1 + correct_counter && this.current_char.toLowerCase() != this.to_type.charAt(this.correct_counter).toLowerCase()}"
+          class="morse_char" *ngFor='let item of to_type_render[i];'>
           {{encodeMorse(item.char)}}
-          <div style="position:relative; top: 0; right: 0; font-size: small;">{{item.char}}</div>
+          <!-- <div style="position:relative; top: 0; right: 0; font-size: small;">{{item.char}}</div> -->
         </div>
         <div class="morse_char"></div>
       </div>
