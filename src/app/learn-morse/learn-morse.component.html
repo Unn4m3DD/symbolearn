@@ -1,24 +1,27 @@
 <div class="centered_container">
-  <div class="morse_container" *ngFor='let _ of to_type_render; let i=index;'>
-    <div class="morse_char"></div>
-    <div [ngClass]="{'grey' : item.index <= 1+ correct_counter}" class="morse_char"
-      *ngFor='let item of to_type_render[i];'>
-      {{encodeMorse(item.char)}}
-      <div style="position:relative; top: 0; right: 0; font-size: small;">{{item.char}}</div>
+  <div class="morse_container_container_container">
+    <div class="morse_container_container" #morse_div>
+      <div class="morse_container" *ngFor='let _ of to_type_render; let i=index;'>
+        <div class="morse_char"></div>
+        <div [ngClass]="{'grey' : item.index <= 1+ correct_counter}" class="morse_char"
+          *ngFor='let item of to_type_render[i];'>
+          {{encodeMorse(item.char)}}
+          <div style="position:relative; top: 0; right: 0; font-size: small;">{{item.char}}</div>
+        </div>
+        <div class="morse_char"></div>
+      </div>
     </div>
-    <div class="morse_char"></div>
   </div>
+  <div class="morse_container_container" #morse_div>
 
-  <div class="text_input_container">
-    <input #text_input class="text_input" value="{{user_input}}" dir="rtl"
-      (keydown)="preventDelete($event, text_input)" />
-    <div
-      [ngClass]="{
+    <div class="text_input_container">
+      <div class="text_input">{{user_input}}</div>
+      <div [ngClass]="{
         'red' : this.current_char.toLowerCase() != this.to_type.charAt(this.correct_counter).toLowerCase(), 
         'green' : this.current_char.toLowerCase() == this.to_type.charAt(this.correct_counter).toLowerCase(), 
         current_char:true
       }">
-      {{current_char}}
+        {{current_char}}
+      </div>
     </div>
   </div>
-</div>

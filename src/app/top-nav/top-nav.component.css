@@ -42,3 +42,6 @@ div{
 .top_tab_button_orange{
   background: #CA9100;
 }
+.top_tab_button_orange:hover {
+    background: #c08a00;
+}
