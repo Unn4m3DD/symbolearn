@@ -1,5 +1,5 @@
 <div>
-  <app-top-nav (current_page_emitter)="changePage($event)"></app-top-nav>
+  <app-top-nav></app-top-nav>
   <app-bottom-nav></app-bottom-nav>
   <div class="content_container">
     <container-element [ngSwitch]="current_page">
@@ -12,4 +12,10 @@
       <app-learn-morse *ngSwitchCase="'learn-morse'"></app-learn-morse>
     </container-element>
   </div>
+</div>
+<div class="bubble_container">
+  <div class="bubble1"></div>
+  <div class="bubble2"></div>
+  <div class="bubble3"></div>
+  <div class="bubble4"></div>
 </div>

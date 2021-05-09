@@ -47,7 +47,7 @@ export class LearnMorseComponent implements OnInit {
       '8': '---··',
       '9': '----·',
       '0': '-----',
-      ' ': '\n'
+      ' ': ' '
     };
     return ref[morseCode.toLowerCase()];
   }
@@ -77,15 +77,16 @@ export class LearnMorseComponent implements OnInit {
         this.current_char = event.key
         return
       }
-      if (this.current_char.toLowerCase() == this.to_type.charAt(this.correct_counter).toLowerCase()) {
+      if (this.current_char.toLowerCase() == this.to_type.charAt(this.correct_counter).toLowerCase()
+      ||this.current_char.toLowerCase() == "⍽" && " " == this.to_type.charAt(this.correct_counter).toLowerCase()) {
         this.correct_counter++
-        this.user_input += this.current_char
-        if (this.current_char == " " && this.morse_div) {
+        this.user_input += this.current_char != "⍽" ? this.current_char : " "
+        if (this.current_char == "⍽" && this.morse_div) {
           this.current_offset += 100 / this.to_type.split(" ").length
           this.morse_div.nativeElement.style.transform = `translate(0, -${this.current_offset}%)`;
         }
       }
-      this.current_char = event.key
+      this.current_char = event.key != " " ? event.key : "⍽"
       if (this.user_input.length > 20)
         this.user_input = this.user_input.substring(1);
     }
