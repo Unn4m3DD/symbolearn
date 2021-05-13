@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { CookieService } from "ngx-cookie-service";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,7 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   current_page = "learn-morse"
-  constructor() {
+  logged_in: boolean = false
+  constructor(private cookieService : CookieService) {
+    this.logged_in = cookieService.get("logged_in") == "true"
     this.current_page = window.location.pathname.substring(1)
     if (this.current_page == "") this.current_page = "initial"
   }
