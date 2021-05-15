@@ -1,23 +1,27 @@
 <div class="outer_div">
-    <div class='text_div'>
-        <div class="title_container">
-            <h1 class="title">Did you know?</h1>
-            <h1 class="sub_title">Kids that play with lego have 73% more chance of working at boston dynamics than kids that don’t</h1>
-        </div>
+  <div class='text_div'>
+    <div class="title_container">
+      <h1 class="title">Did you know?</h1>
+      <h1 class="sub_title">Kids that play with lego have 73% more chance of working at boston dynamics than kids
+        that
+        don’t</h1>
     </div>
-    <div class="sign_in_box_container">
-        <div class="sign_in_box">
-            <div class="box_item">
-                <p class="attribute_text">Email:</p>
-                <input type="text" class="attribute_input" />
-            </div>
-            <div class="box_item">
-                <p class="attribute_text">Password:</p>
-                <input type="password" class="attribute_input" />
-            </div>
-            <div (click)="setLoggedIn()" class="button orange_button">
-                <p class="button_text" href="#">Sign in</p>
-            </div>
+  </div>
+  <div class="sign_in_box_container">
+    <div class="sign_in_box">
+      <div class="box_item">
+        <div class="attribute_text">Email:</div>
+        <input type="text" class="attribute_input" />
+      </div>
+      <div class="box_item">
+        <div class="attribute_text">Password:</div>
+        <input type="password" class="attribute_input password_repeat_input" />
+      </div>
+      <div class="button_container">
+        <div (click)="setLoggedIn()" class="button orange_button">
+          <div class="button_text" href="#">Sign in</div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
