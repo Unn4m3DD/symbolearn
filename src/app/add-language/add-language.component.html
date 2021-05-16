@@ -1,0 +1,20 @@
+<input #file_input type="file" directory webkitdirectory (change)="submitFolder($event)" name="name" style="display: none;" />
+<div (drop)="dropFile($event)" class="container">
+  <div class="upper-text">
+    You should provide folder with files named <br>
+    from A.png to Z.png and 0.png to 1.png
+  </div>
+  <div class="insert-button orange-button" (click)="showFileBrowser()">
+    <div class="button-text" >
+      Select Folder
+    </div>
+  </div>
+  <div class="bottom-text">
+    <div class="alternatively">Alternatively </div>
+    <div class="alternative-button-container">
+      <a class="alternative-button orange-button">Provide 1 at a time</a>
+      <div class="or">or</div>
+      <a class="alternative-button blue-button">Provide a sprite sheet</a>
+    </div>
+  </div>
+</div>

@@ -12,7 +12,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ExercisesComponent } from './exercises/exercises.component';
 import { SettingsComponent } from './settings/settings.component';
 import { LearnMorseComponent } from './learn-morse/learn-morse.component';
-import { FormsModule } from "@angular/forms"
+import { FormsModule } from "@angular/forms";
+import { AddLanguageComponent } from './add-language/add-language.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { FormsModule } from "@angular/forms"
     DashboardComponent,
     ExercisesComponent,
     SettingsComponent,
-    LearnMorseComponent
+    LearnMorseComponent,
+    AddLanguageComponent
   ],
   imports: [
     BrowserModule,
