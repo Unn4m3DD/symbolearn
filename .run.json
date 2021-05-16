@@ -1,0 +1,7 @@
+{
+  "setup": "yarn build",
+  "run": "&& angular-http-server --path dist/symbolearn -p $PORT",
+  "title": "SymboLearn",
+  "subtitle": "Website to learn symbolic languages",
+  "video": "https://raw.githubusercontent.com/Unn4m3DD/symbolearn/master/demo.mp4"
+}
