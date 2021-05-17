@@ -10,10 +10,10 @@
   --primary-button-color-hover: #c08a00;
   --primary-button-color-active: #d69b04;
   --primary-button-text-color: #FFF;
-  --secundary-button-color: #172A3A;
-  --secundary-button-color-hover: #080f14;
-  --secundary-button-color-active: #162835;
-  --secundary-button-text-color: #FFF;
+  --secondary-button-color: #172A3A;
+  --secondary-button-color-hover: #080f14;
+  --secondary-button-color-active: #162835;
+  --secondary-button-text-color: #FFF;
   --dropdown-color: #f9f9f9;
   --morse-input-color: #FFF;
   --morse-input-text-color: #000;
@@ -49,17 +49,17 @@ app-root {
 }
 
 .blue-button {
-  background: var(--secundary-button-color);
+  background: var(--secondary-button-color);
   user-select: none;
-  color: var(--secundary-button-text-color);
+  color: var(--secondary-button-text-color);
 }
 
 .blue-button:hover {
-  background: var(--secundary-button-color-hover);
+  background: var(--secondary-button-color-hover);
 }
 
 .blue-button:active {
-  background: var(--secundary-button-color-active);
+  background: var(--secondary-button-color-active);
 }
 
 .orange-button {

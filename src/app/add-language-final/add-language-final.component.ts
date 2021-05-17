@@ -12,8 +12,11 @@ export class AddLanguageFinalComponent implements OnInit {
   current_char: string = "";
   constructor(private sanitizer: DomSanitizer) {
     this.to_render = []
+    const queryString = window.location.search;
+    const parameters = new URLSearchParams(queryString);
+    const value = parameters.get('set');
     for (let i of "abcdefghijklmnopqrstuvwxyz".toUpperCase().split(""))
-      this.to_render.push({ character: i, image: "", hovering: 0 })
+      this.to_render.push({ character: i, image: value == "sign" ? "/assets/sign-language/" + i.toLowerCase() + ".png" : "", hovering: 0 })
 
   }
   allFull() {
@@ -50,6 +53,7 @@ export class AddLanguageFinalComponent implements OnInit {
       else
         item.hovering--
   }
+
   ngOnInit(): void {
   }
 
