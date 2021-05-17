@@ -64,14 +64,6 @@
   width: 95px;
 }
 
-.blue-button {
-  background-color: #172A3A;
-}
-
-.blue-button:hover {
-  background: #080f14;
-}
-
 .accept-button-container {
   justify-content: center;
 }
@@ -88,14 +80,6 @@
   width: 200px;
   padding: 0 20px;
   color: white;
-}
-
-.orange-button {
-  background-color: #CA9100;
-}
-
-.orange-button:hover {
-  background: #c08a00;
 }
 
 .deactivated{

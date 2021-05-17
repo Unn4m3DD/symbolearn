@@ -16,22 +16,6 @@
   font-size: 22pt;
 }
 
-.orange-button {
-  background-color: #CA9100;
-}
-
-.orange-button:hover {
-  background: #c08a00;
-}
-
-.blue-button {
-  background-color: #172A3A;
-}
-
-.blue-button:hover {
-  background: #080f14;
-}
-
 .insert-button {
   height: 70px;
   align-items: center;

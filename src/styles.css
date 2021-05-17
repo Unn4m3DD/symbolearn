@@ -3,10 +3,26 @@
   font-family: Rubik, sans-serif;
 }
 
+:root {
+  --main-text-color: #FFF;
+  --main-bg-color: #66ACA8;
+  --primary-button-color: #CA9100;
+  --primary-button-color-hover: #c08a00;
+  --primary-button-color-active: #d69b04;
+  --primary-button-text-color: #FFF;
+  --secundary-button-color: #172A3A;
+  --secundary-button-color-hover: #080f14;
+  --secundary-button-color-active: #162835;
+  --secundary-button-text-color: #FFF;
+  --dropdown-color: #f9f9f9;
+  --morse-input-color: #FFF;
+  --morse-input-text-color: #000;
+}
+
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #66ACA8;
+  background-color: var(--main-bg-color);
 }
 
 /* use viewport-relative units to cover page fully */
@@ -30,4 +46,32 @@ app-root {
   /* example padding, font-size, background, etc */
   padding: 10px;
   font-size: 20px;
+}
+
+.blue-button {
+  background: var(--secundary-button-color);
+  user-select: none;
+  color: var(--secundary-button-text-color);
+}
+
+.blue-button:hover {
+  background: var(--secundary-button-color-hover);
+}
+
+.blue-button:active {
+  background: var(--secundary-button-color-active);
+}
+
+.orange-button {
+  background: var(--primary-button-color);
+  color: var(--primary-button-text-color);
+  user-select: none;
+}
+
+.orange-button:hover {
+  background: var(--primary-button-color-hover);
+}
+
+.orange-button:active {
+  background: var(--primary-button-color-active);
 }

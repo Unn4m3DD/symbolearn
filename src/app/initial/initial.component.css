@@ -1,10 +1,6 @@
-.blue_button {
-    background: #172A3A;
-    white-space: nowrap;
-}
-
-.button {
+    .button {
     flex: 1;
+    white-space: nowrap;
     margin-top: 2rem;
     margin-right: 6rem;
     margin-left: 6rem;
@@ -13,18 +9,6 @@
     padding-top: 0.1rem;
     padding-bottom: 0.1rem;
     filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
-}
-
-.blue_button:hover {
-    background: #080f14;
-}
-
-.orange_button {
-    background: #d49903;
-}
-
-.orange_button:hover {
-    background: #CA9100;
 }
 
 .outer_div {
@@ -48,7 +32,6 @@
     font-size: 24px;
     align-items: center;
     text-align: center;
-    color: #FFFFFF;
 }
 
 .text_div {
@@ -63,7 +46,7 @@
     font-style: normal;
     font-weight: normal;
     font-size: 70px;
-    color: #FFFFFF;
+    color: var(--main-text-color);
 }
 
 .sub_title {
@@ -71,5 +54,5 @@
     font-style: normal;
     font-weight: normal;
     font-size: 35px;
-    color: #FFFFFF;
+    color: var(--main-text-color);
 }

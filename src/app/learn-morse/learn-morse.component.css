@@ -2,7 +2,7 @@
   display: flex;
   width: 100vw;
   height: 50pt;
-  background: #FFFFFF;
+  background: var(--morse-input-color);
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   clip-path: inset(0 25% 0 25%);
   flex-direction: row;
@@ -11,7 +11,7 @@
 
 .text_input {
   flex: 1;
-  background-color: #0000;
+  background-color: var(--morse-input-text-color);
   clip-path: inset(0 0 0 10%);
   width: 50%;
   font-size: 50pt;

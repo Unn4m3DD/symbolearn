@@ -15,12 +15,12 @@
       </div>
     </div>
     <div *ngIf="logged_in" (click)="changePage('settings')"
-      class="top_tab_item_container top_tab_button top_tab_button_blue"><a class="top_tab_text">Config</a></div>
+      class="top_tab_item_container top_tab_button blue-button"><a class="top_tab_text">Config</a></div>
     <div *ngIf="logged_in" (click)="changePage('dashboard')"
-      class="top_tab_item_container top_tab_button top_tab_button_orange"><a class="top_tab_text">Profile</a></div>
+      class="top_tab_item_container top_tab_button orange-button"><a class="top_tab_text">Profile</a></div>
     <div *ngIf="!logged_in" (click)="changePage('sign-in')"
-      class="top_tab_item_container top_tab_button top_tab_button_blue"><a class="top_tab_text">Sign In</a></div>
+      class="top_tab_item_container top_tab_button blue-button"><a class="top_tab_text">Sign In</a></div>
     <div *ngIf="!logged_in" (click)="changePage('sign-up')"
-      class="top_tab_item_container top_tab_button top_tab_button_orange"><a class="top_tab_text">Sign Up</a></div>
+      class="top_tab_item_container top_tab_button orange-button"><a class="top_tab_text">Sign Up</a></div>
   </div>
 </div>
