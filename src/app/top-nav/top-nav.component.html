@@ -3,10 +3,24 @@
   <div>
     <div (click)="changePage('exercises')" class="top_tab_item_container"><a class="top_tab_text">Exercises</a></div>
     <!-- <div (click)="changePage('')" class="top_tab_item_container"><a class="top_tab_text">Learn Sign<br>Language</a></div> -->
-    <div (click)="changePage('learn-morse')" class="top_tab_item_container"><a class="top_tab_text">Learn Morse<br>Code</a></div>
-    <div *ngIf="logged_in" (click)="changePage('settings')" class="top_tab_item_container top_tab_button top_tab_button_blue"><a class="top_tab_text">Config</a></div>
-    <div *ngIf="logged_in" (click)="changePage('dashboard')" class="top_tab_item_container top_tab_button top_tab_button_orange"><a class="top_tab_text">Profile</a></div>
-    <div *ngIf="!logged_in" (click)="changePage('sign-in')" class="top_tab_item_container top_tab_button top_tab_button_blue"><a class="top_tab_text">Sign In</a></div>
-    <div *ngIf="!logged_in" (click)="changePage('sign-up')" class="top_tab_item_container top_tab_button top_tab_button_orange"><a class="top_tab_text">Sign Up</a></div>
+    <div class="top_tab_item_container">
+      <div class="top_tab_item_container_container">
+        <div class="dropdown">
+          <a (click)="changePage('learn-morse')" class="top_tab_text">Learn Morse<br>Code</a>
+          <div class="dropdown-content">
+            <div>Learn Sign Language</div>
+            <div>Add Language...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="logged_in" (click)="changePage('settings')"
+      class="top_tab_item_container top_tab_button top_tab_button_blue"><a class="top_tab_text">Config</a></div>
+    <div *ngIf="logged_in" (click)="changePage('dashboard')"
+      class="top_tab_item_container top_tab_button top_tab_button_orange"><a class="top_tab_text">Profile</a></div>
+    <div *ngIf="!logged_in" (click)="changePage('sign-in')"
+      class="top_tab_item_container top_tab_button top_tab_button_blue"><a class="top_tab_text">Sign In</a></div>
+    <div *ngIf="!logged_in" (click)="changePage('sign-up')"
+      class="top_tab_item_container top_tab_button top_tab_button_orange"><a class="top_tab_text">Sign Up</a></div>
   </div>
 </div>
