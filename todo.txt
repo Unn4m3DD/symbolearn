@@ -1,0 +1,3 @@
+variables for colors
+remove selectable text on buttons
+give onclick colors to buttons
