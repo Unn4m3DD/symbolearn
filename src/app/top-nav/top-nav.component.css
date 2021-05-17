@@ -68,9 +68,6 @@ div {
   font-family: rubik;
   text-decoration: none;
 }
-.top_tab_item_container_container{
-
-}
 
 .top_tab_button {
   width: 150px;
@@ -86,10 +83,16 @@ div {
   background: #080f14;
 }
 
+
 .top_tab_button_orange {
   background: #CA9100;
+  user-select: none;
 }
 
 .top_tab_button_orange:hover {
   background: #c08a00;
+}
+
+.top_tab_button_orange:active {
+  background: #d69b04;
 }
