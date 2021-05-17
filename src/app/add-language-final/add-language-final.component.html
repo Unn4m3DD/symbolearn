@@ -1,18 +1,21 @@
-<input #file_input type="file" id="selectedFile" style="display: none;" />
+<input #file_input type="file" accept="image/x-png,image/gif,image/jpeg" (change)="selectedFile($event)"
+  style="display: none;" />
 <div class="char-container">
-  <div class="char-item" *ngFor="let i of to_render" 
-  (dragend)="preventDefaults($event)" 
-  (drop)="preventDefaults($event); parseFile(i.character, $event)"
-  (dragover)="preventDefaults($event)"
-  >
-    <img *ngIf="i.image != ''" class="char-image" [src]="i.image"/>
-    <div *ngIf="i.image == ''" class="char-image-placeholder">
+  <div class="char-item" *ngFor="let i of to_render" (dragend)="preventDefaults($event)"
+    (drop)="preventDefaults($event); parseFile(i.character, $event)" (dragover)="preventDefaults($event);"
+    (dragenter)="setHovering(i.character, true)" (dragleave)="setHovering(i.character, false)"
+    [ngClass]="{hovering: i.hovering > 0}">
+    <img *ngIf="i.hovering == 0 && i.image != ''" class="char-image" [src]="i.image" />
+    <div *ngIf="i.hovering == 0 && i.image == ''" class="char-image-placeholder">
       <div class="placeholder-text">
         Drag and Drop<br>an Image<br><br>or
       </div>
-      <div class="button blue-button">
+      <div class="button blue-button" (click)="selectFile(i.character)">
         Select a File
       </div>
+    </div>
+    <div *ngIf="i.hovering > 0" class="drop-it">
+      Drop It!
     </div>
     <div style="margin-top: 8px;">{{i.character}}</div>
   </div>

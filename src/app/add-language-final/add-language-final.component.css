@@ -17,9 +17,20 @@
   font-weight: bold;
   padding:10px;
 }
+.hovering{
+  background-color: rgba(0,0,0,.5);
+}
 .char-image{
   height: 110px;
   width: 110px;
+}
+.drop-it{
+  height: 110px;
+  width: 110px;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16pt;
 }
 .char-image-placeholder{
   height: 110px;
