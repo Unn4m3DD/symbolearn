@@ -13,7 +13,8 @@ import { ExercisesComponent } from './exercises/exercises.component';
 import { SettingsComponent } from './settings/settings.component';
 import { LearnMorseComponent } from './learn-morse/learn-morse.component';
 import { FormsModule } from "@angular/forms";
-import { AddLanguageComponent } from './add-language/add-language.component'
+import { AddLanguageComponent } from './add-language/add-language.component';
+import { AddLanguageFinalComponent } from './add-language-final/add-language-final.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { AddLanguageComponent } from './add-language/add-language.component'
     ExercisesComponent,
     SettingsComponent,
     LearnMorseComponent,
-    AddLanguageComponent
+    AddLanguageComponent,
+    AddLanguageFinalComponent
   ],
   imports: [
     BrowserModule,

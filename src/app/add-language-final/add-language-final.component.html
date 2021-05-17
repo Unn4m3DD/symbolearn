@@ -1,0 +1,19 @@
+<input #file_input type="file" id="selectedFile" style="display: none;" />
+<div class="char-container">
+  <div class="char-item" *ngFor="let i of to_render" 
+  (dragend)="preventDefaults($event)" 
+  (drop)="preventDefaults($event); parseFile(i.character, $event)"
+  (dragover)="preventDefaults($event)"
+  >
+    <img *ngIf="i.image != ''" class="char-image" [src]="i.image"/>
+    <div *ngIf="i.image == ''" class="char-image-placeholder">
+      <div class="placeholder-text">
+        Drag and Drop<br>an Image<br><br>or
+      </div>
+      <div class="button blue-button">
+        Select a File
+      </div>
+    </div>
+    <div style="margin-top: 8px;">{{i.character}}</div>
+  </div>
+</div>

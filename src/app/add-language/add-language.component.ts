@@ -16,7 +16,9 @@ export class AddLanguageComponent implements OnInit {
     this.file_input?.nativeElement?.click()
 
   }
-
+  goToFinal(){
+    window.location.pathname = "add-language-final"
+  }
   dropFile(event: any) {
     console.log(event)
     event.preventDefault()
