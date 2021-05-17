@@ -1,10 +1,12 @@
-input{
+input {
   border: none;
-  outline:none;
+  outline: none;
 }
-input:active{
-  outline:none;
+
+input:active {
+  outline: none;
 }
+
 .button {
   display: flex;
   flex: 1;
@@ -13,14 +15,6 @@ input:active{
   align-items: center;
   justify-content: center;
   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
-}
-
-.orange_button {
-  background: #d49903;
-}
-
-.orange_button:hover {
-  background: #CA9100;
 }
 
 .outer_div {
@@ -38,7 +32,7 @@ input:active{
   font-weight: bold;
   font-size: 24px;
   text-align: center;
-  color: #FFFFFF;
+  color: var(--main-text-color);
 }
 
 .text_div {
@@ -102,7 +96,7 @@ input:active{
   display: flex;
   align-items: center;
   text-align: center;
-  color: #FFFFFF;
+  color: var(--main-text-color);
   margin-bottom: 5px;
 }
 
@@ -116,7 +110,7 @@ input:active{
   font-style: normal;
   font-size: 18px;
   line-height: 24px;
-  color: #FFFFFF;
+  color: var(--main-text-color);
   padding: 0 10px;
 }
 
@@ -130,7 +124,7 @@ input:active{
   font-weight: normal;
   text-align: left;
   font-size: 70px;
-  color: #FFFFFF;
+  color: var(--main-text-color);
   width: 100%;
 }
 
@@ -145,6 +139,6 @@ input:active{
   text-align: left;
   font-size: 32px;
   line-height: 38px;
-  color: #FFFFFF;
+  color: var(--main-text-color);
   width: 100%;
 }

@@ -15,7 +15,6 @@
   font-weight: bold;
   font-size: 24px;
   text-align: center;
-  color: #FFFFFF;
 }
 
 .contribute_button {
@@ -38,26 +37,10 @@
   padding: 0 20px;
 }
 
-.blue_button {
-  background: #172A3A;
-  white-space: nowrap;
-}
-
 .github_logo {
-  height:70px;
+  height: 70px;
 }
 
-.blue_button:hover {
-  background: #080f14;
-}
-
-.orange_button {
-  background: #d49903;
-}
-
-.orange_button:hover {
-  background: #CA9100;
-}
 
 .flex_space {
   flex: 1;
