@@ -1,51 +1,59 @@
-*{
+* {
   display: flex;
 }
-.char-container{
+
+.char-container {
   width: 80vw;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
+
 .char-item {
   flex-direction: column;
-  background-color: rgba(0,0,0,.3);
+  background-color: rgba(0, 0, 0, .3);
   margin: 10px;
   align-items: center;
-  color:white;
+  color: white;
   font-weight: bold;
-  padding:10px;
+  padding: 10px;
 }
-.hovering{
-  background-color: rgba(0,0,0,.5);
+
+.hovering {
+  background-color: rgba(0, 0, 0, .5);
 }
-.char-image{
-  height: 110px;
-  width: 110px;
+
+.char-image {
+  height: 95px;
+  width: 95px;
 }
-.drop-it{
-  height: 110px;
-  width: 110px;
+
+.drop-it {
+  height: 95px;
+  width: 95px;
   align-items: center;
   justify-content: center;
   font-weight: bold;
   font-size: 16pt;
 }
-.char-image-placeholder{
-  height: 110px;
-  width: 110px;
+
+.char-image-placeholder {
+  height: 95px;
+  width: 95px;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-.placeholder-text{
+
+.placeholder-text {
   font-weight: normal;
   font-size: 10pt;
   text-align: center;
   padding: 0 2px;
 }
-.button{
+
+.button {
   font-weight: normal;
   font-size: 11pt;
   padding: 4 2px;
@@ -53,7 +61,7 @@
   justify-content: center;
   margin-top: 15px;
   height: 35px;
-  width: 110px;
+  width: 95px;
 }
 
 .blue-button {
@@ -62,4 +70,34 @@
 
 .blue-button:hover {
   background: #080f14;
+}
+
+.accept-button-container {
+  justify-content: center;
+}
+
+.accept-button {
+  font-weight: normal;
+  font-size: 16pt;
+  font-weight: bold;
+  padding: 4 2px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  height: 70px;
+  width: 200px;
+  padding: 0 20px;
+  color: white;
+}
+
+.orange-button {
+  background-color: #CA9100;
+}
+
+.orange-button:hover {
+  background: #c08a00;
+}
+
+.deactivated{
+  display: none;
 }

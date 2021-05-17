@@ -9,14 +9,16 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 export class AddLanguageFinalComponent implements OnInit {
   @ViewChild('file_input') file_input: ElementRef | undefined;
   to_render: { character: string, image: string | SafeUrl, hovering: number }[];
-  current_char : string = "";
+  current_char: string = "";
   constructor(private sanitizer: DomSanitizer) {
     this.to_render = []
     for (let i of "abcdefghijklmnopqrstuvwxyz".toUpperCase().split(""))
       this.to_render.push({ character: i, image: "", hovering: 0 })
 
   }
-
+  allFull() {
+    return this.to_render.reduce((e1, e2) => e1 && e2.image != '', true)
+  }
   preventDefaults(e: Event) {
     e.preventDefault()
     e.stopPropagation()
@@ -33,8 +35,8 @@ export class AddLanguageFinalComponent implements OnInit {
       item.hovering = 0
     }
   }
-  selectedFile(event: any){
-    this.parseFile(this.current_char, {dataTransfer: event.target})
+  selectedFile(event: any) {
+    this.parseFile(this.current_char, { dataTransfer: event.target })
   }
   selectFile(char: string) {
     this.current_char = char
