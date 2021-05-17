@@ -1,8 +1,8 @@
 <input #file_input type="file" directory webkitdirectory (change)="submitFolder($event)" name="name" style="display: none;" />
 <div (drop)="dropFile($event)" class="container">
   <div class="upper-text">
-    You should provide folder with files named <br>
-    from A.png to Z.png and 0.png to 1.png
+    You should provide folder with files <br> named
+    from A.png to Z.png
   </div>
   <div class="insert-button orange-button" (click)="showFileBrowser()">
     <div class="button-text" >
@@ -12,9 +12,7 @@
   <div class="bottom-text">
     <div class="alternatively">Alternatively </div>
     <div class="alternative-button-container">
-      <a class="alternative-button orange-button" (click)="goToFinal()" >Provide 1 at a time</a>
-      <div class="or">or</div>
-      <a class="alternative-button blue-button">Provide a sprite sheet</a>
+      <a class="alternative-button blue-button" (click)="goToFinal()" >Provide 1 at a time</a>
     </div>
   </div>
 </div>

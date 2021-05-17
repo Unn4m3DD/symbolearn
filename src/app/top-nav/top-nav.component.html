@@ -8,8 +8,8 @@
         <div class="dropdown">
           <a (click)="changePage('learn-morse')" class="top_tab_text">Learn Morse<br>Code</a>
           <div class="dropdown-content">
-            <div>Learn Sign Language</div>
-            <div>Add Language...</div>
+            <div (click)="changePage('')" >Learn Sign Language</div>
+            <div (click)="changePage('add-language')" >Add Language...</div>
           </div>
         </div>
       </div>
