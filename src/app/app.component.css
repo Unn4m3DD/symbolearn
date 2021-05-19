@@ -41,7 +41,7 @@ app-bottom-nav {
   right: -100px;
   top: -50px;
   clip-path: circle(100px);
-  background: rgba(202, 145, 0, 0.11);
+  background: var(--bubbles-color);
 }
 
 .bubble2 {
@@ -51,7 +51,7 @@ app-bottom-nav {
   right: 375px;
   top: 650px;
   clip-path: circle(200px);
-  background: rgba(202, 145, 0, 0.11);
+  background: var(--bubbles-color);
 }
 
 .bubble3 {
@@ -61,7 +61,7 @@ app-bottom-nav {
   left: -148px;
   top: 590px;
   clip-path: circle(225px);
-  background: rgba(202, 145, 0, 0.11);
+  background: var(--bubbles-color);
 }
 .bubble4 {
   position: absolute;
@@ -70,5 +70,5 @@ app-bottom-nav {
   left: 340px;
   top: 50px;
   clip-path: circle(165px);
-  background: rgba(202, 145, 0, 0.11);
+  background: var(--bubbles-color-secondary);
 }

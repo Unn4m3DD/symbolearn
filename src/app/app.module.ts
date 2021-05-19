@@ -15,6 +15,8 @@ import { LearnMorseComponent } from './learn-morse/learn-morse.component';
 import { FormsModule } from "@angular/forms";
 import { AddLanguageComponent } from './add-language/add-language.component';
 import { AddLanguageFinalComponent } from './add-language-final/add-language-final.component'
+import { HttpClientModule } from '@angular/common/http';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,9 @@ import { AddLanguageFinalComponent } from './add-language-final/add-language-fin
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    AngularSvgIconModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

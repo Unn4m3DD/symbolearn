@@ -1540,6 +1540,13 @@ alphanum-sort@^1.0.2:
   resolved "https://registry.npmjs.org/alphanum-sort/-/alphanum-sort-1.0.2.tgz"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
 
+angular-svg-icon@^11.2.0:
+  version "11.2.0"
+  resolved "https://registry.yarnpkg.com/angular-svg-icon/-/angular-svg-icon-11.2.0.tgz#cda349cb55643781b7a42d622f0f6610921ead2a"
+  integrity sha512-5SWvZyRPRV88n6/b+5AqI580Aq3xmQ1dd1ucYCMDrj4afQzQwJv2V7pBFcF3qNYzVZyF5TLDF006tGxMHYAb2g==
+  dependencies:
+    tslib "^2.0.0"
+
 ansi-colors@4.1.1:
   version "4.1.1"
   resolved "https://registry.npmjs.org/ansi-colors/-/ansi-colors-4.1.1.tgz"

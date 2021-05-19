@@ -14,9 +14,11 @@ div {
   text-align: center;
   margin: 0;
 }
-.dropdown-content div{
+
+.dropdown-content div {
   display: block;
 }
+
 .dropdown-content {
   top: 100%;
   width: 220px;
@@ -28,6 +30,7 @@ div {
   left: 50%;
   transform: translateX(-50%);
 }
+
 .dropdown-content div {
   margin: 0;
   padding: 20px 10px;
@@ -37,7 +40,7 @@ div {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.top_tab_item_container_container{
+.top_tab_item_container_container {
   padding: 10px 20px;
 }
 
@@ -63,7 +66,7 @@ div {
 }
 
 .top_tab_text {
-  color: white;
+  color: var(--top-tab-text);
   font-weight: bold;
   text-align: center;
   font-family: rubik;
@@ -74,4 +77,12 @@ div {
   width: 150px;
   height: 70px;
   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.primary-button {
+  color: var(--primary-button-text-color);
+}
+
+.secondary-button {
+  color: var(--secondary-button-text-color);
 }

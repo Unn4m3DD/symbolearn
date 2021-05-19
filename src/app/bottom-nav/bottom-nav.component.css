@@ -6,7 +6,7 @@
   bottom: 0;
   width: 100%;
   justify-content: space-between;
-  background: linear-gradient(180deg, #528986 0%, #61A6A1 100%);
+  background: linear-gradient(180deg, var(--linear-gradient-start) 0%, var(--linear-gradient-stop) 100%);
 }
 
 .button_text {

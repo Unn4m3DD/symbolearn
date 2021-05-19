@@ -1,27 +1,32 @@
 <div class="top_tab_container">
-  <img (click)="changePage('initial')" id="logo" src="/assets/logo.svg" />
+  <svg-icon (click)="changePage('initial')" id="logo" src="/assets/logo.svg"></svg-icon>
   <div>
     <div (click)="changePage('exercises')" class="top_tab_item_container"><a class="top_tab_text">Exercises</a></div>
     <!-- <div (click)="changePage('')" class="top_tab_item_container"><a class="top_tab_text">Learn Sign<br>Language</a></div> -->
     <div class="top_tab_item_container">
       <div class="top_tab_item_container_container">
         <div class="dropdown">
-          <a  class="top_tab_text">Practice</a>
+          <a class="top_tab_text">Practice</a>
           <div class="dropdown-content">
-            <div (click)="changePage('learn', 'lang=morse')" >Morse Code</div>
-            <div (click)="changePage('learn')" >Sign Language</div>
-            <div (click)="changePage('add-language')" >Add Language...</div>
+            <div (click)="changePage('learn', 'lang=morse')">Morse Code</div>
+            <div (click)="changePage('learn')">Sign Language</div>
+            <div (click)="changePage('add-language')">Add Language...</div>
           </div>
         </div>
       </div>
     </div>
-    <div *ngIf="logged_in" (click)="changePage('settings')"
-      class="top_tab_item_container top_tab_button blue-button"><a class="top_tab_text">Config</a></div>
+    <div *ngIf="logged_in" (click)="changePage('settings')" class="top_tab_item_container top_tab_button blue-button">
+      <a class="top_tab_text primary-button">Config</a>
+    </div>
     <div *ngIf="logged_in" (click)="changePage('dashboard')"
-      class="top_tab_item_container top_tab_button orange-button"><a class="top_tab_text">Profile</a></div>
-    <div *ngIf="!logged_in" (click)="changePage('sign-in')"
-      class="top_tab_item_container top_tab_button blue-button"><a class="top_tab_text">Sign In</a></div>
-    <div *ngIf="!logged_in" (click)="changePage('sign-up')"
-      class="top_tab_item_container top_tab_button orange-button"><a class="top_tab_text">Sign Up</a></div>
+      class="top_tab_item_container top_tab_button orange-button">
+      <a class="top_tab_text secondary-button">Profile</a>
+    </div>
+    <div *ngIf="!logged_in" (click)="changePage('sign-in')" class="top_tab_item_container top_tab_button blue-button">
+      <a class="top_tab_text primary-button">Sign In</a>
+    </div>
+    <div *ngIf="!logged_in" (click)="changePage('sign-up')" class="top_tab_item_container top_tab_button orange-button">
+      <a class="top_tab_text secondary-button">Sign Up</a>
+    </div>
   </div>
 </div>
