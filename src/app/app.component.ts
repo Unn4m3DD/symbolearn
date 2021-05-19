@@ -42,6 +42,30 @@ export class AppComponent {
       "--bubbles-color": "#cf95031c",
       "--bubbles-color-secondary": "#cf95031c",
       "--form-text-color": "#fff"
+    }, {
+
+      "--main-text-color": "#000",
+      "--main-bg-color": "#ffffff",
+      "--primary-button-color": "#dc91cc",
+      "--primary-button-color-hover": "#c08a00",
+      "--primary-button-color-active": "#d69b04",
+      "--primary-button-text-color": "#FFF",
+      "--secondary-button-color": "#64536f",
+      "--secondary-button-color-hover": "#080f14",
+      "--secondary-button-color-active": "#162835",
+      "--secondary-button-text-color": "#FFF",
+      "--dropdown-color": "#f9f9f9",
+      "--morse-input-color": "#FFF",
+      "--morse-input-text-color": "#000",
+      "--logo-grad-start": "#000",
+      "--logo-grad-stop": "#b6e4ee",
+      "--linear-gradient-start": "#d2fbfb",
+      "--linear-gradient-stop": "#57b1ff",
+      "--top-tab-text": "#333",
+      "--bubbles-color": "#f9a0ff4f",
+      "--bubbles-color-secondary": "#57b1ff2b",
+      "--form-text-color": "#fff",
+
     },
     {
       "--main-text-color": "#000",
@@ -218,7 +242,7 @@ export class AppComponent {
     for (let key in this.themes[this.styles]) {
       docStyle.setProperty(key, this.themes[this.styles][key]);
     }
-    
+
     console.log(this.styles)
   }
 }
