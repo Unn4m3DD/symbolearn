@@ -14,7 +14,7 @@ export class AddLanguageFinalComponent implements OnInit {
     this.to_render = []
     const queryString = window.location.search;
     const parameters = new URLSearchParams(queryString);
-    const value = parameters.get('set');
+    const value = parameters.get('lang');
     for (let i of "abcdefghijklmnopqrstuvwxyz".toUpperCase().split(""))
       this.to_render.push({ character: i, image: value == "sign" ? "/assets/sign-language/" + i.toLowerCase() + ".png" : "", hovering: 0 })
 
@@ -52,6 +52,10 @@ export class AddLanguageFinalComponent implements OnInit {
         item.hovering++
       else
         item.hovering--
+  }
+  changePage(page_name: string, query?: string | undefined) {
+    if (query == undefined) query = ""
+    window.location = <any>("/" + page_name + "?" + query)
   }
 
   ngOnInit(): void {

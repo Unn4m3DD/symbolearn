@@ -6,11 +6,12 @@ import { CookieService } from "ngx-cookie-service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  current_page = "learn-morse"
+  current_page = "learn"
   logged_in: boolean = false
   constructor(private cookieService : CookieService) {
-    this.logged_in = cookieService.get("logged_in") == "true"
-    this.current_page = window.location.pathname.substring(1)
+    this.logged_in = this.cookieService.get("logged_in") == "true"
+    this.current_page = window.location.pathname.substring(1);
+    console.log(this.current_page)
     if (this.current_page == "") this.current_page = "initial"
   }
   changePage(event: string) {

@@ -11,5 +11,8 @@ export class InitialComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  changePage(page_name: string, query?: string | undefined) {
+    if (query == undefined) query = ""
+    window.location = <any>("/" + page_name + "?" + query)
+  }
 }

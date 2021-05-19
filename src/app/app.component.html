@@ -2,17 +2,17 @@
   <app-top-nav></app-top-nav>
   <app-bottom-nav></app-bottom-nav>
   <div class="content_container">
-    <container-element [ngSwitch]="current_page">
+    <div [ngSwitch]="current_page">
       <app-initial *ngSwitchCase="'initial'"></app-initial>
       <app-sign-in *ngSwitchCase="'sign-in'"></app-sign-in>
       <app-sign-up *ngSwitchCase="'sign-up'"></app-sign-up>
       <app-exercises *ngSwitchCase="'exercises'"></app-exercises>
       <app-dashboard *ngSwitchCase="'dashboard'"></app-dashboard>
       <app-settings *ngSwitchCase="'settings'"></app-settings>
-      <app-learn-morse *ngSwitchCase="'learn-morse'"></app-learn-morse>
+      <app-learn-morse *ngSwitchCase="'learn'"></app-learn-morse>
       <app-add-language *ngSwitchCase="'add-language'"></app-add-language>
       <app-add-language-final *ngSwitchCase="'add-language-final'"></app-add-language-final>
-    </container-element>
+    </div>
   </div>
 </div>
 <div class="bubble_container">

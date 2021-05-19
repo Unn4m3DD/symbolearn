@@ -8,12 +8,13 @@ import { CookieService } from "ngx-cookie-service"
 export class TopNavComponent implements OnInit {
   logged_in: boolean = false
   constructor(private cookieService: CookieService) {
-    this.logged_in = cookieService.get("logged_in") == "true"
+    this.logged_in = this.cookieService.get("logged_in") == "true"
   }
   ngOnInit(): void {
   }
-  changePage(page_name: string) {
-    window.location.pathname = "/" + page_name
+  changePage(page_name: string, query?: string | undefined) {
+    if (query == undefined) query = ""
+    window.location = <any>("/" + page_name + "?" + query)
   }
 
 }

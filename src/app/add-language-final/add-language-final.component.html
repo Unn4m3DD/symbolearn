@@ -5,7 +5,7 @@
     (drop)="preventDefaults($event); parseFile(i.character, $event)" (dragover)="preventDefaults($event);"
     (dragenter)="setHovering(i.character, true)" (dragleave)="setHovering(i.character, false)"
     [ngClass]="{hovering: i.hovering > 0}">
-    <img  *ngIf="i.hovering == 0 && i.image != ''" class="char-image" [src]="i.image" />
+    <img *ngIf="i.hovering == 0 && i.image != ''" class="char-image" [src]="i.image" />
     <div *ngIf="i.hovering == 0 && i.image == ''" class="char-image-placeholder">
       <div class="placeholder-text">
         Drag and Drop<br>an Image<br><br>or
@@ -21,6 +21,8 @@
   </div>
 </div>
 <div class="accept-button-container">
-  <div class="accept-button orange-button" [ngClass]="{deactivated: !allFull()}"> Add Language  </div>
-  <div class="accept-button-practice blue-button" [ngClass]="{deactivated: !allFull()}"> Add Language<br>and<br>Start Practicing  </div>
+  <div class="accept-button orange-button" (click)="changePage('learn', 'lang=sign')"
+    [ngClass]="{deactivated: !allFull()}"> Add Language </div>
+  <div class="accept-button-practice blue-button" (click)="changePage('learn', 'lang=sign')"
+    [ngClass]="{deactivated: !allFull()}"> Add Language<br>and<br>Start Practicing </div>
 </div>
