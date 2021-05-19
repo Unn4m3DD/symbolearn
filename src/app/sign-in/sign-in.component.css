@@ -95,7 +95,7 @@ input:active {
   display: flex;
   align-items: center;
   text-align: center;
-  color: var(--main-text-color);
+  color: var(--form-text-color);
   margin-bottom: 5px;
 }
 
