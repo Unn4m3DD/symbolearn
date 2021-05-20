@@ -21,6 +21,7 @@ import { SmallCardComponent } from './small-card/small-card.component';
 import { ChartComponent } from './chart/chart.component';
 import { ChartCardComponent } from './chart-card/chart-card.component';
 import { ExercisesCardComponent } from './exercises-card/exercises-card.component';
+import { ConfigComponent } from './config/config.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import { ExercisesCardComponent } from './exercises-card/exercises-card.componen
     SmallCardComponent,
     ChartComponent,
     ChartCardComponent,
-    ExercisesCardComponent
+    ExercisesCardComponent,
+    ConfigComponent
   ],
   imports: [
     BrowserModule,

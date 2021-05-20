@@ -1,0 +1,17 @@
+.container {
+    display: grid;
+    gap: 1em;
+    width: 60vw;
+}
+
+.container .button {
+    margin-top: 20px;
+    padding: 12px 80px;
+    border-radius: 1px;
+    border-width:0px;
+    width: 20vw;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin: auto;
+}
