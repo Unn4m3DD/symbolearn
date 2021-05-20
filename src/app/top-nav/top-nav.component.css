@@ -20,11 +20,12 @@ div {
 }
 
 .dropdown:hover .dropdown-arrow{
-  transform: rotate(180deg);
+  transform: rotate(-180deg);
 }
 
 .dropdown-arrow {
   color: var(--top-tab-text);
+  transition: transform .5s;
 }
 
 .dropdown-content {
