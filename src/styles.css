@@ -55,6 +55,7 @@ app-root {
 
 .blue-button:hover {
   background: var(--secondary-button-color-hover);
+  cursor: pointer;
 }
 
 .blue-button:active {
@@ -69,6 +70,7 @@ app-root {
 
 .orange-button:hover {
   background: var(--primary-button-color-hover);
+  cursor: pointer;
 }
 
 .orange-button:active {
