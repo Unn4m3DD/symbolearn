@@ -1,0 +1,24 @@
+button {
+    background-color: #172A3A;
+    color: white;
+    padding: 30px 40px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    margin-top: 50px;
+    border-radius: 0px;
+    border-width: 0px;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-container {
+    display: grid;
+    gap: 1em;
+    justify-content: space-evenly;  
+    grid-template-columns: repeat(4, 1fr);
+}

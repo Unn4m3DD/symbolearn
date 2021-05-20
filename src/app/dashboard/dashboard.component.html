@@ -1,1 +1,11 @@
-<p>dashboard works!</p>
+
+
+<div class="smaller-grid-container">
+    <app-small-card *ngFor="let card of small_cards_data" [title]=card.title [value]=card.value></app-small-card>
+</div>
+
+
+
+<div class="bigger-grid-container">
+    <app-chart-card *ngFor="let chart of charts" [id]=chart.id [title]=chart.title [data]=chart.data [extra]=chart.extra></app-chart-card>
+</div>

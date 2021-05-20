@@ -1,1 +1,7 @@
-<p>exercises works!</p>
+<div class="grid-container">
+    <app-exercises-card *ngFor="let ex of exercises" [exercise]=ex></app-exercises-card>
+</div>
+
+<div class="button-container">
+    <button>Create Your Exercise</button>
+</div>

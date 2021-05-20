@@ -17,6 +17,11 @@ import { AddLanguageComponent } from './add-language/add-language.component';
 import { AddLanguageFinalComponent } from './add-language-final/add-language-final.component'
 import { HttpClientModule } from '@angular/common/http';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { SmallCardComponent } from './small-card/small-card.component';
+import { ChartComponent } from './chart/chart.component';
+import { CardComponent } from './card/card.component';
+import { ChartCardComponent } from './chart-card/chart-card.component';
+import { ExercisesCardComponent } from './exercises-card/exercises-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +35,12 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
     SettingsComponent,
     LearnMorseComponent,
     AddLanguageComponent,
-    AddLanguageFinalComponent
+    AddLanguageFinalComponent,
+    SmallCardComponent,
+    ChartComponent,
+    CardComponent,
+    ChartCardComponent,
+    ExercisesCardComponent
   ],
   imports: [
     BrowserModule,
