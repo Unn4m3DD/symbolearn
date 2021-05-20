@@ -15,15 +15,14 @@ export class ConfigComponent implements OnInit {
 
   changeSelected(selected:string) {
     this.selected = selected
-    console.log(this.selected)
-    /*
-    this.cookieService.set("logged_in", "true")
-    window.location.reload();
-    */
+    this.cookieService.set("config_"+this.setting.config.replace(" ", "_").toLowerCase(),selected) //  selected.replace(" ", "_").toLowerCase()
   }
 
   ngOnInit(): void {
-    this.selected = this.setting.options[0]
+    this.selected = this.cookieService.get("config_"+this.setting.config.replace(" ", "_").toLowerCase())
+    if(this.selected == "" || !this.setting.options.includes(this.selected)) {
+      this.selected = this.setting.options[0]
+    }    
   }
 
 }

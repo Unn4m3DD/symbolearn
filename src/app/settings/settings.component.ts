@@ -10,39 +10,27 @@ export class SettingsComponent implements OnInit {
   settings = [
     {
       config: "Attempt Duration",
-      options: [
-        "120s"
-      ]
+      options: ["60s", "120s", "240s"]
     },
     {
       config: "Mode",
-      options: [
-        "Scrambled Letters", "Words", "Phrases"
-      ]
+      options: ["Scrambled Letters", "Words", "Phrases"]
     },
     {
       config: "Help Level",
-      options: [
-        "Character Over Symbol", "Cheat Sheet", "No Help"
-      ]
+      options: ["Character Over Symbol", "Cheat Sheet", "No Help"]
     },
     {
       config: "Display Style",
-      options: [
-        "Words", "Inline", "Show Current character"
-      ]
+      options: ["Words", "Inline", "Show Current character"]
     },
     {
       config: "Include Numbers",
-      options: [
-        "Yes", "No"
-      ]
+      options: ["Yes", "No"]
     },
     {
       config: "Language",
-      options: [
-        "English", "Portuguese"
-      ]
+      options: ["English", "Portuguese"]
     },
   ]
 

@@ -5,7 +5,7 @@
 }
 
 .container .button {
-    margin-top: 20px;
+    margin-top: 20px !important;
     padding: 12px 80px;
     border-radius: 1px;
     border-width:0px;
