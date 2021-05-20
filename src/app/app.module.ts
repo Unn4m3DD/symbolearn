@@ -19,7 +19,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { SmallCardComponent } from './small-card/small-card.component';
 import { ChartComponent } from './chart/chart.component';
-import { CardComponent } from './card/card.component';
 import { ChartCardComponent } from './chart-card/chart-card.component';
 import { ExercisesCardComponent } from './exercises-card/exercises-card.component';
 @NgModule({
@@ -38,7 +37,6 @@ import { ExercisesCardComponent } from './exercises-card/exercises-card.componen
     AddLanguageFinalComponent,
     SmallCardComponent,
     ChartComponent,
-    CardComponent,
     ChartCardComponent,
     ExercisesCardComponent
   ],
