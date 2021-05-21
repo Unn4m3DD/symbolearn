@@ -1,11 +1,19 @@
-
-
-<div class="smaller-grid-container">
-    <app-small-card *ngFor="let card of small_cards_data" [title]=card.title [value]=card.value></app-small-card>
-</div>
-
-
-
-<div class="bigger-grid-container">
-    <app-chart-card *ngFor="let chart of charts" [id]=chart.id [title]=chart.title [data]=chart.data [extra]=chart.extra></app-chart-card>
+<div class="container">
+    <div class="arrow arrow-left" (click)="slide('left')">
+        <img src="/assets/left_arrow.png">
+    </div>
+    <div class="ola">
+        <div  class="smaller-grid-container" #smaller_slider>
+            <div *ngFor="let card of small_cards_data">
+                <app-small-card [title]=card.title [value]=card.value></app-small-card>
+            </div>
+        </div>
+        <div class="arrow arrow-right" (click)="slide('right')">
+            <img src="/assets/right_arrow.png">
+        </div>
+    </div>
+    
+    <div class="bigger-grid-container">
+        <app-chart-card *ngFor="let chart of charts" [id]=chart.id [title]=chart.title [data]=chart.data [extra]=chart.extra></app-chart-card>
+    </div>
 </div>

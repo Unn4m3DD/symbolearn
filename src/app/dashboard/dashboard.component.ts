@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
+  @ViewChild('smaller_slider') smaller_slider: ElementRef | any;
+  public small_cards_buffer: number = 0;
 
   small_cards_data = [{
       title: "Today",
@@ -22,9 +23,12 @@ export class DashboardComponent implements OnInit {
     {
       title: "Words",
       value: "28"
-    }
+    },
+    {
+      title: "Words2",
+      value: "233"
+    },
   ]
-
 
   charts = [
     {
@@ -65,10 +69,17 @@ export class DashboardComponent implements OnInit {
     }
   ]
 
-  constructor() { }
-
   ngOnInit(): void {
+  }
 
+  slide(direction: string) {
+    const deltaX = 255;
+    if(direction == "right") {
+      if(this.small_cards_buffer >= deltaX*(this.small_cards_data.length-4)) return
+      this.small_cards_buffer += deltaX;
+    }
+    else if(direction == "left") this.small_cards_buffer -= deltaX;
+    this.smaller_slider.nativeElement.style.transform = `translate(-${this.small_cards_buffer}px, 0)`;
   }
 
 }

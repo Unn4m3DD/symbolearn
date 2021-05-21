@@ -5,6 +5,9 @@
     (drop)="preventDefaults($event); parseFile(i.character, $event)" (dragover)="preventDefaults($event);"
     (dragenter)="setHovering(i.character, true)" (dragleave)="setHovering(i.character, false)"
     [ngClass]="{hovering: i.hovering > 0}">
+    <div *ngIf="i.hovering == 0 && i.image != ''" class="delete-button-container" (click)="i.image=''">
+      <i class="fa fa-trash delete-button"></i>
+    </div>
     <img *ngIf="i.hovering == 0 && i.image != ''" class="char-image" [src]="i.image" />
     <div *ngIf="i.hovering == 0 && i.image == ''" class="char-image-placeholder">
       <div class="placeholder-text">

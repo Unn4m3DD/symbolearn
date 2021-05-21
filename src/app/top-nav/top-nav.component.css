@@ -19,6 +19,15 @@ div {
   display: block;
 }
 
+.dropdown:hover .dropdown-arrow{
+  transform: rotate(-180deg);
+}
+
+.dropdown-arrow {
+  color: var(--top-tab-text);
+  transition: transform .5s;
+}
+
 .dropdown-content {
   top: 100%;
   width: 220px;
@@ -46,6 +55,7 @@ div {
 
 .top_tab_item_container_container:hover {
   background-color: rgba(0, 0, 0, .1);
+  
 }
 
 .dropdown:hover .dropdown-content {

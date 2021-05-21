@@ -11,6 +11,7 @@
 }
 
 .char-item {
+  position: relative;
   flex-direction: column;
   background-color: rgba(0, 0, 0, .3);
   margin: 10px;
@@ -96,6 +97,25 @@
   width: 200px;
   padding: 0 20px;
   color: white;
+}
+
+.delete-button-container{
+  position: absolute;
+  top: .8rem;
+  right: 1rem;
+}
+
+.delete-button {
+  font-size:20px; 
+  color: white; 
+  position: relative;
+}
+
+.delete-button:hover {
+  color: rgba(255, 255, 255, 0.692);
+}
+.delete-button:active {
+  color: rgba(255, 255, 255, 0.397);
 }
 
 .deactivated {

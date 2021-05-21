@@ -1,0 +1,31 @@
+.container {
+    display: grid;
+    justify-content: space-around;
+    gap: 1em;
+    grid-template-columns: 0.6fr 1fr 1fr 1fr;
+}
+
+.config {
+    margin-top: 8px;
+    color:white;
+    font-weight: bold;
+    text-align: right;
+}
+
+.config::after {
+    content: ":"
+}
+
+.selected {
+    background-color: #172A3A !important;
+    color:white;
+}
+
+.option {
+    cursor: pointer;
+    background-color:white;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+    padding: 8px 20px;
+}
