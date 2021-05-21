@@ -22,6 +22,8 @@ import { ChartComponent } from './chart/chart.component';
 import { ChartCardComponent } from './chart-card/chart-card.component';
 import { ExercisesCardComponent } from './exercises-card/exercises-card.component';
 import { ConfigComponent } from './config/config.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +48,8 @@ import { ConfigComponent } from './config/config.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AngularSvgIconModule.forRoot()
+    AngularSvgIconModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
