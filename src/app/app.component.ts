@@ -44,7 +44,6 @@ export class AppComponent {
       "--bubbles-color-secondary": "#cf95031c",
       "--form-text-color": "#fff"
     }, {
-
       "--main-text-color": "#000",
       "--main-bg-color": "#ffffff",
       "--primary-button-color": "#dc91cc",
@@ -66,7 +65,6 @@ export class AppComponent {
       "--bubbles-color": "#f9a0ff4f",
       "--bubbles-color-secondary": "#57b1ff2b",
       "--form-text-color": "#fff",
-
     },
     {
       "--main-text-color": "#000",
