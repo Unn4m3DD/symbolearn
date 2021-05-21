@@ -6,6 +6,8 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
   @ViewChild('smaller_slider') smaller_slider: ElementRef | any;
+  @ViewChild('right_arrow') right_arrow: ElementRef | any;
+  @ViewChild('left_arrow') left_arrow: ElementRef | any;
   public small_cards_buffer: number = 0;
 
   small_cards_data = [{
@@ -25,9 +27,9 @@ export class DashboardComponent implements OnInit {
     value: "28"
   },
   {
-    title: "Words2",
-    value: "233"
-  },
+    title: "Boas",
+    value: "Ola"
+  }
   ]
 
   charts = [
@@ -69,16 +71,22 @@ export class DashboardComponent implements OnInit {
     }
   ]
 
+  ngAfterViewInit(): void {
+    this.left_arrow.nativeElement.style.display = 'none';
+    if(this.small_cards_data.length <= 4) this.right_arrow.nativeElement.style.display = 'none';
+  }
+
   ngOnInit(): void {
   }
 
   slide(direction: string) {
-    const deltaX = 240 * 4;
-    if (direction == "right") {
-      if (this.small_cards_buffer >= deltaX * (this.small_cards_data.length - 4)) return
-      this.small_cards_buffer += deltaX;
-    }
+    const deltaX = 240 * 1;
+    if (direction == "right") this.small_cards_buffer += deltaX;
     else if (direction == "left") this.small_cards_buffer -= deltaX;
+    if(this.small_cards_buffer == 0) this.left_arrow.nativeElement.style.display = 'none';
+    else this.left_arrow.nativeElement.style.display = 'inline';
+    if(this.small_cards_buffer >= deltaX * (this.small_cards_data.length - 4)) this.right_arrow.nativeElement.style.display = 'none';
+    else this.right_arrow.nativeElement.style.display = 'inline';
     this.smaller_slider.nativeElement.style.transform = `translate(-${this.small_cards_buffer}px, 0)`;
   }
 
