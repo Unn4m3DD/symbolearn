@@ -3,7 +3,7 @@
     display: flex;
     flex-wrap: nowrap;
     width: calc(240 * 4)px;
-    transition: transform 0.5s;
+    transition: transform 0.25s;
 }
 
 .arrow-left {
@@ -34,7 +34,7 @@
 .container {
     position: relative;
     display:flex;
-    width: 60vw;
+    width: 1250px;
     flex-direction: column;
     align-items: center;
 }
