@@ -26,13 +26,13 @@
 }
 
 .char-image {
-  height: 95px;
-  width: 95px;
+  height: 75px;
+  width: 75px;
 }
 
 .drop-it {
-  height: 95px;
-  width: 95px;
+  height: 75px;
+  width: 75px;
   align-items: center;
   justify-content: center;
   font-weight: bold;
@@ -40,8 +40,8 @@
 }
 
 .char-image-placeholder {
-  height: 95px;
-  width: 95px;
+  height: 75px;
+  width: 75px;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -56,17 +56,22 @@
 
 .button {
   font-weight: normal;
-  font-size: 11pt;
+  font-size: 9pt;
   padding: 4 2px;
   align-items: center;
   justify-content: center;
-  margin-top: 15px;
-  height: 35px;
-  width: 95px;
+  height: 25px;
+  width: 75px;
+}
+
+.accept-button-container-container {
+  justify-content: center;
+  align-items: center;
 }
 
 .accept-button-container {
-  justify-content: center;
+  width: 40vw;
+  justify-content: space-around;
 }
 
 .accept-button {
@@ -78,7 +83,7 @@
   justify-content: center;
   margin-top: 15px;
   height: 70px;
-  width: 200px;
+  width: 220px;
   padding: 0 20px;
   color: white;
 }
@@ -94,26 +99,32 @@
   margin-top: 15px;
   margin-left: 30px;
   height: 70px;
-  width: 200px;
+  width: 220px;
   padding: 0 20px;
   color: white;
+  outline: none;
+  border: none;
+}
+.accept-button-practice:focus {
+  outline: none;
 }
 
-.delete-button-container{
+.delete-button-container {
   position: absolute;
   top: .8rem;
   right: 1rem;
 }
 
 .delete-button {
-  font-size:20px; 
-  color: white; 
+  font-size: 20px;
+  color: white;
   position: relative;
 }
 
 .delete-button:hover {
   color: rgba(255, 255, 255, 0.692);
 }
+
 .delete-button:active {
   color: rgba(255, 255, 255, 0.397);
 }
