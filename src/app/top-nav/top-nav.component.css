@@ -19,7 +19,7 @@ div {
   display: block;
 }
 
-.dropdown:hover .dropdown-arrow{
+.top_tab_item_container:hover .dropdown-arrow{
   transform: rotate(-180deg);
 }
 
@@ -58,7 +58,7 @@ div {
   
 }
 
-.dropdown:hover .dropdown-content {
+.top_tab_item_container_container:hover .dropdown-content {
   display: inline-block;
 }
 
