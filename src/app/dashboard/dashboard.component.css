@@ -3,7 +3,16 @@
     display: flex;
     flex-wrap: nowrap;
     width: calc(240 * 4)px;
-    transition: transform 0.25s;
+}
+
+.bigger-grid-container {
+    display: flex;
+    flex-wrap: nowrap;
+    width: calc(240 * 4)px;
+}
+
+.animated {
+    transition: transform 0.4s;
 }
 
 .arrow-left {
@@ -24,13 +33,6 @@
     margin-right: 50px;
 }
 
-.bigger-grid-container {
-    display: grid;
-    gap: 4em;
-    grid-template-columns: 1fr 1fr;
-    justify-content: space-around; 
-}
-
 .container {
     position: relative;
     display:flex;
@@ -39,10 +41,26 @@
     align-items: center;
 }
 
-.ola {
+.visible-container {
     margin-bottom: 40px;
     display: flex;
     flex-wrap: nowrap;
     overflow: hidden;
-    width: calc(240 * 4px);
+    width: calc(4 * 240px);
+}
+
+.bigger-visible-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    width: calc(2 * 520px);
+}
+
+
+.bellow-left {
+    margin-top:320px;
+}
+
+.bellow-right {
+    margin-top:315px;
 }
