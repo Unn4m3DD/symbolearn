@@ -9,25 +9,25 @@ export class DashboardComponent implements OnInit {
   public small_cards_buffer: number = 0;
 
   small_cards_data = [{
-      title: "Today",
-      value: "1 hour"
-    },
-    {
-      title: "Correct Characters",
-      value: "273"
-    },
-    {
-      title: "Incorrect Characters",
-      value: "16"
-    },
-    {
-      title: "Words",
-      value: "28"
-    },
-    {
-      title: "Words2",
-      value: "233"
-    },
+    title: "Today",
+    value: "1 hour"
+  },
+  {
+    title: "Correct Characters",
+    value: "273"
+  },
+  {
+    title: "Incorrect Characters",
+    value: "16"
+  },
+  {
+    title: "Words",
+    value: "28"
+  },
+  {
+    title: "Words2",
+    value: "233"
+  },
   ]
 
   charts = [
@@ -35,13 +35,13 @@ export class DashboardComponent implements OnInit {
       id: "p_ot",
       title: "Precision Over Time",
       data: [
-        {id: 'Dec', value: 28},
-        {id: 'Jan', value: 50},
-        {id: 'Fev', value: 52},
-        {id: 'Mar', value: 57},
-        {id: 'Abr', value: 60},
-        {id: 'Mai', value: 75},
-        {id: 'Jun', value: 95},
+        { id: 'Dec', value: 28 },
+        { id: 'Jan', value: 50 },
+        { id: 'Fev', value: 52 },
+        { id: 'Mar', value: 57 },
+        { id: 'Abr', value: 60 },
+        { id: 'Mai', value: 75 },
+        { id: 'Jun', value: 95 },
       ],
       extra: {
         title: "Current Accuracy",
@@ -52,13 +52,13 @@ export class DashboardComponent implements OnInit {
     {
       id: "wpm_ot",
       data: [
-        {id: 'Dec', value: 5},
-        {id: 'Jan', value: 30},
-        {id: 'Fev', value: 60},
-        {id: 'Mar', value: 85},
-        {id: 'Abr', value: 88},
-        {id: 'Mai', value: 80},
-        {id: 'Jun', value: 120},
+        { id: 'Dec', value: 5 },
+        { id: 'Jan', value: 30 },
+        { id: 'Fev', value: 60 },
+        { id: 'Mar', value: 85 },
+        { id: 'Abr', value: 88 },
+        { id: 'Mai', value: 80 },
+        { id: 'Jun', value: 120 },
       ],
       title: "WPM Over Time",
       extra: {
@@ -73,12 +73,12 @@ export class DashboardComponent implements OnInit {
   }
 
   slide(direction: string) {
-    const deltaX = 255;
-    if(direction == "right") {
-      if(this.small_cards_buffer >= deltaX*(this.small_cards_data.length-4)) return
+    const deltaX = 240 * 4;
+    if (direction == "right") {
+      if (this.small_cards_buffer >= deltaX * (this.small_cards_data.length - 4)) return
       this.small_cards_buffer += deltaX;
     }
-    else if(direction == "left") this.small_cards_buffer -= deltaX;
+    else if (direction == "left") this.small_cards_buffer -= deltaX;
     this.smaller_slider.nativeElement.style.transform = `translate(-${this.small_cards_buffer}px, 0)`;
   }
 
