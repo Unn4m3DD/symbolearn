@@ -2,11 +2,10 @@
     font-family: 'Mulish', sans-serif;
     background-color: white;
     height: 95px;
-    width: 215px;
+    width: 200px;
     position: relative;
     border-radius: 8px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 0 20px;
 }
 
 .card {

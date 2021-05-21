@@ -2,7 +2,7 @@
     margin-bottom: 40px;
     display: flex;
     flex-wrap: nowrap;
-    width: 1000px;
+    width: calc(240 * 4)px;
     transition: transform 0.5s;
 }
 
@@ -44,5 +44,5 @@
     display: flex;
     flex-wrap: nowrap;
     overflow: hidden;
-    width: 50vw;
+    width: calc(240 * 4px);
 }
