@@ -7,55 +7,17 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class LearnMorseComponent implements OnInit {
   @ViewChild('morse_div') morse_div: ElementRef | undefined;
-
+  current_language: string;
   correct_counter: number = 0;
-  encodeMorse(morseCode: string): string {
-    let ref: { [key: string]: string } = {
-      'a': '·-',
-      'b': '-···',
-      'c': '-·-·',
-      'd': '-··',
-      'e': '·',
-      'f': '··-·',
-      'g': '--·',
-      'h': '····',
-      'i': '··',
-      'j': '·---',
-      'k': '-·-',
-      'l': '·-··',
-      'm': '--',
-      'n': '-·',
-      'o': '---',
-      'p': '·--·',
-      'q': '--·-',
-      'r': '·-·',
-      's': '···',
-      't': '-',
-      'u': '··-',
-      'v': '···-',
-      'w': '·--',
-      'x': '-··-',
-      'y': '-·--',
-      'z': '--··',
-      '1': '·----',
-      '2': '··---',
-      '3': '···--',
-      '4': '····-',
-      '5': '·····',
-      '6': '-····',
-      '7': '--···',
-      '8': '---··',
-      '9': '----·',
-      '0': '-----',
-      ' ': ' '
-    };
-    return ref[morseCode.toLowerCase()];
+  getImage(morseCode: string): string {
+    return `assets/${this.current_language}/${morseCode.toLowerCase()}.png`;
   }
 
   user_input: string = ""
   to_type_render: { char: string, index: number }[][] = []
   to_type = "As armas e os baroes assinalados Que da ocidental praia Lusitana Por mares nunca de antes navegados Passaram ainda alem da Taprobana Em perigos e guerras esforcados Mais do que prometia a forca humana E entre gente remota edificaram Novo Reino que tanto sublimaram"
   constructor() {
+    this.current_language = new URLSearchParams(window.location.search).get('lang') ?? "morse-code";
     let g_index = 0;
     for (let i = 0; i < this.to_type.split(" ").length; i++) {
       this.to_type_render.push([])
@@ -78,7 +40,7 @@ export class LearnMorseComponent implements OnInit {
         return
       }
       if (this.current_char.toLowerCase() == this.to_type.charAt(this.correct_counter).toLowerCase()
-      ||this.current_char.toLowerCase() == "⍽" && " " == this.to_type.charAt(this.correct_counter).toLowerCase()) {
+        || this.current_char.toLowerCase() == "⍽" && " " == this.to_type.charAt(this.correct_counter).toLowerCase()) {
         this.correct_counter++
         this.user_input += this.current_char != "⍽" ? this.current_char : " "
         if (this.current_char == "⍽" && this.morse_div) {

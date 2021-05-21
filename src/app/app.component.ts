@@ -231,10 +231,10 @@ export class AppComponent {
 
   @HostListener('document:keypress', ['$event'])
   onPress(e: KeyboardEvent) {
-    if (e.key == "d")
-      this.styles++
-    else if (e.key == "a")
-      this.styles--
+    //if (e.key == "d")
+    //  this.styles++
+    //else if (e.key == "a")
+    //  this.styles--
     this.updateColorScheme();
   }
   updateColorScheme() {

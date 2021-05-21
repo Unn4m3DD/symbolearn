@@ -24,13 +24,11 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  width: 50vw;
 }
 
 .morse_container_container_container {
-  height: calc(70px * 2);
+  height: calc(110px * 2);
   overflow: hidden;
-  margin: 20px;
 }
 
 .morse_container_container {
@@ -38,13 +36,13 @@
 }
 
 .morse_char {
-  flex: 1;
   text-align: center;
-  height: 70px;
+  height: 110px;
   margin: 0;
-  width: 10px;
+  width: 110px;
   font-size: 30pt;
   font-weight: bold;
+  align-self: top;
 }
 
 .centered_container {
@@ -55,15 +53,15 @@
 }
 
 .grey {
-  color: grey;
+  filter: brightness(0.9) invert(.7) sepia(.5) hue-rotate(100deg) ;
 }
 
 .green {
-  color: green;
+  filter: brightness(0.9) invert(.7) sepia(.5) hue-rotate(70deg) saturate(600%);
 }
 
 .red {
-  color: red;
+  filter: brightness(0.9) invert(.7) sepia(.5) hue-rotate(304deg) saturate(9999%);
 }
 
 .current_char {
