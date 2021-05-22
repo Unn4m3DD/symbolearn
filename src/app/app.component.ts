@@ -32,9 +32,13 @@ export class AppComponent {
     this.updateColorScheme();
   }
   updateColorScheme() {
+    let theme = this.cookieService.get("theme")
+    console.log(theme)
+    if(theme == "") theme = "Default"
     let docStyle = document.documentElement.style;
-    for (let key in themes["Default"].color_definitions) {
-      docStyle.setProperty(themes["Default"].color_definitions[key][0], themes["Default"].color_definitions[key][1]);
+
+    for (let key in themes[theme].color_definitions) {
+      docStyle.setProperty(themes[theme].color_definitions[key][0], themes[theme].color_definitions[key][1]);
     }
   }
 }
