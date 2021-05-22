@@ -1,119 +1,124 @@
+
+
 .container {
-    width: 60vw;
-    display: grid;
-    justify-content: space-around;
-    gap: 1em;
-    grid-template-columns: 0.6fr 3fr;
+  width: 60vw;
+  display: grid;
+  justify-content: space-around;
+  gap: 1em;
+  grid-template-columns: 0.6fr 3fr;
+  position: relative;
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .container-1 {
-    grid-template-columns: 0.6fr 1fr 2fr;
+  grid-template-columns: 0.6fr 1fr 2fr;
+  z-index: 2;
 }
 
 .button {
-    margin-top: 20px !important;
-    padding: 12px;
-    border-radius: 1px;
-    border-width:0px;
-    font-size: 36px;
-    font-weight: bold;
-    margin: auto;
-    width: 50%;
-    text-align: center;
+  margin-top: 20px !important;
+  padding: 12px;
+  border-radius: 1px;
+  border-width: 0px;
+  font-size: 36px;
+  font-weight: bold;
+  margin: auto;
+  width: 50%;
+  text-align: center;
 }
 
 .config {
-    margin: 8px;
-    color:white;
-    font-weight: bold;
-    text-align: right;
+  margin: 8px;
+  color: var(--top-tab-text);
+  font-weight: bold;
+  text-align: right;
 }
 
 .config::after {
-    content: ":"
+  content: ":"
 }
 
 input {
-    background-color:white;
-    text-align: center;
-    border-radius: 8px;
-    font-weight: bold;
-    border-width: 0px;
-    font-size: 20px;
-    outline: none;
-    padding: 8px 20px;
-    margin-bottom: 16px;
+  background-color: white;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+  border-width: 0px;
+  font-size: 20px;
+  outline: none;
+  padding: 8px 20px;
+  margin-bottom: 16px;
 }
 
 input:focus {
-    background: #172A3A;
-    color:white;
+  background: #172A3A;
+  color: white;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
 /* Firefox */
+
 input[type=number] {
   -moz-appearance: textfield;
 }
 
 input::after {
-    content: "s";
-    display: block;
+  content: "s";
+  display: block;
 }
 
 .dropbtn {
-    background-color:white;
-    text-align: center;
-    border-radius: 8px;
-    font-weight: bold;
-    border-width: 0px;
-    font-size: 20px;
-    outline: none;
-    padding: 8px 20px;
-    margin-bottom: 16px;
-    border: none;
-    cursor: pointer;
-    width: 100%
+  background-color: white;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+  border-width: 0px;
+  font-size: 20px;
+  outline: none;
+  padding: 8px 20px;
+  margin-bottom: 16px;
+  border: none;
+  cursor: pointer;
+  width: 100%
 }
 
 .dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    width: 100%;
-    z-index: 1;
-    border-radius: 15px;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 100%;
+  z-index: 10;
+  border-radius: 15px;
 }
 
 .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    cursor: pointer;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  cursor: pointer;
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
-    border-radius: 15px;
+  background-color: #f1f1f1;
+  border-radius: 15px;
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+  display: block;
 }
 
 .dropdown:hover .dropbtn {
-    background-color: #172A3A;
-    color: white;
+  background-color: #172A3A;
+  color: white;
 }
