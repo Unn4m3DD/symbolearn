@@ -7,6 +7,7 @@ input {
 }
 
 textarea {
+    resize: none;
     border: none;
     outline: none;
     border-radius: 15px;
@@ -14,7 +15,7 @@ textarea {
 }
 
 label {
-    color: white;
+    color: var(--form-text-color);
     margin-bottom: 5px;
     font-weight: bold;
 }
@@ -39,7 +40,7 @@ label {
 .text-input {
     flex: 1;
     width: 100%;
-    border: 3px solid #172A3A;
+    border: 3px solid #FFF;
     border-radius: 8px;
     background: local;
     font-family: Rubik;
@@ -49,10 +50,6 @@ label {
     color: var(--main-text-color);
     padding: 0 10px;
 }
-
-.text-input-white {
-    border: 3px solid #FFFFFF;
-  }
 
 .button-container {
     margin: 1rem;
