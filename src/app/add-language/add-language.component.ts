@@ -31,7 +31,7 @@ export class AddLanguageComponent implements OnInit {
         console.log("missing", String.fromCharCode(i))
       }
     }
-    window.location = <any> "add-language-final?lang=sign"
+    window.location = <any> "add-language-final?lang=sem"
 
   }
   ngOnInit(): void {
