@@ -101,7 +101,7 @@ input:active {
 
 .attribute_input {
   flex: 1;
-  border: 3px solid #172A3A;
+    border: 3px solid #FFF;
   border-radius: 8px;
   background: local;
   width: 100%;
@@ -111,10 +111,6 @@ input:active {
   line-height: 24px;
   color: var(--main-text-color);
   padding: 0 10px;
-}
-
-.password_repeat_input {
-  border: 3px solid #FFFFFF;
 }
 
 .title {
