@@ -32,12 +32,9 @@ export class AppComponent {
     this.updateColorScheme();
   }
   updateColorScheme() {
-    if (this.styles > themes.length) this.styles = 0
-    if (this.styles < 0) this.styles = themes.length - 1
     let docStyle = document.documentElement.style;
-    for (let key in themes[this.styles]) {
-      if (key != "name" && key != "colorblind")
-        docStyle.setProperty(key, themes[this.styles][key]);
+    for (let key in themes["Default"].color_definitions) {
+      docStyle.setProperty(themes["Default"].color_definitions[key][0], themes["Default"].color_definitions[key][1]);
     }
   }
 }
