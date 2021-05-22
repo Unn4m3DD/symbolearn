@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { NotifierModule } from 'angular-notifier';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
@@ -22,7 +24,7 @@ import { ChartComponent } from './chart/chart.component';
 import { ChartCardComponent } from './chart-card/chart-card.component';
 import { ExercisesCardComponent } from './exercises-card/exercises-card.component';
 import { ConfigComponent } from './config/config.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CreateExerciseComponent } from './create-exercise/create-exercise.component';
 
 @NgModule({
   declarations: [
@@ -42,14 +44,30 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ChartComponent,
     ChartCardComponent,
     ExercisesCardComponent,
-    ConfigComponent
+    ConfigComponent,
+    CreateExerciseComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AngularSvgIconModule.forRoot(),
-    BrowserAnimationsModule
+    NotifierModule.withConfig({
+      position: {
+        horizontal: {
+          position: 'right'
+        },
+        vertical: {
+          position: 'top',
+          distance: 250
+        }
+      },
+      behaviour: {
+        autoHide: 5000,
+        onMouseover: 'pauseAutoHide',
+        stacking: 20
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

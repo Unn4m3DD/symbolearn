@@ -2,6 +2,7 @@
   <app-top-nav></app-top-nav>
   <app-bottom-nav></app-bottom-nav>
   <div class="content_container">
+    <notifier-container></notifier-container>
     <div [ngSwitch]="current_page">
       <app-initial *ngSwitchCase="'initial'"></app-initial>
       <app-sign-in *ngSwitchCase="'sign-in'"></app-sign-in>
@@ -12,6 +13,7 @@
       <app-learn-morse *ngSwitchCase="'learn'"></app-learn-morse>
       <app-add-language *ngSwitchCase="'add-language'"></app-add-language>
       <app-add-language-final *ngSwitchCase="'add-language-final'"></app-add-language-final>
+      <app-create-exercise *ngSwitchCase="'create-exercise'"></app-create-exercise>
     </div>
   </div>
 </div>

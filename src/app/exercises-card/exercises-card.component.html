@@ -8,6 +8,16 @@
             <div class="wpm">{{ exercise.stats.wpm }}</div>
             <div class="accuracy">{{ exercise.stats.accuracy }}</div>
         </div>
-        <div class="attempt orange-button">Attempt</div>
+        <div class="top_tab_item_container">
+            <div class="top_tab_item_container_container">
+                <div class="dropdown">
+                    <a class="top_tab_text"><div class="attempt orange-button">Attempt</div></a>
+                    <div class="dropdown-content">
+                        <div (click)="changePage('learn', 'lang=morse-code')">Morse Code</div>
+                        <div (click)="changePage('learn', 'lang=sign-language')">Sign Language</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

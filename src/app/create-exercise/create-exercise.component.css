@@ -1,0 +1,55 @@
+textarea {
+    width: 800px;
+    height: 200px;
+}
+
+input {
+    border-radius: 15px;
+    padding: 10px 30px;
+    margin-bottom: 20px;
+}
+
+label {
+    color: white;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.text-input {
+    border-radius: 15px;
+    font-size: 20px;
+    outline: none;
+    padding: 10px 15px;
+}
+
+.button-container {
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+}
+
+.container {
+    display:flex;
+    flex-direction: column;
+}
+
+.text-input:focus {
+    border-color: orange;
+    border-width: 2px;
+}
+
+.button {
+    width: 400px;
+    padding: 20px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    margin-top: 50px;
+    border-radius: 0px;
+    border-width: 0px;
+    text-align: center;
+}
+
+label {
+    text-align: left;
+}

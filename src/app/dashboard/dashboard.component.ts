@@ -29,11 +29,11 @@ export class DashboardComponent implements OnInit {
   },
   {
     title: "Words",
-    value: "28"
+    value: "98"
   },
   {
-    title: "Boas",
-    value: "Ola"
+    title: "Exercises",
+    value: "7"
   }
   ]
 
@@ -52,7 +52,7 @@ export class DashboardComponent implements OnInit {
       ],
       extra: {
         title: "Current Accuracy",
-        value: "85",
+        value: "95",
         improvement: "+7.00% - in 1 month"
       }
     },
@@ -75,21 +75,21 @@ export class DashboardComponent implements OnInit {
       }
     },
     {
-      id: "wpm_ott",
+      id: "f_rate",
       data: [
-        { id: 'Dec', value: 5 },
-        { id: 'Jan', value: 30 },
-        { id: 'Fev', value: 60 },
-        { id: 'Mar', value: 85 },
-        { id: 'Abr', value: 88 },
-        { id: 'Mai', value: 80 },
-        { id: 'Jun', value: 120 },
+        { id: 'Dec', value: 10 },
+        { id: 'Jan', value: 21 },
+        { id: 'Fev', value: 8 },
+        { id: 'Mar', value: 58 },
+        { id: 'Abr', value: 92 },
+        { id: 'Mai', value: 68 },
+        { id: 'Jun', value: 80 },
       ],
-      title: "WPM Over Timeeeeeeee",
+      title: "Finish rate",
       extra: {
-        title: "Current WPM",
-        value: "120",
-        improvement: "+25.00% - in 1 month"
+        title: "Current FR",
+        value: "80",
+        improvement: "+18.00% - in 1 month"
       }
     }
   ]

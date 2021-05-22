@@ -73,6 +73,11 @@ export class ExercisesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  changePage(page_name: string, query?: string | undefined) {
+    if (query == undefined) query = ""
+    window.location = <any>("/" + page_name + "?" + query)
+  }
+
   slide(direction: string) {
     const deltaX = 300 * 1;
     if (direction == "right") this.cards_buffer += deltaX;
