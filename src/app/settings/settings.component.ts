@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-settings',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsComponent implements OnInit {
   current_theme:string = "";
-  attempt_duraction = 120;
+  attempt_duration:string = "";
   
   themes = [
     {
@@ -59,10 +60,13 @@ export class SettingsComponent implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor(private cookieService: CookieService) {    
+  }
 
   ngOnInit(): void {
     this.current_theme = this.themes[0].name
+    if(!this.cookieService.check("attempt_duration")) this.attempt_duration = "120";
+    else this.attempt_duration = this.cookieService.get("attempt_duration")
   }
 
   changeTheme(theme: string) {
@@ -70,7 +74,13 @@ export class SettingsComponent implements OnInit {
   }
 
   save() {
-    
+    this.cookieService.set("theme", this.current_theme)
+    this.cookieService.set("attempt_duration", this.attempt_duration+"")
+    for (let setting of this.settings) {
+      if(this.cookieService.check("temp_config_"+setting.config.replace(" ", "_").toLowerCase())) {
+        this.cookieService.set("config_"+setting.config.replace(" ", "_").toLowerCase(), this.cookieService.get("temp_config_"+setting.config.replace(" ", "_").toLowerCase()))
+      }
+    }
   }
 
 }
