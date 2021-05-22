@@ -70,3 +70,11 @@
   font-size: 50pt;
   font-family: Rubik, sans-serif;
 }
+
+.help-char{
+  position: absolute;
+  top:0px;
+  right: 80%;
+  font-size: 8pt;
+  transform: translate(80%, 0);
+}
