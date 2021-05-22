@@ -56,6 +56,7 @@ div {
 
 .top_tab_item_container_container:hover {
   background-color: rgba(0, 0, 0, .1);
+  cursor: pointer;
   
 }
 
@@ -74,6 +75,11 @@ div {
   justify-content: center;
   margin: 0 30px;
   user-select: none;
+}
+
+.top_tab_item_container:hover {
+  cursor: pointer;
+  
 }
 
 .top_tab_text {
