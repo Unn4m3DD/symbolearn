@@ -1,6 +1,18 @@
-<div class="container">
-    <app-config *ngFor="let setting of settings" [setting]=setting></app-config>
-    <!--
-    <div class="button orange-button">Apply</div>
-    -->
+<div class="container container-1">
+    <div class="config">Attempt Duration</div>
+    <input type="number" min="0" value="{{ attempt_duraction }}">
 </div>
+<div class="container container-1">
+    <div class="config">Theme</div>
+    <div class="dropdown">
+        <button class="dropbtn">{{ current_theme }}</button>
+        <div class="dropdown-content">
+          <a *ngFor="let theme of themes" (click)="changeTheme(theme.name)">{{ theme.name }}</a>
+        </div>
+      </div>
+</div>
+<div class="container" *ngFor="let setting of settings">
+    <div class="config">{{ setting.config }}</div>
+    <app-config [setting]=setting></app-config>
+</div>
+<div class="button orange-button" (click)="save()">Apply</div>

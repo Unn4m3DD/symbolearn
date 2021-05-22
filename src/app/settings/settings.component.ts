@@ -6,12 +6,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./settings.component.css']
 })
 export class SettingsComponent implements OnInit {
+  current_theme:string = "";
+  attempt_duraction = 120;
+  
+  themes = [
+    {
+      name:"Default",
+      color_blind_friendly: true
+    },
+    {
+      name:"High Contrast",
+      color_blind_friendly: true
+    },
+    {
+      name:"Light",
+      color_blind_friendly: true
+    },
+    {
+      name:"Dark",
+      color_blind_friendly: true
+    },
+    {
+      name:"Monokai",
+      color_blind_friendly: false
+    },
+    {
+      name:"Abyss",
+      color_blind_friendly: false
+    }
+  ]
 
   settings = [
-    {
-      config: "Attempt Duration",
-      options: ["60s", "120s", "240s"]
-    },
     {
       config: "Mode",
       options: ["Scrambled Letters", "Words", "Phrases"]
@@ -37,6 +62,15 @@ export class SettingsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.current_theme = this.themes[0].name
+  }
+
+  changeTheme(theme: string) {
+    this.current_theme = theme
+  }
+
+  save() {
+    
   }
 
 }
