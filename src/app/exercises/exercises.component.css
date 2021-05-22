@@ -24,7 +24,6 @@
 }
 
 .visible-container {
-    margin-bottom: 40px;
     display: flex;
     flex-wrap: nowrap;
     overflow: hidden;
@@ -53,7 +52,6 @@
     font-size: 32px;
     font-weight: 700;
     line-height: 40px;
-    margin-top: 50px;
     border-radius: 0px;
     border-width: 0px;
 }

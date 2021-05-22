@@ -1,23 +1,25 @@
 <div class="card-container">
-    <div class="card">
-        <div class="title">{{ exercise.title }}</div>
-        <div class="sub_title">{{ exercise.subtitle }}</div>
-        <div class="dev_by">Developed by</div>
-        <div class="developer">{{ exercise.developer }}</div>
-        <div class="stats">
-            <div class="wpm">{{ exercise.stats.wpm }}</div>
-            <div class="accuracy">{{ exercise.stats.accuracy }}</div>
-        </div>
-        <div class="top_tab_item_container">
-            <div class="top_tab_item_container_container">
-                <div class="dropdown">
-                    <a class="top_tab_text"><div class="attempt orange-button">Attempt</div></a>
-                    <div class="dropdown-content">
-                        <div (click)="changePage('learn', 'lang=morse-code')">Morse Code</div>
-                        <div (click)="changePage('learn', 'lang=sign-language')">Sign Language</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div *ngIf="!attempt_display" class="card">
+    <div class="title">{{ exercise.title }}</div>
+    <div class="sub_title">{{ exercise.subtitle }}</div>
+    <div class="dev_by">Developed by</div>
+    <div class="developer">{{ exercise.developer }}</div>
+    <div class="stats">
+      <div class="wpm">{{ exercise.stats.wpm }}</div>
+      <div class="accuracy">{{ exercise.stats.accuracy }}</div>
     </div>
+    <div class="top_tab_item_container">
+      <div (click)="toggleAttemptDisplay()" class="top_tab_item_container_container">
+        <div class="attempt orange-button">Attempt</div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="attempt_display" class="card" >
+    <div class="title">{{ exercise.title }}</div>
+    <div class="sub_title">{{ exercise.subtitle }}</div>
+    <div class="sub_title" style="font-weight:bold; margin-top: 20px;">Select a Language:</div>
+    <i class="fa fa-times-circle cross" (click)="toggleAttemptDisplay()" style="font-size: 24pt;"></i>
+    <div class="language" (click)="changePage('learn', 'lang=morse-code')">Morse Code</div>
+    <div class="language" (click)="changePage('learn', 'lang=sign-language')">Sign Language</div>
+  </div>
 </div>

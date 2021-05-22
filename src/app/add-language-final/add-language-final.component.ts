@@ -16,7 +16,7 @@ export class AddLanguageFinalComponent implements OnInit {
     const parameters = new URLSearchParams(queryString);
     const value = parameters.get('lang');
     for (let i of "abcdefghijklmnopqrstuvwxyz".toUpperCase().split(""))
-      this.to_render.push({ character: i, image: value == "sign" ? "/assets/sign-language/" + i.toLowerCase() + ".png" : "", hovering: 0 })
+      this.to_render.push({ character: i, image: value == "sign" ? "/assets/sem/" + i.toLowerCase() + ".png" : "", hovering: 0 })
 
   }
   allFull() {

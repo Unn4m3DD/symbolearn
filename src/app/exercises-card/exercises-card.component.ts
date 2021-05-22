@@ -6,10 +6,12 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./exercises-card.component.css']
 })
 export class ExercisesCardComponent implements OnInit {
-  @Input('exercise') public exercise:any;
-
+  @Input('exercise') public exercise: any;
+  attempt_display = false;
   constructor() { }
-
+  toggleAttemptDisplay() {
+    this.attempt_display = !this.attempt_display;
+  }
   ngOnInit(): void {
   }
 
