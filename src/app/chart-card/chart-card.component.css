@@ -1,58 +1,59 @@
 .card-container {
-    font-family: 'Mulish', sans-serif;
-    background-color: white;
-    height: 350px;
-    width: 500px;
-    position: relative;
-    border-radius: 8px;
-    margin: 0px 10px;
+  font-family: 'Mulish', sans-serif;
+  background-color: white;
+  height: 350px;
+  width: 500px;
+  position: relative;
+  border-radius: 8px;
+  margin: 10px 10px;
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .card {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
-    white-space: nowrap;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  white-space: nowrap;
 }
 
 .card .title {
-    color: #252733;
-    text-align: left;
-    padding-bottom: 20px;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 32px;
-    letter-spacing: 0em;
-    text-align: left;
+  color: #252733;
+  text-align: left;
+  padding-bottom: 20px;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
 .card .extra {
-    float:right;
-    text-align: left;
+  float: right;
+  text-align: left;
 }
 
 .card .extra .title {
-    color: #9FA2B4;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 0.4px;
-    padding-bottom: 0px;
+  color: #9FA2B4;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  padding-bottom: 0px;
 }
 
 .card .extra .value {
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 132%;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 132%;
 }
 
 .card .extra .improvement {
-    color: #4AAF05;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 0.4px;
-    padding-bottom: 0px;
+  color: #4AAF05;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  padding-bottom: 0px;
 }

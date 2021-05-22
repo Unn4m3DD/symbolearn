@@ -3,10 +3,13 @@
   width: 100vw;
   height: 50pt;
   background: var(--morse-input-color);
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   clip-path: inset(0 25% 0 25%);
   flex-direction: row;
   align-items: center;
+}
+.text_input_container_container{
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+
 }
 
 .text_input {

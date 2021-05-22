@@ -5,8 +5,9 @@
     width: 200px;
     position: relative;
     border-radius: 8px;
-    margin: 0 20px;
-}
+    margin: 10px 20px;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+  }
 
 .card {
     margin: 0;

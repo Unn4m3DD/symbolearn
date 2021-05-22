@@ -14,16 +14,16 @@
                   (this.current_char.toLowerCase() == this.to_type.charAt(this.correct_counter).toLowerCase() ||
                   this.current_char.toLowerCase() == '⍽')
           }" class="morse_char" src="{{getImage(item.char)}}" />
-          <div *ngIf="help"  class="help-char"  >{{item.char}}</div>
+          <div *ngIf="help" class="help-char">{{item.char}}</div>
         </div>
       </div>
     </div>
   </div>
   <div class="morse_container_container" #morse_div>
-
-    <div class="text_input_container">
-      <div class="text_input">{{user_input}}</div>
-      <div [ngClass]="{
+    <div class="text_input_container_container">
+      <div class="text_input_container">
+        <div class="text_input">{{user_input}}</div>
+        <div [ngClass]="{
         'red' : 
           this.current_char.toLowerCase() != this.to_type.charAt(this.correct_counter).toLowerCase() && 
           this.current_char.toLowerCase() != '⍽', 
@@ -31,7 +31,8 @@
           this.current_char.toLowerCase() == '⍽', 
         current_char:true
       }">
-        {{current_char}}
+          {{current_char}}
+        </div>
       </div>
     </div>
   </div>

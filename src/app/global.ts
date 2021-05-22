@@ -7,7 +7,7 @@ export const themes:
   }
   = {
   "Default": {
-    "colorblind": false,
+    "colorblind": true,
     "color_definitions": [
       ["--main-text-color", "#FFF"],
       ["--main-bg-color", "#66ACA8"],

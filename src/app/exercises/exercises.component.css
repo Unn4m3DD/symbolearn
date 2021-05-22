@@ -1,57 +1,57 @@
 .grid-container {
-    margin-bottom: 40px;
-    display: flex;
-    flex-wrap: nowrap;
-    width: calc(300 * 4)px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: nowrap;
+  width: calc(300 * 4)px;
 }
 
 .button-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
-    position: relative;
-    display:flex;
-    width: 1450px;
-    flex-direction: column;
-    align-items: center;
+  position: relative;
+  display: flex;
+  width: 1450px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .animated {
-    transition: transform 0.4s;
+  transition: transform 0.4s;
 }
 
 .visible-container {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow: hidden;
-    width: calc(4 * 300px);
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  width: calc(4 * 300px);
 }
 
 .arrow-left {
-    margin-left: 50px;
-    position: absolute;
-    left:0;
+  margin-left: 50px;
+  position: absolute;
+  left: 0;
 }
 
 .arrow {
-    margin-top: 125px;
-    cursor: pointer;
+  margin-top: 125px;
+  cursor: pointer;
 }
 
 .arrow-right {
-    position: absolute;
-    right:0;
-    margin-right: 50px;
+  position: absolute;
+  right: 0;
+  margin-right: 50px;
 }
 
 .button {
-    padding: 30px 40px;
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 40px;
-    border-radius: 0px;
-    border-width: 0px;
+  padding: 30px 40px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  border-radius: 0px;
+  border-width: 0px;
 }
