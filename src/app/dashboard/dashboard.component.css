@@ -1,66 +1,65 @@
 .smaller-grid-container {
-    margin-bottom: 40px;
-    display: flex;
-    flex-wrap: nowrap;
-    width: calc(240 * 4)px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: nowrap;
+  width: calc(240 * 4)px;
 }
 
 .bigger-grid-container {
-    display: flex;
-    flex-wrap: nowrap;
-    width: calc(240 * 4)px;
+  display: flex;
+  flex-wrap: nowrap;
+  width: calc(240 * 4)px;
 }
 
 .animated {
-    transition: transform 0.4s;
+  transition: transform .8s;
 }
 
 .arrow-left {
-    margin-left: 50px;
-    position: absolute;
-    left:0;
+  margin-left: 50px;
+  position: absolute;
+  left: 0;
 }
 
 .arrow {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .arrow-right {
-    position: absolute;
-    right:0;
-    margin-right: 50px;
+  position: absolute;
+  right: 0;
+  margin-right: 50px;
 }
 
 .container {
-    position: relative;
-    display:flex;
-    width: 1250px;
-    flex-direction: column;
-    align-items: center;
+  position: relative;
+  display: flex;
+  width: 1250px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .visible-container {
-    margin-bottom: 40px;
-    display: flex;
-    flex-wrap: nowrap;
-    overflow: hidden;
-    width: calc(4 * 240px);
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  width: calc(4 * 240px);
 }
 
 .bigger-visible-container {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow: hidden;
-    width: calc(2 * 520px);
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  width: calc(2 * 520px);
 }
 
-
 .bellow-left {
-    margin-top:320px;
+  margin-top: 320px;
 }
 
 .bellow-right {
-    margin-top:315px;
+  margin-top: 315px;
 }

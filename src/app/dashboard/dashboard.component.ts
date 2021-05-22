@@ -15,26 +15,39 @@ export class DashboardComponent implements OnInit {
   @ViewChild('chart_slider') chart_slider: ElementRef | any;
   public big_cards_buffer: number = 0;
 
-  small_cards_data = [{
-    title: "Today",
-    value: "1 hour"
-  },
-  {
-    title: "Correct Characters",
-    value: "273"
-  },
-  {
-    title: "Incorrect Characters",
-    value: "16"
-  },
-  {
-    title: "Words",
-    value: "98"
-  },
-  {
-    title: "Exercises",
-    value: "7"
-  }
+  small_cards_data = [
+    {
+      title: "Today",
+      value: "1 hour"
+    },
+    {
+      title: "Correct Characters",
+      value: "273"
+    },
+    {
+      title: "Incorrect Characters",
+      value: "40"
+    },
+    {
+      title: "Words",
+      value: "98"
+    },
+    {
+      title: "This Week",
+      value: "5 hour"
+    },
+    {
+      title: "Correct Characters",
+      value: "1023"
+    },
+    {
+      title: "Incorrect Characters",
+      value: "220"
+    },
+    {
+      title: "Words",
+      value: "523"
+    }
   ]
 
   charts = [
@@ -91,39 +104,57 @@ export class DashboardComponent implements OnInit {
         value: "80",
         improvement: "+18.00% - in 1 month"
       }
+    },
+    {
+      id: "t_spent",
+      data: [
+        { id: 'Dec', value: 4 },
+        { id: 'Jan', value: 5 },
+        { id: 'Fev', value: 5 },
+        { id: 'Mar', value: 5 },
+        { id: 'Abr', value: 6 },
+        { id: 'Mai', value: 5 },
+        { id: 'Jun', value: 8 },
+      ],
+      title: "Time Spent",
+      extra: {
+        title: "Current TS",
+        value: "8",
+        improvement: "+3h - in 1 month"
+      }
     }
   ]
 
   ngAfterViewInit(): void {
     this.left_arrow.nativeElement.style.display = 'none';
-    if(this.small_cards_data.length <= 4) this.right_arrow.nativeElement.style.display = 'none';
+    if (this.small_cards_data.length <= 4) this.right_arrow.nativeElement.style.display = 'none';
     this.left_arrow_bellow.nativeElement.style.display = 'none';
-    if(this.charts.length <= 2) this.right_arrow_bellow.nativeElement.style.display = 'none';
+    if (this.charts.length <= 2) this.right_arrow_bellow.nativeElement.style.display = 'none';
   }
 
   ngOnInit(): void {
   }
 
   slide(direction: string) {
-    const deltaX = 240 * 1;
-    if (direction == "right") this.small_cards_buffer += deltaX;
-    else if (direction == "left") this.small_cards_buffer -= deltaX;
-    if(this.small_cards_buffer == 0) this.left_arrow.nativeElement.style.display = 'none';
+    const deltaX = 240 * 4;
+    if (direction == "right") this.small_cards_buffer += 1;
+    else if (direction == "left") this.small_cards_buffer -= 1;
+    if (this.small_cards_buffer == 0) this.left_arrow.nativeElement.style.display = 'none';
     else this.left_arrow.nativeElement.style.display = 'inline';
-    if(this.small_cards_buffer >= deltaX * (this.small_cards_data.length - 4)) this.right_arrow.nativeElement.style.display = 'none';
+    if (this.small_cards_buffer + 1 >= this.small_cards_data.length / 4) this.right_arrow.nativeElement.style.display = 'none';
     else this.right_arrow.nativeElement.style.display = 'inline';
-    this.smaller_slider.nativeElement.style.transform = `translate(-${this.small_cards_buffer}px, 0)`;
+    this.smaller_slider.nativeElement.style.transform = `translate(-${this.small_cards_buffer * deltaX}px, 0)`;
   }
 
   slide_bellow(direction: string) {
-    const deltaX = 520 * 1;
-    if (direction == "right") this.big_cards_buffer += deltaX;
-    else if (direction == "left") this.big_cards_buffer -= deltaX;
-    if(this.big_cards_buffer == 0) this.left_arrow_bellow.nativeElement.style.display = 'none';
+    const deltaX = 520 * 2;
+    if (direction == "right") this.big_cards_buffer += 1;
+    else if (direction == "left") this.big_cards_buffer -= 1;
+    if (this.big_cards_buffer == 0) this.left_arrow_bellow.nativeElement.style.display = 'none';
     else this.left_arrow_bellow.nativeElement.style.display = 'inline';
-    if(this.big_cards_buffer >= deltaX * (this.charts.length - 2)) this.right_arrow_bellow.nativeElement.style.display = 'none';
+    if (this.big_cards_buffer + 1 >= this.charts.length / 2) this.right_arrow_bellow.nativeElement.style.display = 'none';
     else this.right_arrow_bellow.nativeElement.style.display = 'inline';
-    this.chart_slider.nativeElement.style.transform = `translate(-${this.big_cards_buffer}px, 0)`;
+    this.chart_slider.nativeElement.style.transform = `translate(-${this.big_cards_buffer * deltaX}px, 0)`;
   }
 
 }
