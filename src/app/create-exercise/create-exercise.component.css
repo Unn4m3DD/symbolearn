@@ -1,12 +1,16 @@
-textarea {
-    width: 800px;
-    height: 200px;
-}
-
 input {
+    border: none;
+    outline: none;
     border-radius: 15px;
     padding: 10px 30px;
     margin-bottom: 20px;
+}
+
+textarea {
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 10px 30px;
 }
 
 label {
@@ -15,41 +19,62 @@ label {
     font-weight: bold;
 }
 
-.text-input {
-    border-radius: 15px;
-    font-size: 20px;
-    outline: none;
-    padding: 10px 15px;
+.box_item_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
 }
 
-.button-container {
-    align-items: center;
-    display:flex;
+.box_item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
     flex-direction: column;
+    width: 80%;
+    margin: 5px 0;
+}
+
+.text-input {
+    flex: 1;
+    width: 100%;
+    border: 3px solid #172A3A;
+    border-radius: 8px;
+    background: local;
+    font-family: Rubik;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--main-text-color);
+    padding: 0 10px;
+}
+
+.text-input-white {
+    border: 3px solid #FFFFFF;
+  }
+
+.button-container {
+    margin: 1rem;
+    display: flex;
+    width: 80%;
 }
 
 .container {
-    display:flex;
+    display: flex;
+    width: 70vh;
     flex-direction: column;
-}
-
-.text-input:focus {
-    border-color: orange;
-    border-width: 2px;
+    padding-top: 15px;
+    background: rgba(0, 0, 0, 0.25);
+    align-items: center;
+    justify-content: center;
 }
 
 .button {
-    width: 400px;
-    padding: 20px;
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 40px;
-    margin-top: 50px;
-    border-radius: 0px;
-    border-width: 0px;
-    text-align: center;
-}
-
-label {
-    text-align: left;
+    display: flex;
+    flex: 1;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
 }

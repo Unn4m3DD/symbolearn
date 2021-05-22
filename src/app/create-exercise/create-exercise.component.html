@@ -1,14 +1,25 @@
-
 <div class="container">
-    <label>Title</label>
-    <input class="text-input" #title>
+    <div class="box_item_container">
+        <div class="box_item">
+            <label>Title</label>
+            <input class="text-input text-input-white" #title>
+        </div>
 
-    <label>Subject</label>
-    <input class="text-input" #subject>
+    </div>
+    <div class="box_item_container">
+        <div class="box_item">
+            <label>Subject</label>
+            <input class="text-input" #subject>
+        </div>
 
-    <label>Text</label>
-    <textarea class="text-input" #text></textarea>
+    </div>
+    <div class="box_item_container">
+        <div class="box_item">
+            <label>Text</label>
+            <textarea class="text-input text-input-white" #text></textarea>
+        </div>
+    </div>
     <div class="button-container">
-        <div class="button blue-button" (click)="save()">Save</div>
+        <div class="button blue-button" (click)="save()">Add Exercise!</div>
     </div>
 </div>
