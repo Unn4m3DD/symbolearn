@@ -1,41 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
-
+import { themes } from "../global"
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.css']
 })
 export class SettingsComponent implements OnInit {
-  current_theme:string = "";
-  attempt_duration:string = "";
-  
-  themes = [
-    {
-      name:"Default",
-      color_blind_friendly: true
-    },
-    {
-      name:"High Contrast",
-      color_blind_friendly: true
-    },
-    {
-      name:"Light",
-      color_blind_friendly: true
-    },
-    {
-      name:"Dark",
-      color_blind_friendly: true
-    },
-    {
-      name:"Monokai",
-      color_blind_friendly: false
-    },
-    {
-      name:"Abyss",
-      color_blind_friendly: false
-    }
-  ]
+  current_theme: string = "";
+  attempt_duration: string = "";
 
   settings = [
     {
@@ -59,26 +32,42 @@ export class SettingsComponent implements OnInit {
       options: ["English", "Portuguese"]
     },
   ]
-
-  constructor(private cookieService: CookieService) {    
+  themes: {
+    [key: string]: {
+      colorblind: boolean;
+      color_definitions: string[][];
+    }
+  };
+  constructor(private cookieService: CookieService) {
+    this.themes = themes
+    console.log(this.themes)
   }
 
   ngOnInit(): void {
-    this.current_theme = this.themes[0].name
-    if(!this.cookieService.check("attempt_duration")) this.attempt_duration = "120";
+    this.current_theme = this.cookieService.get("theme") || "Default"
+    if (!this.cookieService.check("attempt_duration")) this.attempt_duration = "120";
     else this.attempt_duration = this.cookieService.get("attempt_duration")
   }
 
   changeTheme(theme: string) {
     this.current_theme = theme
+    let docStyle = document.documentElement.style;
+
+    for (let key in themes[theme].color_definitions) {
+      docStyle.setProperty(themes[theme].color_definitions[key][0], themes[theme].color_definitions[key][1]);
+    }
+  }
+
+  objKeys(){
+    return Object.keys(this.themes)
   }
 
   save() {
     this.cookieService.set("theme", this.current_theme)
-    this.cookieService.set("attempt_duration", this.attempt_duration+"")
+    this.cookieService.set("attempt_duration", this.attempt_duration + "")
     for (let setting of this.settings) {
-      if(this.cookieService.check("temp_config_"+setting.config.replace(" ", "_").toLowerCase())) {
-        this.cookieService.set("config_"+setting.config.replace(" ", "_").toLowerCase(), this.cookieService.get("temp_config_"+setting.config.replace(" ", "_").toLowerCase()))
+      if (this.cookieService.check("temp_config_" + setting.config.replace(" ", "_").toLowerCase())) {
+        this.cookieService.set("config_" + setting.config.replace(" ", "_").toLowerCase(), this.cookieService.get("temp_config_" + setting.config.replace(" ", "_").toLowerCase()))
       }
     }
   }

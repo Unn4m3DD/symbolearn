@@ -7,7 +7,7 @@
     <div class="dropdown">
         <button class="dropbtn">{{ current_theme }}</button>
         <div class="dropdown-content">
-          <a *ngFor="let theme of themes" (click)="changeTheme(theme.name)">{{ theme.name }}</a>
+          <a *ngFor="let theme of objKeys()" (click)="changeTheme(theme)">{{ theme }}</a>
         </div>
       </div>
 </div>
