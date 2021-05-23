@@ -13,7 +13,7 @@ export class SignInComponent implements OnInit {
 
   setLoggedIn() {
     this.cookieService.set("logged_in", "true")
-    window.location.reload();
+    window.location = <any>("/dashboard")
   }
 
   ngOnInit(): void {
