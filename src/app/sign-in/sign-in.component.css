@@ -51,7 +51,6 @@ input:active {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 50%;
 }
 
 .sign_in_box {
@@ -62,7 +61,6 @@ input:active {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 70vh;
   width: 60%;
   /*padding-top: 1rem;*/
   /*margin-right: 8rem;*/
@@ -101,7 +99,7 @@ input:active {
 
 .attribute_input {
   flex: 1;
-    border: 3px solid #FFF;
+  border: 3px solid #FFF;
   border-radius: 8px;
   background: local;
   width: 100%;
