@@ -1,16 +1,17 @@
+
 <div class="outer_div">
   <div class='text_div'>
-    <h1 class="title">Welcome to SymboLearn!</h1>
+    <h1 class="title">{{this.locale.title[lang]}}</h1>
   </div>
   <div class='text_div'>
-    <h1 class="sub_title">At SymboLearn you can learn symbolic languages </h1>
+    <h1 class="sub_title">{{this.locale.subtitle[lang]}}</h1>
   </div>
   <div class="buttons_div">
     <div class="button blue-button" (click)="changePage('learn')">
-      <p class="button_text" >Try it now</p>
+      <p class="button_text" >{{this.locale.try_button[lang]}}</p>
     </div>
     <div class="button orange-button" (click)="changePage('sign-up')">
-      <p class="button_text">Join Us</p>
+      <p class="button_text">{{this.locale.join_button[lang]}}</p>
     </div>
   </div>
 </div>

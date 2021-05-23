@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { NotifierService } from 'angular-notifier';
 import { CookieService } from 'ngx-cookie-service';
+import locale from '../../languages';
 
 @Component({
   selector: 'app-add-language-final',
@@ -12,7 +13,9 @@ export class AddLanguageFinalComponent implements OnInit {
   @ViewChild('file_input') file_input: ElementRef | undefined;
   to_render: { character: string, image: string | SafeUrl, hovering: number }[];
   current_char: string = "";
-  language_name: string = ""
+  language_name: string = "";
+  locale: any;
+  lang: string;
   constructor(private sanitizer: DomSanitizer, private notifier: NotifierService, private cookieService: CookieService) {
     this.to_render = []
     const queryString = window.location.search;
@@ -20,7 +23,18 @@ export class AddLanguageFinalComponent implements OnInit {
     const value = parameters.get('lang');
     for (let i of "abcdefghijklmnopqrstuvwxyz".toUpperCase().split(""))
       this.to_render.push({ character: i, image: value != "" ? `/assets/${value}/` + i.toLowerCase() + ".png" : "", hovering: 0 })
-
+      this.locale = locale.add_lang_final;
+      switch (this.cookieService.get("config_language")) {
+        case "English":
+          this.lang = "en";
+          break;
+        case "Portuguese":
+          this.lang = "pt";
+          break;
+        default:
+          this.lang = "pt";
+          break;
+      }
   }
   allFull() {
     return this.to_render.reduce((e1, e2) => e1 && e2.image != '', true)

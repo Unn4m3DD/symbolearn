@@ -1,14 +1,30 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CookieService } from "ngx-cookie-service"
+import locale from '../../languages';
+
 @Component({
   selector: 'app-top-nav',
   templateUrl: './top-nav.component.html',
   styleUrls: ['./top-nav.component.css']
 })
 export class TopNavComponent implements OnInit {
+  locale: any;
+  lang: string;
   logged_in: boolean = false
   constructor(private cookieService: CookieService) {
-    this.logged_in = this.cookieService.get("logged_in") == "true"
+    this.logged_in = this.cookieService.get("logged_in") == "true";
+    this.locale = locale.header;
+    switch (this.cookieService.get("config_language")) {
+      case "English":
+        this.lang = "en";
+        break;
+      case "Portuguese":
+        this.lang = "pt";
+        break;
+      default:
+        this.lang = "pt";
+        break;
+    }
   }
   ngOnInit(): void {
   }

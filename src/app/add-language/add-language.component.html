@@ -1,18 +1,15 @@
 <input #file_input type="file" directory webkitdirectory (change)="submitFolder($event)" name="name" style="display: none;" />
 <div (drop)="dropFile($event)" class="container">
-  <div class="upper-text">
-    You should provide folder with files <br> named
-    from A.png to Z.png
-  </div>
+  <div class="upper-text">{{this.locale.upper_text[this.lang]}}</div>
   <div class="insert-button orange-button" (click)="showFileBrowser()">
     <div class="button-text" >
-      Select Folder
+      {{this.locale.select_folder_button[this.lang]}}
     </div>
   </div>
   <div class="bottom-text">
-    <div class="alternatively">Alternatively </div>
+    <div class="alternatively">{{this.locale.bottom_text[this.lang]}}</div>
     <div class="alternative-button-container">
-      <a class="alternative-button blue-button" (click)="goToFinal()" >Provide 1 at a time</a>
+      <a class="alternative-button blue-button" (click)="goToFinal()" >{{this.locale.one_at_a_time_button[this.lang]}}</a>
     </div>
   </div>
 </div>

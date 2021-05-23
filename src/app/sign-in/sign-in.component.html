@@ -1,25 +1,23 @@
 <div class="outer_div">
   <div class='text_div'>
     <div class="title_container">
-      <h1 class="title">Did you know?</h1>
-      <h1 class="sub_title">Kids that play with lego have 73% more chance of working at boston dynamics than kids
-        that
-        don’t</h1>
+      <h1 class="title">{{this.locale.title[this.lang]}}</h1>
+      <h1 class="sub_title">{{this.locale.subtitle[this.lang]}}</h1>
     </div>
   </div>
   <div class="sign_in_box_container">
     <div class="sign_in_box">
       <div class="box_item">
-        <div class="attribute_text">Email:</div>
+        <div class="attribute_text">{{this.locale.form.email[this.lang]}}:</div>
         <input type="text" class="attribute_input" />
       </div>
       <div class="box_item">
-        <div class="attribute_text">Password:</div>
+        <div class="attribute_text">{{this.locale.form.password[this.lang]}}:</div>
         <input type="password" class="attribute_input" />
       </div>
       <div class="button_container">
         <div (click)="setLoggedIn()" class="button orange-button">
-          <div class="button_text" href="#">Sign in</div>
+          <div class="button_text" href="#">{{this.locale.form.sign_in_button[this.lang]}}</div>
         </div>
       </div>
     </div>

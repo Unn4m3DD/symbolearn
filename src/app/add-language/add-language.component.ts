@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-
+import { CookieService } from "ngx-cookie-service"
+import locale from '../../languages';
 @Component({
   selector: 'app-add-language',
   templateUrl: './add-language.component.html',
@@ -8,8 +9,21 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 export class AddLanguageComponent implements OnInit {
 
   @ViewChild('file_input') file_input: ElementRef | undefined;
-  constructor() {
-
+  locale: any;
+  lang: string;
+  constructor(private cookieService: CookieService) {
+    this.locale = locale.add_lang;
+    switch (this.cookieService.get("config_language")) {
+      case "English":
+        this.lang = "en";
+        break;
+      case "Portuguese":
+        this.lang = "pt";
+        break;
+      default:
+        this.lang = "pt";
+        break;
+    }
   }
 
   showFileBrowser() {

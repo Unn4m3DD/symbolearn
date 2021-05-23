@@ -2,27 +2,27 @@
   <div *ngIf="!attempt_display" class="card">
     <div class="title">{{ exercise.name }}</div>
     <div class="sub_title">{{ exercise.description }}</div>
-    <div class="dev_by">Developed by</div>
+    <div class="dev_by">{{this.locale.dev[this.lang]}}</div>
     <div class="developer">{{ exercise.developer }}</div>
     <div class="stats">
       <div class="wpm">{{ exercise.wpm }}</div>
-      <div class="accuracy">{{ exercise.accuracy }}</div>
+      <div class="accuracy">{{ exercise.accuracy }}%</div>
     </div>
     <div class="top_tab_item_container">
       <div (click)="toggleAttemptDisplay()" class="top_tab_item_container_container">
-        <div class="attempt orange-button">Attempt</div>
+        <div class="attempt orange-button">{{this.locale.attempt[this.lang]}}</div>
       </div>
     </div>
   </div>
   <div *ngIf="attempt_display" class="card">
     <div class="title">{{ exercise.name }}</div>
     <div class="sub_title">{{ exercise.description }}</div>
-    <div class="sub_title" style="font-weight:bold; margin-top: 20px;">Select a Language:</div>
+    <div class="sub_title" style="font-weight:bold; margin-top: 20px;">{{this.locale.select_lang[this.lang]}}:</div>
     <i class="fa fa-times-circle cross" (click)="toggleAttemptDisplay()" style="font-size: 24pt;"></i>
-    <div class="language" (click)="changePage('learn', 'lang=morse-code&exercise=' + exercise.name)">Morse Code</div>
-    <div class="language" (click)="changePage('learn', 'lang=sign-language&exercise=' + exercise.name)">Sign Language
+    <div class="language" (click)="changePage('learn', 'lang=morse-code&exercise=' + exercise.name)">{{this.locale.morse_code[this.lang]}}</div>
+    <div class="language" (click)="changePage('learn', 'lang=sign-language&exercise=' + exercise.name)">{{this.locale.sign_lang[this.lang]}}
     </div>
     <div *ngIf="semaphoreActive()" class="language" (click)="changePage('learn', 'lang=sem&exercise=' + exercise.name)">
-      Semaphore Language</div>
+      {{this.locale.semaphore_lang[this.lang]}}</div>
   </div>
 </div>

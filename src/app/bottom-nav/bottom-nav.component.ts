@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from "ngx-cookie-service"
+import locale from '../../languages';
 
 @Component({
   selector: 'app-bottom-nav',
@@ -7,8 +8,22 @@ import { CookieService } from "ngx-cookie-service"
   styleUrls: ['./bottom-nav.component.css']
 })
 export class BottomNavComponent implements OnInit {
-
-  constructor(private cookieService: CookieService) { }
+  locale: any;
+  lang: string;
+  constructor(private cookieService: CookieService) {
+    this.locale = locale.footer;
+    switch (this.cookieService.get("config_language")) {
+      case "English":
+        this.lang = "en";
+        break;
+      case "Portuguese":
+        this.lang = "pt";
+        break;
+      default:
+        this.lang = "pt";
+        break;
+    }
+  }
 
   setLoggedOut() {
     this.cookieService.delete("logged_in")

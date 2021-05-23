@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { config } from 'rxjs';
+import locale from '../../languages';
 import { themes } from "../global"
 @Component({
   selector: 'app-settings',
@@ -10,38 +11,52 @@ import { themes } from "../global"
 export class SettingsComponent implements OnInit {
   current_theme: string = "";
   attempt_duration: string = "";
-
-  settings = [
-    {
-      config: "Mode",
-      options: ["Scrambled Letters", "Words", "Phrases"]
-    },
-    {
-      config: "Help Level",
-      options: ["Character Over Symbol", "Cheat Sheet", "No Help"]
-    },
-    {
-      config: "Display Style",
-      options: ["Words", "Inline", "Show Current character"]
-    },
-    {
-      config: "Include Numbers",
-      options: ["Yes", "No"]
-    },
-    {
-      config: "Language",
-      options: ["English", "Portuguese"]
-    },
-  ]
+  settings:any;
   themes: {
     [key: string]: {
       colorblind: boolean;
       color_definitions: string[][];
     }
   };
+  locale: any;
+  lang: string;
   constructor(private cookieService: CookieService) {
     this.themes = themes
 
+    this.locale = locale.settings;
+    switch (this.cookieService.get("config_language")) {
+      case "English":
+        this.lang = "en";
+        break;
+      case "Portuguese":
+        this.lang = "pt";
+        break;
+      default:
+        this.lang = "pt";
+        break;
+    }
+    this.settings = [
+      {
+        config: this.locale.mode[this.lang],
+        options: this.locale.mode.options[this.lang]
+      },
+      {
+        config: this.locale.help_lvl[this.lang],
+        options: this.locale.help_lvl.options[this.lang]
+      },
+      {
+        config: this.locale.disp_style[this.lang],
+        options: this.locale.disp_style.options[this.lang],
+      },
+      {
+        config: this.locale.incl_numbers[this.lang],
+        options: this.locale.incl_numbers.options[this.lang]
+      },
+      {
+        config: this.locale.language[this.lang],
+        options: this.locale.language.options[this.lang]
+      },
+    ]
   }
   @HostListener('window:beforeunload', ['$event'])
   unloadHandler(event: Event) {
@@ -74,6 +89,13 @@ export class SettingsComponent implements OnInit {
     this.cookieService.set("theme", this.current_theme)
     this.cookieService.set("attempt_duration", this.attempt_duration + "")
     for (let setting of this.settings) {
+      if(setting.config === "Idioma") {
+        setting.config = "Language";
+        let language = this.cookieService.get("temp_config_" + setting.config.replace(" ", "_").toLowerCase())
+        if(language === "Inglês") language = "English";
+        else language = "Portuguese";
+        this.cookieService.set("temp_config_" + setting.config.replace(" ", "_").toLowerCase(), language)
+      }
       if (this.cookieService.check("temp_config_" + setting.config.replace(" ", "_").toLowerCase())) {
         this.cookieService.set("config_" + setting.config.replace(" ", "_").toLowerCase(), this.cookieService.get("temp_config_" + setting.config.replace(" ", "_").toLowerCase()))
       }

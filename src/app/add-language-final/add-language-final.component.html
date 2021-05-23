@@ -10,24 +10,24 @@
     </div>
     <img *ngIf="i.hovering == 0 && i.image != ''" class="char-image" [src]="i.image" />
     <div *ngIf="i.hovering == 0 && i.image == ''" class="char-image-placeholder">
-      <div class="placeholder-text">
-        Drag and Drop<br>an Image<br>or
+      <div class="placeholder-text" *ngFor="let i of this.locale.drag_drop[this.lang]">
+        {{i}} 
       </div>
       <div class="button blue-button" (click)="selectFile(i.character)">
-        Select a File
+        {{this.locale.select_button[this.lang]}}
       </div>
     </div>
     <div *ngIf="i.hovering > 0" class="drop-it">
-      Drop It!
+      {{this.locale.drop[this.lang]}}
     </div>
     <div style="margin-top: 8px;">{{i.character}}</div>
   </div>
 </div>
 <div class="accept-button-container-container">
   <div class="accept-button-container">
-    <input [(ngModel)]="language_name" placeholder="Insert Language Name" class="accept-button-practice blue-button"
+    <input [(ngModel)]="language_name" placeholder={{this.locale.lang_name[this.lang]}} class="accept-button-practice blue-button"
       [ngClass]="{deactivated: !allFull()}" />
     <div class="accept-button orange-button" (click)="changePage('learn', 'lang=sem')"
-      [ngClass]="{deactivated: !allFull()}"> Add Language </div>
+      [ngClass]="{deactivated: !allFull()}">{{this.locale.add_lang[this.lang]}}</div>
   </div>
 </div>

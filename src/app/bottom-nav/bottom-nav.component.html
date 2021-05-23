@@ -2,12 +2,12 @@
   <div class="button_container">  
     <div class="contribute_button blue-button" (click)="goToGitHub()">
       <i class="fa fa-github" style="font-size:35px; color: white; padding: 0 10px;"></i>
-      <p class="button_text">Contribute</p>
+      <p class="button_text">{{this.locale.contribute_button[this.lang]}}</p>
     </div>
   </div>
   <div class="button_container">
     <div (click)="setLoggedOut()" class="button orange-button">
-      <p class="button_text" href="#">About Us</p>
+      <p class="button_text" href="#">{{this.locale.about_button[this.lang]}}</p>
     </div>
   </div>
 </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { exercises, exercises_t } from "./../global"
+import { exercises, exercises_t } from "./../global";
+import { CookieService } from "ngx-cookie-service";
+import locale from "../../languages";
 @Component({
   selector: 'app-exercises',
   templateUrl: './exercises.component.html',
@@ -12,8 +14,22 @@ export class ExercisesComponent implements OnInit {
   public cards_buffer: number = 0;
 
   exercises: exercises_t
-  constructor() {
+  locale: any;
+  lang: string;
+  constructor(private cookieService: CookieService) {
     this.exercises = exercises
+    this.locale = locale.exercises;
+    switch (this.cookieService.get("config_language")) {
+      case "English":
+        this.lang = "en";
+        break;
+      case "Portuguese":
+        this.lang = "pt";
+        break;
+      default:
+        this.lang = "pt";
+        break;
+    }
   }
 
   ngAfterViewInit(): void {

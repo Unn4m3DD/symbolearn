@@ -1,0 +1,6 @@
+correct answers to the tasks on the observers guide
+
+adicionar semaphore e fazer ex
+morse (default be letra dos parabens)  
+melhoria de wpm (25%)
+add language (selecionando qualquer pasta ele preenche) tem de dar nome
