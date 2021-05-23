@@ -1,4 +1,3 @@
 linguas pt/en
 cookie semaphore
-add exercicios dinamicamente
 aviso nome da linguagem a adicionar   
