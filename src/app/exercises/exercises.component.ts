@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-
+import { exercises, exercises_t } from "./../global"
 @Component({
   selector: 'app-exercises',
   templateUrl: './exercises.component.html',
@@ -11,63 +11,14 @@ export class ExercisesComponent implements OnInit {
   @ViewChild('left_arrow') left_arrow: ElementRef | any;
   public cards_buffer: number = 0;
 
-  exercises = [{
-    id: "01",
-    title: "SymboLearn",
-    subtitle: "Welcome to SymboLearn",
-    developer: "Rock Lee",
-    stats: {
-      wpm: 59,
-      accuracy: "85%"
-    }
-  },
-  {
-    id: "02",
-    title: "Hamlet",
-    subtitle: "Hamlet's first act",
-    developer: "Baianinho de Mauá",
-    stats: {
-      wpm: 156,
-      accuracy: "99%"
-    }
-  },
-  {
-    id: "02",
-    title: "Hamlet",
-    subtitle: "Hamlet's first act",
-    developer: "Baianinho de Mauá",
-    stats: {
-      wpm: 156,
-      accuracy: "99%"
-    }
-  },
-  {
-    id: "02",
-    title: "Hamlet",
-    subtitle: "Hamlet's first act",
-    developer: "Baianinho de Mauá",
-    stats: {
-      wpm: 156,
-      accuracy: "99%"
-    }
-  },
-  {
-    id: "02",
-    title: "Hamlet",
-    subtitle: "Hamlet's first act",
-    developer: "Baianinho de Mauá",
-    stats: {
-      wpm: 156,
-      accuracy: "99%"
-    }
+  exercises: exercises_t
+  constructor() {
+    this.exercises = exercises
   }
-]
-
-  constructor() { }
 
   ngAfterViewInit(): void {
     this.left_arrow.nativeElement.style.display = 'none';
-    if(this.exercises.length <= 4) this.right_arrow.nativeElement.style.display = 'none';
+    if (Object.keys(exercises).length <= 4) this.right_arrow.nativeElement.style.display = 'none';
   }
 
   ngOnInit(): void {
@@ -79,14 +30,17 @@ export class ExercisesComponent implements OnInit {
   }
 
   slide(direction: string) {
-    const deltaX = 300 * 1;
-    if (direction == "right") this.cards_buffer += deltaX;
-    else if (direction == "left") this.cards_buffer -= deltaX;
-    if(this.cards_buffer == 0) this.left_arrow.nativeElement.style.display = 'none';
+    const deltaX = 300 * 4;
+    if (direction == "right") this.cards_buffer += 1;
+    else if (direction == "left") this.cards_buffer -= 1;
+    if (this.cards_buffer == 0) this.left_arrow.nativeElement.style.display = 'none';
     else this.left_arrow.nativeElement.style.display = 'inline';
-    if(this.cards_buffer >= deltaX * (this.exercises.length - 4)) this.right_arrow.nativeElement.style.display = 'none';
+    if (this.cards_buffer + 1 >= (Object.keys(exercises).length / 4)) this.right_arrow.nativeElement.style.display = 'none';
     else this.right_arrow.nativeElement.style.display = 'inline';
-    this.slider.nativeElement.style.transform = `translate(-${this.cards_buffer}px, 0)`;
+    this.slider.nativeElement.style.transform = `translate(-${this.cards_buffer * deltaX}px, 0)`;
   }
 
+  exerciseKeys() {
+    return Object.keys(exercises)
+  }
 }

@@ -1,3 +1,44 @@
+export interface exercise_t { name: string, description: string, text: string, developer: string, wpm: string, accuracy: string };
+export interface exercises_t { [key: string]: exercise_t };
+export const exercises: exercises_t = {
+  "Hamlet": {
+    name: "Hamlet",
+    description: "Hamlet first act",
+    developer: "João Rodrigues", wpm: "75", accuracy: "85",
+    text: "Enter two Sentinels first Francisco who paces up and down at his post then Bernardo who approaches him Whos there Nay answer me Stand and unfold yourself"
+  },
+  "Parabéns": {
+    name: "Parabéns",
+    description: "Musica Parabéns",
+    developer: "Joana Maria", wpm: "120", accuracy: "90",
+    text: "Parabens a voce nesta data querida muitas felicidades muitos anos de vida"
+  },
+  "Os Lusíadas": {
+    name: "Os Lusíadas",
+    description: "Primeiro verso d'Os Lusíadas",
+    developer: "Mário Correia", wpm: "10", accuracy: "95",
+    text: "As armas e os baroes assinalados Que da ocidental praia Lusitana Por mares nunca de antes navegados Passaram ainda alem da Taprobana"
+  },
+  "Bohemian Rhapsody": {
+    name: "Bohemian Rhapsody",
+    description: "Bohemian Rhapsody first verse",
+    developer: "Miguel José", wpm: "43", accuracy: "60",
+    text: "Is this the real life Is this just fantasy Caught in a landside No escape from reality"
+  },
+  "Anel de Rubi": {
+    name: "Anel de Rubi",
+    description: "Musica Anel de Rubi",
+    developer: "Daniel Silva", wpm: "125", accuracy: "95",
+    text: "Tu eras aquela que eu mais queria Para me dar algum conforto e companhia"
+  },
+  "D'zrt": {
+    name: "D'zrt",
+    description: "Musica Para mim Tanto me Faz",
+    developer: "Carlos Emanuel", wpm: "97", accuracy: "83",
+    text: "Acabou ve se entendes Nao vale a pena menos que tu tentes"
+  }
+}
+
 export const themes:
   {
     [key: string]: {

@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { exercises } from '../global';
 
 @Component({
   selector: 'app-learn-morse',
@@ -14,11 +15,12 @@ export class LearnMorseComponent implements OnInit {
   getImage(morseCode: string): string {
     return `assets/${this.current_language}/${morseCode.toLowerCase()}.png`;
   }
-  help : boolean;
+  help: boolean;
   user_input: string = ""
   to_type_render: { char: string, index: number }[][] = []
-  to_type = "As armas e os baroes assinalados Que da ocidental praia Lusitana Por mares nunca de antes navegados Passaram ainda alem da Taprobana Em perigos e guerras esforcados Mais do que prometia a forca humana E entre gente remota edificaram Novo Reino que tanto sublimaram"
+  to_type: string;
   constructor(private cookieService: CookieService) {
+    this.to_type = exercises[new URLSearchParams(window.location.search).get('exercise') ?? "Lusíadas"].text
     this.help = cookieService.get("config_help_level") == "Character Over Symbol"
     this.current_language = new URLSearchParams(window.location.search).get('lang') ?? "morse-code";
     let g_index = 0;
@@ -55,7 +57,7 @@ export class LearnMorseComponent implements OnInit {
       if (this.user_input.length > 20)
         this.user_input = this.user_input.substring(1);
     }
-    if(this.correct_counter >= this.to_type.length-1) {
+    if (this.correct_counter >= this.to_type.length - 1) {
       this.modal.nativeElement.style.visibility = 'visible';
       this.modal.nativeElement.style.opacity = '1';
     }

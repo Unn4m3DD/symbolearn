@@ -1,18 +1,18 @@
 <div class="container">
-    <div class="arrow arrow-left" (click)="slide('left')">
-        <img src="/assets/left_arrow.png" #left_arrow>
+  <div class="arrow arrow-left" (click)="slide('left')">
+    <img src="/assets/left_arrow.png" #left_arrow>
+  </div>
+  <div class="visible-container">
+    <div class="grid-container animated" #slider>
+      <app-exercises-card *ngFor="let ex of exerciseKeys()" [exercise]="exercises[ex]"></app-exercises-card>
     </div>
-    <div class="visible-container">
-        <div class="grid-container animated" #slider>
-            <app-exercises-card *ngFor="let ex of exercises" [exercise]=ex></app-exercises-card>
-        </div>
-    </div>
-    <div class="arrow arrow-right" (click)="slide('right')">
-        <img src="/assets/right_arrow.png" #right_arrow>
-    </div>
-    
-    
-    <div class="button-container">
-        <div class="button blue-button" (click)="changePage('create-exercise')">Create Your Exercise</div>
-    </div>
+  </div>
+  <div class="arrow arrow-right" (click)="slide('right')">
+    <img src="/assets/right_arrow.png" #right_arrow>
+  </div>
+
+
+  <div class="button-container">
+    <div class="button blue-button" (click)="changePage('create-exercise')">Create Your Exercise</div>
+  </div>
 </div>
