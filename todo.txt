@@ -1,1 +1,6 @@
-dropdown add setinha com hover rotate
+cores hover botoes
+linguas pt/en
+cookie semaphore
+add exercicios dinamicamente
+aviso nome da linguagem a adicionar   
+aviso definicoes nao gravadas
