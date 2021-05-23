@@ -89,7 +89,7 @@ input:active {
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 32px;
   display: flex;
   align-items: center;
   text-align: center;
@@ -106,7 +106,7 @@ input:active {
   font-family: Rubik;
   font-style: normal;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 32px;
   color: var(--main-text-color);
   padding: 0 10px;
 }
