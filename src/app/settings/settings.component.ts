@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { config } from 'rxjs';
 import { themes } from "../global"
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
-  styleUrls: ['./settings.component.css']
+  styleUrls: ['./settings.component.css'],
 })
 export class SettingsComponent implements OnInit {
   current_theme: string = "";
@@ -40,7 +41,12 @@ export class SettingsComponent implements OnInit {
   };
   constructor(private cookieService: CookieService) {
     this.themes = themes
-    console.log(this.themes)
+
+  }
+  @HostListener('window:beforeunload', ['$event'])
+  unloadHandler(event: Event) {
+    if (this.cookieService.get("temp_dirty") != "")
+      event.returnValue = <any>"You have not applied the change to website configuration\nAre you sure you want to quit?"
   }
 
   ngOnInit(): void {
@@ -58,11 +64,12 @@ export class SettingsComponent implements OnInit {
     }
   }
 
-  objKeys(){
+  objKeys() {
     return Object.keys(this.themes)
   }
 
   save() {
+    this.cookieService.delete("temp_dirty")
     this.cookieService.set("theme", this.current_theme)
     this.cookieService.set("attempt_duration", this.attempt_duration + "")
     for (let setting of this.settings) {
