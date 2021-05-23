@@ -68,6 +68,7 @@ div {
   width: 150px;
   height: 150px;
   margin: 20px;
+  cursor: pointer;
 }
 
 .top_tab_item_container {
