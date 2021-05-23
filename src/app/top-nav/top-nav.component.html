@@ -11,7 +11,7 @@
           <div class="dropdown-content">
             <div (click)="changePage('learn', 'lang=morse-code')">Morse Code</div>
             <div (click)="changePage('learn', 'lang=sign-language')">Sign Language</div>
-            <div (click)="changePage('learn', 'lang=sem')">Semaphore Language</div>
+            <div *ngIf="semaphoreActive()" (click)="changePage('learn', 'lang=sem')">Semaphore Language</div>
             <div (click)="changePage('add-language')">Add Language...</div>
           </div>
         </div>

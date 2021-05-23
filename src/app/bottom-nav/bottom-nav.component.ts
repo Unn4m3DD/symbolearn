@@ -11,7 +11,8 @@ export class BottomNavComponent implements OnInit {
   constructor(private cookieService: CookieService) { }
 
   setLoggedOut() {
-    this.cookieService.set("logged_in", "false")
+    this.cookieService.delete("logged_in")
+    this.cookieService.delete("semaphore")
     window.location.reload();
   }
 

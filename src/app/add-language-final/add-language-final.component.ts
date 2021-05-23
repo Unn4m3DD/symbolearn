@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { NotifierService } from 'angular-notifier';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-add-language-final',
@@ -12,7 +13,7 @@ export class AddLanguageFinalComponent implements OnInit {
   to_render: { character: string, image: string | SafeUrl, hovering: number }[];
   current_char: string = "";
   language_name: string = ""
-  constructor(private sanitizer: DomSanitizer, private notifier: NotifierService) {
+  constructor(private sanitizer: DomSanitizer, private notifier: NotifierService, private cookieService: CookieService) {
     this.to_render = []
     const queryString = window.location.search;
     const parameters = new URLSearchParams(queryString);
@@ -60,6 +61,7 @@ export class AddLanguageFinalComponent implements OnInit {
       this.notifier.notify('error', 'Cannot add language without a name');
       return
     }
+    this.cookieService.set("semaphore", "true")
     if (query == undefined) query = ""
     window.location = <any>("/" + page_name + "?" + query)
   }

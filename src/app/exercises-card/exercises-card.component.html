@@ -20,6 +20,9 @@
     <div class="sub_title" style="font-weight:bold; margin-top: 20px;">Select a Language:</div>
     <i class="fa fa-times-circle cross" (click)="toggleAttemptDisplay()" style="font-size: 24pt;"></i>
     <div class="language" (click)="changePage('learn', 'lang=morse-code&exercise=' + exercise.name)">Morse Code</div>
-    <div class="language" (click)="changePage('learn', 'lang=sign-language&exercise=' + exercise.name)">Sign Language</div>
+    <div class="language" (click)="changePage('learn', 'lang=sign-language&exercise=' + exercise.name)">Sign Language
+    </div>
+    <div *ngIf="semaphoreActive()" class="language" (click)="changePage('learn', 'lang=sem&exercise=' + exercise.name)">
+      Semaphore Language</div>
   </div>
 </div>

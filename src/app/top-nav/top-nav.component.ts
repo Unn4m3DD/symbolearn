@@ -16,5 +16,8 @@ export class TopNavComponent implements OnInit {
     if (query == undefined) query = ""
     window.location = <any>("/" + page_name + "?" + query)
   }
+  semaphoreActive(){
+    return this.cookieService.get("semaphore") == "true"
+  }
 
 }
