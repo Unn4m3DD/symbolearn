@@ -8,6 +8,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class LearnMorseComponent implements OnInit {
   @ViewChild('morse_div') morse_div: ElementRef | undefined;
+  @ViewChild('modal') modal: ElementRef | any;
   current_language: string;
   correct_counter: number = 0;
   getImage(morseCode: string): string {
@@ -54,7 +55,10 @@ export class LearnMorseComponent implements OnInit {
       if (this.user_input.length > 20)
         this.user_input = this.user_input.substring(1);
     }
-    console.log(this.correct_counter)
+    if(this.correct_counter >= this.to_type.length-1) {
+      this.modal.nativeElement.style.visibility = 'visible';
+      this.modal.nativeElement.style.opacity = '1';
+    }
   }
   preventDelete(e: KeyboardEvent, text_input: HTMLInputElement) {
     if (e.key == "Backspace" && text_input == document.activeElement) {
@@ -62,6 +66,20 @@ export class LearnMorseComponent implements OnInit {
     }
   }
   ngOnInit(): void {
+  }
+
+  closeModal() {
+    this.modal.nativeElement.style.visibility = 'hidden';
+    this.modal.nativeElement.style.opacity = '0';
+  }
+
+  restart() {
+    location.reload();
+  }
+
+  changePage(page_name: string, query?: string | undefined) {
+    if (query == undefined) query = ""
+    window.location = <any>("/" + page_name + "?" + query)
   }
 
 }

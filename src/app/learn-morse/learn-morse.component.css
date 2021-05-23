@@ -81,3 +81,67 @@
   font-size: 8pt;
   transform: translate(80%, 0);
 }
+
+/* Modal */
+
+.modal-window {
+	position: fixed;
+	background-color: rgba(68, 55, 55, 0.25);
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.3s;
+}
+
+.modal-window:target {
+	visibility: visible;
+	opacity: 1;
+}
+
+.modal-window > div {
+  border-radius: 16px;
+	width: 800px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 2em;
+	background: white;
+}
+
+.modal-close {
+	color: #aaa;
+	line-height: 50px;
+	font-size: 80%;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	top: 0;
+	width: 70px;
+	text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+	color: black;
+}
+
+.buttons-container {
+  margin: 0px 20px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.option-button {
+  width: 200px;
+  padding: 20px 20px;
+  border-width: 0px;
+  border-radius: 5px;
+  font-weight: 700;
+}
