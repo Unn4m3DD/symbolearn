@@ -1,3 +1,2 @@
 linguas pt/en
 cookie semaphore
-aviso nome da linguagem a adicionar   

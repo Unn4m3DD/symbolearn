@@ -23,12 +23,12 @@ export class CreateExerciseComponent implements OnInit {
   }
 
   save() {
-    if(this.title.nativeElement.value.length > 0 && this.subject.nativeElement.value.length > 0 && this.text.nativeElement.value.length > 0) {
+    if (this.title.nativeElement.value.length > 0 && this.subject.nativeElement.value.length > 0 && this.text.nativeElement.value.length > 0) {
       this.title.nativeElement.value = this.subject.nativeElement.value = this.text.nativeElement.value = '';
       this.notifier.notify('success', 'Exercise saved successfully');
     }
     else {
-      this.notifier.notify('error', 'Exercise not correcly submitted, make sure all fields have values');
+      this.notifier.notify('error', 'Exercise not correctly submitted, make sure all fields have values');
     }
   }
 }

@@ -20,9 +20,9 @@ export class LearnMorseComponent implements OnInit {
   to_type_render: { char: string, index: number }[][] = []
   to_type: string;
   constructor(private cookieService: CookieService) {
-    this.to_type = exercises[new URLSearchParams(window.location.search).get('exercise') ?? "Lusíadas"].text
+    this.to_type = exercises[new URLSearchParams(window.location.search).get('exercise') || "Os Lusíadas"].text
     this.help = cookieService.get("config_help_level") == "Character Over Symbol"
-    this.current_language = new URLSearchParams(window.location.search).get('lang') ?? "morse-code";
+    this.current_language = new URLSearchParams(window.location.search).get('lang') || "morse-code";
     let g_index = 0;
     for (let i = 0; i < this.to_type.split(" ").length; i++) {
       this.to_type_render.push([])
