@@ -18,5 +18,8 @@ export class BottomNavComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  goToGitHub(){
+    window.open("https://github.com/Unn4m3DD/symbolearn", "_blank")
+  }
 
 }

@@ -56,6 +56,7 @@ export class SettingsComponent implements OnInit {
   }
 
   changeTheme(theme: string) {
+    this.cookieService.set("temp_dirty", "true")
     this.current_theme = theme
     let docStyle = document.documentElement.style;
 
