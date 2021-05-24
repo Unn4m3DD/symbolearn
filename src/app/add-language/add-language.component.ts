@@ -14,11 +14,11 @@ export class AddLanguageComponent implements OnInit {
   constructor(private cookieService: CookieService) {
     this.locale = locale.add_lang;
     switch (this.cookieService.get("config_language")) {
-      case "English":
-        this.lang = "en";
-        break;
-      case "Portuguese":
+      case "0":
         this.lang = "pt";
+        break;
+      case "1":
+        this.lang = "en";
         break;
       default:
         this.lang = "pt";
@@ -30,7 +30,7 @@ export class AddLanguageComponent implements OnInit {
     this.file_input?.nativeElement?.click()
 
   }
-  goToFinal(){
+  goToFinal() {
     window.location.pathname = "add-language-final"
   }
   dropFile(event: any) {
@@ -45,7 +45,7 @@ export class AddLanguageComponent implements OnInit {
         console.log("missing", String.fromCharCode(i))
       }
     }
-    window.location = <any> "add-language-final?lang=sem"
+    window.location = <any>"add-language-final?lang=sem"
 
   }
   ngOnInit(): void {

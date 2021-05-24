@@ -19,16 +19,16 @@ export class DashboardComponent implements OnInit {
 
   locale: any;
   lang: string;
-  small_cards_data:any;
-  charts:any;
+  small_cards_data: any;
+  charts: any;
   constructor(private cookieService: CookieService) {
     this.locale = locale.dashboard;
     switch (this.cookieService.get("config_language")) {
-      case "English":
-        this.lang = "en";
-        break;
-      case "Portuguese":
+      case "0":
         this.lang = "pt";
+        break;
+      case "1":
+        this.lang = "en";
         break;
       default:
         this.lang = "pt";
@@ -68,7 +68,7 @@ export class DashboardComponent implements OnInit {
         value: "523"
       }
     ]
-  
+
     this.charts = [
       {
         id: "p_ot",
@@ -85,7 +85,7 @@ export class DashboardComponent implements OnInit {
         extra: {
           title: this.locale.charts.curr_accuracy[this.lang],
           value: "95",
-          improvement: "+7.00% - " +this.locale.charts.in[this.lang] + " 1 " + this.locale.charts.month[this.lang]
+          improvement: "+7.00% - " + this.locale.charts.in[this.lang] + " 1 " + this.locale.charts.month[this.lang]
         }
       },
       {
@@ -103,7 +103,7 @@ export class DashboardComponent implements OnInit {
         extra: {
           title: this.locale.charts.curr_wpm[this.lang],
           value: "120",
-          improvement: "+25.00% - "+this.locale.charts.in[this.lang] + " 1 " + this.locale.charts.month[this.lang]
+          improvement: "+25.00% - " + this.locale.charts.in[this.lang] + " 1 " + this.locale.charts.month[this.lang]
         }
       },
       {
@@ -145,7 +145,7 @@ export class DashboardComponent implements OnInit {
     ]
   }
 
- 
+
 
   ngAfterViewInit(): void {
     this.left_arrow.nativeElement.style.display = 'none';

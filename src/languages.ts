@@ -1,4 +1,4 @@
-const locale = {
+const locale : {[key : string]: any} = {
   header: {
     exercises: {
       pt: "Exercícios",
@@ -289,8 +289,8 @@ const locale = {
       pt: "Idioma",
       en: "Language",
       options: {
-        pt:  ["Inglês", "Português"],
-        en:  ["English", "Portuguese"]
+        pt:  ["Português", "Inglês" ],
+        en:  ["Portuguese", "English"]
       }
     },
     apply_button: {

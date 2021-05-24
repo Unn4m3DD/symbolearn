@@ -15,11 +15,11 @@ export class TopNavComponent implements OnInit {
     this.logged_in = this.cookieService.get("logged_in") == "true";
     this.locale = locale.header;
     switch (this.cookieService.get("config_language")) {
-      case "English":
-        this.lang = "en";
-        break;
-      case "Portuguese":
+      case "0":
         this.lang = "pt";
+        break;
+      case "1":
+        this.lang = "en";
         break;
       default:
         this.lang = "pt";
@@ -32,7 +32,7 @@ export class TopNavComponent implements OnInit {
     if (query == undefined) query = ""
     window.location = <any>("/" + page_name + "?" + query)
   }
-  semaphoreActive(){
+  semaphoreActive() {
     return this.cookieService.get("semaphore") == "true"
   }
 

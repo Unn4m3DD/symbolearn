@@ -25,10 +25,10 @@ export class AddLanguageFinalComponent implements OnInit {
       this.to_render.push({ character: i, image: value != "" ? `/assets/${value}/` + i.toLowerCase() + ".png" : "", hovering: 0 })
       this.locale = locale.add_lang_final;
       switch (this.cookieService.get("config_language")) {
-        case "English":
+        case "1":
           this.lang = "en";
           break;
-        case "Portuguese":
+        case "0":
           this.lang = "pt";
           break;
         default:

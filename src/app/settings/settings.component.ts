@@ -11,7 +11,7 @@ import { themes } from "../global"
 export class SettingsComponent implements OnInit {
   current_theme: string = "";
   attempt_duration: string = "";
-  settings:any;
+  settings: any;
   themes: {
     [key: string]: {
       colorblind: boolean;
@@ -22,17 +22,19 @@ export class SettingsComponent implements OnInit {
   lang: string;
   constructor(private cookieService: CookieService) {
     this.themes = themes
-
     this.locale = locale.settings;
+    console.log(this.cookieService.get("config_language"))
     switch (this.cookieService.get("config_language")) {
-      case "English":
-        this.lang = "en";
-        break;
-      case "Portuguese":
+      case "0":
         this.lang = "pt";
+        break;
+      case "1":
+        this.lang = "en";
         break;
       default:
         this.lang = "pt";
+        this.cookieService.set("temp_config_language", "0")
+        this.cookieService.set("config_language", "0")
         break;
     }
     this.settings = [
@@ -88,16 +90,15 @@ export class SettingsComponent implements OnInit {
     this.cookieService.delete("temp_dirty")
     this.cookieService.set("theme", this.current_theme)
     this.cookieService.set("attempt_duration", this.attempt_duration + "")
-    for (let setting of this.settings) {
-      if(setting.config === "Idioma") {
-        setting.config = "Language";
-        let language = this.cookieService.get("temp_config_" + setting.config.replace(" ", "_").toLowerCase())
-        if(language === "Inglês") language = "English";
-        else language = "Portuguese";
-        this.cookieService.set("temp_config_" + setting.config.replace(" ", "_").toLowerCase(), language)
-      }
-      if (this.cookieService.check("temp_config_" + setting.config.replace(" ", "_").toLowerCase())) {
-        this.cookieService.set("config_" + setting.config.replace(" ", "_").toLowerCase(), this.cookieService.get("temp_config_" + setting.config.replace(" ", "_").toLowerCase()))
+    for (let setting_info of this.settings) {
+      let config_name = "";
+        for (let setting in locale.settings)
+          if (locale.settings[setting].pt == setting_info.config || locale.settings[setting].en == setting_info.config) 
+            config_name = locale.settings[setting].en.replace(" ", "_").toLowerCase();
+      console.log(config_name)
+      console.log(this.settings)
+      if (this.cookieService.check("temp_config_" + config_name.replace(" ", "_").toLowerCase())) {
+        this.cookieService.set("config_" + config_name.replace(" ", "_").toLowerCase(), this.cookieService.get("temp_config_" + config_name.replace(" ", "_").toLowerCase()))
       }
     }
   }

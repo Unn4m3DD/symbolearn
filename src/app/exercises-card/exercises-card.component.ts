@@ -15,11 +15,11 @@ export class ExercisesCardComponent implements OnInit {
   constructor(private cookieService: CookieService) {
     this.locale = locale.exercises;
     switch (this.cookieService.get("config_language")) {
-      case "English":
-        this.lang = "en";
-        break;
-      case "Portuguese":
+      case "0":
         this.lang = "pt";
+        break;
+      case "1":
+        this.lang = "en";
         break;
       default:
         this.lang = "pt";

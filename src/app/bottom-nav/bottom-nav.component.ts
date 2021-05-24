@@ -13,11 +13,11 @@ export class BottomNavComponent implements OnInit {
   constructor(private cookieService: CookieService) {
     this.locale = locale.footer;
     switch (this.cookieService.get("config_language")) {
-      case "English":
-        this.lang = "en";
-        break;
-      case "Portuguese":
+      case "0":
         this.lang = "pt";
+        break;
+      case "1":
+        this.lang = "en";
         break;
       default:
         this.lang = "pt";
@@ -33,7 +33,7 @@ export class BottomNavComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  goToGitHub(){
+  goToGitHub() {
     window.open("https://github.com/Unn4m3DD/symbolearn", "_blank")
   }
 
