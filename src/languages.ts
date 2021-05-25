@@ -1,4 +1,14 @@
-const locale : {[key : string]: any} = {
+const locale: { [key: string]: any } = {
+  refresh_prompt: {
+    title: {
+      pt: "Este botão serve para repor todas as definições",
+      en: "This button resets all user definitions",
+    },
+    subtitle: {
+      pt: "Tem a certeza que deseja faze-lo?",
+      en: "Are you sure you want to continue?",
+    }
+  },
   header: {
     exercises: {
       pt: "Exercícios",
@@ -48,7 +58,7 @@ const locale : {[key : string]: any} = {
       en: "Welcome to SymboLearn!"
     },
     subtitle: {
-      pt: "Aprenda liguagens simbólicas com o SymboLearn",
+      pt: "Aprenda linguagens simbólicas com o SymboLearn",
       en: "At SymboLearn you can learn symbolic languages"
     },
     try_button: {
@@ -178,7 +188,7 @@ const locale : {[key : string]: any} = {
       en: "Drop It!",
     },
     add_lang: {
-      pt: "Adicionar Liguagem",
+      pt: "Adicionar Linguagem",
       en: "Add Language",
     },
     lang_name: {
@@ -257,15 +267,15 @@ const locale : {[key : string]: any} = {
       pt: "Modo",
       en: "Mode",
       options: {
-        pt:  ["Letras aleatórias", "Palavras", "Frases"],
-        en:  ["Scrambled Letters", "Words", "Phrases"]
+        pt: ["Letras aleatórias", "Palavras", "Frases"],
+        en: ["Scrambled Letters", "Words", "Phrases"]
       }
     },
     help_lvl: {
-      pt: "Nivel de ajuda",
+      pt: "Nível de ajuda",
       en: "Help Level",
       options: {
-        pt: ["Letras sobre o Símbolo", "Tabela de Tradução", "Sem Ajuda"],
+        pt: ["Letra sobre o Símbolo", "Tabela de Tradução", "Sem Ajuda"],
         en: ["Character Over Symbol", "Cheat Sheet", "No Help"]
       }
     },
@@ -273,24 +283,24 @@ const locale : {[key : string]: any} = {
       pt: "Estilo",
       en: "Display Style",
       options: {
-        pt:  ["Palavras", "Em linhas", "Mostrar Caracter Atual"],
-        en:  ["Words", "Inline", "Show Current Character"]
+        pt: ["Palavras", "Em linhas", "Mostrar Letra Atual"],
+        en: ["Words", "Inline", "Show Current Character"]
       }
     },
     incl_numbers: {
       pt: "Incluir Números",
       en: "Include Numbers",
       options: {
-        pt:  ["Sim", "Não"],
-        en:  ["Yes", "No"]
+        pt: ["Sim", "Não"],
+        en: ["Yes", "No"]
       }
     },
     language: {
       pt: "Idioma",
       en: "Language",
       options: {
-        pt:  ["Português", "Inglês" ],
-        en:  ["Portuguese", "English"]
+        pt: ["Português", "Inglês"],
+        en: ["Portuguese", "English"]
       }
     },
     apply_button: {

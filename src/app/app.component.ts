@@ -28,6 +28,9 @@ export class AppComponent {
         this.lang = "pt";
         break;
     }
+    if(this.cookieService.get("config_help_level") == ""){
+      this.cookieService.set("config_help_level", "2")
+    }
   }
   changePage(event: string) {
     this.current_page = event;

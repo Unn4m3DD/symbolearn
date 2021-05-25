@@ -15,9 +15,10 @@ export class BottomNavComponent implements OnInit {
   }
 
   setLoggedOut() {
-    this.cookieService.delete("logged_in")
-    this.cookieService.delete("semaphore")
-    window.location.reload();
+    if(confirm(locale.refresh_prompt.title[this.lang] + "\n" + locale.refresh_prompt.subtitle[this.lang] )){
+      this.cookieService.deleteAll()
+      window.location.reload()
+    }
   }
 
   ngOnInit(): void {
