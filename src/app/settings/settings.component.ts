@@ -54,8 +54,11 @@ export class SettingsComponent implements OnInit {
   changeTheme(theme: string) {
     this.cookieService.set("temp_dirty", "true")
     this.current_theme = theme
-    let docStyle = document.documentElement.style;
 
+    if (this.lang == "pt") {
+      theme = this.locale.theme.options.en[this.locale.theme.options.pt.indexOf(theme)]
+    }
+    let docStyle = document.documentElement.style;
     for (let key in themes[theme].color_definitions) {
       docStyle.setProperty(themes[theme].color_definitions[key][0], themes[theme].color_definitions[key][1]);
     }
@@ -91,9 +94,7 @@ export class SettingsComponent implements OnInit {
   }
 
   objKeys() {
-    console.log(this.lang)
-    console.log(this.locale.theme.options.pt)
-    if(this.lang == "pt")
+    if (this.lang == "pt")
       return this.locale.theme.options.pt;
     return Object.keys(this.themes)
   }
