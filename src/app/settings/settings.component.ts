@@ -91,6 +91,10 @@ export class SettingsComponent implements OnInit {
   }
 
   objKeys() {
+    console.log(this.lang)
+    console.log(this.locale.theme.options.pt)
+    if(this.lang == "pt")
+      return this.locale.theme.options.pt;
     return Object.keys(this.themes)
   }
 
