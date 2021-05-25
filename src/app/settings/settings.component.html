@@ -1,18 +1,18 @@
 <div class="container container-1">
-    <div class="config">{{this.locale.attempt_duration[this.lang]}}</div>
-    <input type="number" min="0" [(ngModel)]="attempt_duration">
+  <div class="config">{{this.locale.attempt_duration[this.lang]}}</div>
+  <input type="number" min="0" [(ngModel)]="attempt_duration">
 </div>
 <div class="container container-1">
-    <div class="config">{{this.locale.theme[this.lang]}}</div>
-    <div class="dropdown">
-        <button class="dropbtn">{{ current_theme }}</button>
-        <div class="dropdown-content">
-          <a *ngFor="let theme of objKeys()" (click)="changeTheme(theme)">{{ theme }}</a>
-        </div>
-      </div>
+  <div class="config">{{this.locale.theme[this.lang]}}</div>
+  <div class="dropdown">
+    <button class="dropbtn">{{ current_theme }}</button>
+    <div class="dropdown-content">
+      <a *ngFor="let theme of objKeys()" (click)="changeTheme(theme)">{{ theme }}</a>
+    </div>
+  </div>
 </div>
 <div class="container" *ngFor="let setting of settings">
-    <div class="config">{{ setting.config }}</div>
-    <app-config [setting]=setting></app-config>
+  <div class="config">{{ setting.config }}</div>
+  <app-config (config_changed)="changeLang($event)" [setting]=setting></app-config>
 </div>
 <div class="button orange-button" (click)="save()">{{this.locale.apply_button[this.lang]}}</div>

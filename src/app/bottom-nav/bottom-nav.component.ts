@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CookieService } from "ngx-cookie-service"
 import locale from '../../languages';
 
@@ -9,20 +9,9 @@ import locale from '../../languages';
 })
 export class BottomNavComponent implements OnInit {
   locale: any;
-  lang: string;
+  @Input('lang') public lang: string;
   constructor(private cookieService: CookieService) {
     this.locale = locale.footer;
-    switch (this.cookieService.get("config_language")) {
-      case "0":
-        this.lang = "pt";
-        break;
-      case "1":
-        this.lang = "en";
-        break;
-      default:
-        this.lang = "pt";
-        break;
-    }
   }
 
   setLoggedOut() {

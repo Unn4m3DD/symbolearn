@@ -10,17 +10,31 @@ export class AppComponent {
   styles = 0
   current_page = "learn"
   logged_in: boolean = false
+  lang: string;
   constructor(private cookieService: CookieService) {
     this.logged_in = this.cookieService.get("logged_in") == "true"
     this.current_page = window.location.pathname.substring(1);
     console.log(this.current_page)
     if (this.current_page == "") this.current_page = "initial"
     window.onload = () => this.updateColorScheme()
+    switch (this.cookieService.get("config_language")) {
+      case "0":
+        this.lang = "pt";
+        break;
+      case "1":
+        this.lang = "en";
+        break;
+      default:
+        this.lang = "pt";
+        break;
+    }
   }
   changePage(event: string) {
     this.current_page = event;
   }
-
+  changeLanguage(language: string){
+    this.lang = language
+  }
 
 
   @HostListener('document:keypress', ['$event'])
