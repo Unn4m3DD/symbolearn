@@ -9,7 +9,7 @@ let lang_selected: string = "";
 })
 export class ConfigComponent implements OnInit {
   @Output() config_changed = new EventEmitter<string>();
-
+  @Output() dirtyChange = new EventEmitter<undefined>();
   @Input('setting') public setting: any;
   public selected: string = "";
 
@@ -17,6 +17,7 @@ export class ConfigComponent implements OnInit {
   }
 
   changeSelected(selected: string) {
+    this.dirtyChange.emit();
     let config_name = "";
     let sel_id = "";
     for (let setting in locale.settings) {

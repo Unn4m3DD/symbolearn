@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, OnInit, Output, ViewChild } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import locale from '../../languages';
 import { themes } from "../global"
@@ -21,6 +21,8 @@ export class SettingsComponent implements OnInit {
   };
   locale: any;
   lang: string;
+  @ViewChild('save_button') save_button: ElementRef ;
+  
   constructor(private cookieService: CookieService) {
     this.cookieService.delete("temp_dirty")
     this.themes = themes
@@ -68,6 +70,9 @@ export class SettingsComponent implements OnInit {
       docStyle.setProperty(themes[theme].color_definitions[key][0], themes[theme].color_definitions[key][1]);
     }
   }
+  dirtyChange(){
+    this.save_button.nativeElement.style.display = "block"
+  }
   changeLang(current_lang: string) {
     if (current_lang == "pt")
       this.current_theme_btn = this.locale.theme.options.pt[this.locale.theme.options.en.indexOf(this.current_theme)]
@@ -109,6 +114,7 @@ export class SettingsComponent implements OnInit {
   }
 
   save() {
+    this.save_button.nativeElement.style.display = "none"
     this.cookieService.delete("temp_dirty")
     this.cookieService.set("theme", this.current_theme)
     this.cookieService.set("attempt_duration", this.attempt_duration + "")

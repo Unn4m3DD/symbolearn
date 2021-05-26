@@ -13,6 +13,6 @@
 </div>
 <div class="container" *ngFor="let setting of settings">
   <div class="config">{{ setting.config }}</div>
-  <app-config (config_changed)="changeLang($event)" [setting]=setting></app-config>
+  <app-config (config_changed)="changeLang($event)" (dirtyChange)="dirtyChange()" [setting]=setting></app-config>
 </div>
-<div class="button orange-button" (click)="save()">{{this.locale.apply_button[this.lang]}}</div>
+<div class="button orange-button" #save_button style="display: none;" (click)="save()">{{this.locale.apply_button[this.lang]}}</div>
