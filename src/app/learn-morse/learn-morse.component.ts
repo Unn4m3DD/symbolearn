@@ -56,6 +56,7 @@ export class LearnMorseComponent implements OnInit {
       }
       if (!this.started) {
         this.started = true;
+        this.timer = 0
         this.timer_interval = setInterval(() => { this.timer++ }, 10)
       }
       if (this.current_char.toLowerCase() == this.to_type.charAt(this.correct_counter).toLowerCase()
