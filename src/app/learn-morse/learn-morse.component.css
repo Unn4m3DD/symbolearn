@@ -78,7 +78,10 @@
   text-align: center;
   color: var(--main-text-color);
 }
+
 .timer-text {
+  font-family: monospace;
+  font-weight: bold;
   text-align: center;
   color: var(--main-text-color);
 }

@@ -15,12 +15,14 @@ export class LearnMorseComponent implements OnInit {
   getImage(morseCode: string): string {
     return `assets/${this.current_language}/${morseCode.toLowerCase()}.png`;
   }
+  started: boolean;
   help: boolean;
   user_input: string = ""
   to_type_render: { char: string, index: number }[][] = []
   to_type: string;
   constructor(private cookieService: CookieService) {
-    this.to_type = exercises[new URLSearchParams(window.location.search).get('exercise') || "Os Lusíadas"].text
+    this.started = false;
+    this.to_type = exercises[new URLSearchParams(window.location.search).get('exercise') || "Parabéns"].text
     this.help = cookieService.get("config_help_level") == "0"
     this.current_language = new URLSearchParams(window.location.search).get('lang') || "morse-code";
     let g_index = 0;
@@ -37,12 +39,24 @@ export class LearnMorseComponent implements OnInit {
   last_wrong = false;
   current_char = "";
   current_offset = 0
+  timer = 0;
+  getTimer() {
+    return `${Math.floor(this.timer / 600000 % 10)}${Math.floor(this.timer / 10000 % 10)}:${Math.floor(this.timer / 1000 % 10)}${Math.floor(this.timer / 100 % 10)}:${Math.floor(this.timer / 10 % 10)}${Math.floor(this.timer % 10)}`
+  }
+  getSeconds() {
+    return `${Math.floor(this.timer / 100)}`
+  }
+  timer_interval: any;
   onUserInput(event: KeyboardEvent) {
     event.preventDefault()
     if (event.key.length == 1) {
       if (this.current_char == "") {
         this.current_char = event.key
         return
+      }
+      if (!this.started) {
+        this.started = true;
+        this.timer_interval = setInterval(() => { this.timer++ }, 10)
       }
       if (this.current_char.toLowerCase() == this.to_type.charAt(this.correct_counter).toLowerCase()
         || this.current_char.toLowerCase() == "⍽" && " " == this.to_type.charAt(this.correct_counter).toLowerCase()) {
@@ -60,6 +74,7 @@ export class LearnMorseComponent implements OnInit {
     if (this.correct_counter >= this.to_type.length - 1) {
       this.modal.nativeElement.style.visibility = 'visible';
       this.modal.nativeElement.style.opacity = '1';
+      clearInterval(this.timer_interval)
     }
     console.log(this.user_input)
   }

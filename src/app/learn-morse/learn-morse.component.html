@@ -1,4 +1,6 @@
 <div class="centered_container">
+  <div *ngIf="!started" class="info-text">Comece a escrever quando estiver preparado.<br> Um temporizador será iniciado após o primeiro click</div>
+  <div *ngIf="started" class="timer-text">{{getTimer()}}</div>
   <div class="morse_container_container_container">
     <div class="morse_container_container" #morse_div>
       <div class="morse_container" *ngFor='let _ of to_type_render; let i=index;'>
@@ -42,8 +44,8 @@
   <div>
     <a class="modal-close" (click)="closeModal()">Close</a>
     <h3 style="text-align: center;">Success !!</h3>
-    <span>WPM: 16</span><br>
-    <span>Time taken: 83 seconds</span>
+    <span>WPM: 56</span><br>
+    <span>Time taken: {{getSeconds()}} seconds</span>
     <div class="buttons-container ">
       <button class="blue-button option-button" (click)="restart()">Repeat</button>
       <button class="orange-button option-button" (click)="changePage('exercises')">Search Exercises</button>
