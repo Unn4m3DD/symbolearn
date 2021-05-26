@@ -1,5 +1,9 @@
 <div class="centered_container">
-  <div *ngIf="!started" class="info-text">Comece a escrever quando estiver preparado.<br> Um temporizador será iniciado após o primeiro click</div>
+  <div *ngIf="!started">
+    <div class="info-text" *ngFor="let title_line of help_title">
+      {{title_line}}
+    </div>
+  </div>
   <div *ngIf="started" class="timer-text">{{getTimer()}}</div>
   <div class="morse_container_container_container">
     <div class="morse_container_container" #morse_div>
