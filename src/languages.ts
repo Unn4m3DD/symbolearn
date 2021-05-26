@@ -156,7 +156,7 @@ const locale: { [key: string]: any } = {
       en: "Sign Language",
     },
     semaphore_lang: {
-      pt: "Linguagem Semáforo",
+      pt: "Código Semafórico",
       en: "Semaphore Language",
     },
   },

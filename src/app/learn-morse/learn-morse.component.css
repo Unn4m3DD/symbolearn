@@ -7,9 +7,9 @@
   flex-direction: row;
   align-items: center;
 }
-.text_input_container_container{
-  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
 
+.text_input_container_container {
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .text_input {
@@ -56,7 +56,7 @@
 }
 
 .grey {
-  filter: brightness(0.9) invert(.7) sepia(.5) hue-rotate(100deg) ;
+  filter: brightness(0.9) invert(.7) sepia(.5) hue-rotate(100deg);
 }
 
 .green {
@@ -74,9 +74,18 @@
   font-family: Rubik, sans-serif;
 }
 
-.help-char{
+.info-text {
+  text-align: center;
+  color: var(--main-text-color);
+}
+.timer-text {
+  text-align: center;
+  color: var(--main-text-color);
+}
+
+.help-char {
   position: absolute;
-  top:0px;
+  top: 0px;
   right: 80%;
   font-size: 12pt;
   transform: translate(80%, 0);
@@ -85,49 +94,49 @@
 /* Modal */
 
 .modal-window {
-	position: fixed;
-	background-color: rgba(68, 55, 55, 0.25);
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 1000;
-	visibility: hidden;
-	opacity: 0;
-	transition: all 0.3s;
+  position: fixed;
+  background-color: rgba(68, 55, 55, 0.25);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
 }
 
 .modal-window:target {
-	visibility: visible;
-	opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
 
-.modal-window > div {
+.modal-window>div {
   border-radius: 16px;
-	width: 800px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	padding: 2em;
-	background: white;
+  width: 800px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2em;
+  background: white;
 }
 
 .modal-close {
-	color: #aaa;
-	line-height: 50px;
-	font-size: 80%;
-	position: absolute;
-	right: 0;
-	text-align: center;
-	top: 0;
-	width: 70px;
-	text-decoration: none;
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
   cursor: pointer;
 }
 
 .modal-close:hover {
-	color: black;
+  color: black;
 }
 
 .buttons-container {

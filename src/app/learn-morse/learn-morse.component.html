@@ -24,13 +24,13 @@
       <div class="text_input_container">
         <div class="text_input">{{user_input}}</div>
         <div [ngClass]="{
-        'red' : 
-          this.current_char.toLowerCase() != this.to_type.charAt(this.correct_counter).toLowerCase() && 
-          this.current_char.toLowerCase() != '⍽', 
-        'green' : this.current_char.toLowerCase() == this.to_type.charAt(this.correct_counter).toLowerCase() || 
-          this.current_char.toLowerCase() == '⍽', 
-        current_char:true
-      }">
+          'red' : 
+            this.current_char.toLowerCase() != this.to_type.charAt(this.correct_counter).toLowerCase() && 
+            this.current_char.toLowerCase() != '⍽', 
+          'green' : this.current_char.toLowerCase() == this.to_type.charAt(this.correct_counter).toLowerCase() || 
+            this.current_char.toLowerCase() == '⍽', 
+          current_char:true
+        }">
           {{current_char}}
         </div>
       </div>

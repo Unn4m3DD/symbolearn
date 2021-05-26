@@ -47,7 +47,7 @@ export class LearnMorseComponent implements OnInit {
       if (this.current_char.toLowerCase() == this.to_type.charAt(this.correct_counter).toLowerCase()
         || this.current_char.toLowerCase() == "⍽" && " " == this.to_type.charAt(this.correct_counter).toLowerCase()) {
         this.correct_counter++
-        this.user_input += this.current_char != "⍽" ? this.current_char : " "
+        this.user_input += this.current_char != "⍽" ? this.current_char : "\xa0"
         if (this.current_char == "⍽" && this.morse_div) {
           this.current_offset += 100 / this.to_type.split(" ").length
           this.morse_div.nativeElement.style.transform = `translate(0, -${this.current_offset}%)`;
@@ -61,6 +61,7 @@ export class LearnMorseComponent implements OnInit {
       this.modal.nativeElement.style.visibility = 'visible';
       this.modal.nativeElement.style.opacity = '1';
     }
+    console.log(this.user_input)
   }
   preventDelete(e: KeyboardEvent, text_input: HTMLInputElement) {
     if (e.key == "Backspace" && text_input == document.activeElement) {
