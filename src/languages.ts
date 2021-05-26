@@ -202,8 +202,8 @@ const locale: { [key: string]: any } = {
   },
   learnMorse: {
     helpTitle: {
-      pt: ["Comece a escrever quando estiver preparado."," Um temporizador será iniciado após o primeiro click"],
-      en: ["Start typing when you're ready.","A timer will start after the first click"]
+      pt: ["Comece a escrever quando estiver preparado."," Um temporizador será iniciado após o primeiro click!"],
+      en: ["Start typing when you're ready.","A timer will start after the first click!"]
     }
   },
   dashboard: {
