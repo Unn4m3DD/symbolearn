@@ -10,6 +10,7 @@ import { themes } from "../global"
 export class SettingsComponent implements OnInit {
   @Output() lang_changed = new EventEmitter<string>();
   current_theme: string = "";
+  current_theme_btn: string = "";
   attempt_duration: string = "";
   settings: any;
   themes: {
@@ -47,20 +48,31 @@ export class SettingsComponent implements OnInit {
 
   ngOnInit(): void {
     this.current_theme = this.cookieService.get("theme") || "Default"
+    if (this.lang == "pt")
+      this.current_theme_btn = this.locale.theme.options.pt[this.locale.theme.options.en.indexOf(this.current_theme)]
+    else this.current_theme_btn = this.current_theme;
     if (!this.cookieService.check("attempt_duration")) this.attempt_duration = "120";
     else this.attempt_duration = this.cookieService.get("attempt_duration")
   }
 
   changeTheme(theme: string) {
     this.cookieService.set("temp_dirty", "true")
+    this.current_theme_btn = theme
+
+    if (this.lang == "pt") {
+      theme = this.locale.theme.options.en[this.locale.theme.options.pt.indexOf(theme)]
+    }
     this.current_theme = theme
     let docStyle = document.documentElement.style;
-
     for (let key in themes[theme].color_definitions) {
       docStyle.setProperty(themes[theme].color_definitions[key][0], themes[theme].color_definitions[key][1]);
     }
   }
   changeLang(current_lang: string) {
+    if (current_lang == "pt")
+      this.current_theme_btn = this.locale.theme.options.pt[this.locale.theme.options.en.indexOf(this.current_theme)]
+    else
+      this.current_theme_btn = this.current_theme
     this.lang = current_lang
     this.lang_changed.emit(current_lang)
     this.updateLang();
@@ -91,6 +103,8 @@ export class SettingsComponent implements OnInit {
   }
 
   objKeys() {
+    if (this.lang == "pt")
+      return this.locale.theme.options.pt;
     return Object.keys(this.themes)
   }
 

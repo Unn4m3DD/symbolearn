@@ -5,7 +5,7 @@
 <div class="container container-1">
   <div class="config">{{this.locale.theme[this.lang]}}</div>
   <div class="dropdown">
-    <button class="dropbtn">{{ current_theme }}</button>
+    <button class="dropbtn">{{ current_theme_btn }}</button>
     <div class="dropdown-content">
       <a *ngFor="let theme of objKeys()" (click)="changeTheme(theme)">{{ theme }}</a>
     </div>
