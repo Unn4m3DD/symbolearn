@@ -1,4 +1,8 @@
 const locale: { [key: string]: any } = {
+  semaphore_lang: {
+    en: "Semaphore Language",
+    pt: "Código Semafórico"
+  },
   refresh_prompt: {
     title: {
       pt: "Este botão serve para repor todas as definições",
@@ -26,7 +30,7 @@ const locale: { [key: string]: any } = {
         en: "Sign Language",
       },
       semaphore_lang: {
-        pt: "Linguagem Semáforo",
+        pt: "Código Semafórico",
         en: "Semaphore Language",
       },
       add_lang: {

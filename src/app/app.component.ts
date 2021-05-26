@@ -28,14 +28,14 @@ export class AppComponent {
         this.lang = "pt";
         break;
     }
-    if(this.cookieService.get("config_help_level") == ""){
+    if (this.cookieService.get("config_help_level") == "") {
       this.cookieService.set("config_help_level", "2")
     }
   }
   changePage(event: string) {
     this.current_page = event;
   }
-  changeLanguage(language: string){
+  changeLanguage(language: string) {
     this.lang = language
   }
 
@@ -51,7 +51,7 @@ export class AppComponent {
   updateColorScheme() {
     let theme = this.cookieService.get("theme")
     console.log(theme)
-    if(theme == "") theme = "Default"
+    if (theme == "") theme = "Default"
     let docStyle = document.documentElement.style;
 
     for (let key in themes[theme].color_definitions) {

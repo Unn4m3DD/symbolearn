@@ -26,7 +26,7 @@
 <div class="accept-button-container-container">
   <div class="accept-button-container">
     <input [(ngModel)]="language_name" placeholder={{this.locale.lang_name[this.lang]}} class="accept-button-practice blue-button"
-      [ngClass]="{deactivated: !allFull()}" />
+      [ngClass]="{deactivated: !allFull()}" (keydown)="keydown($event)" />
     <div class="accept-button orange-button" (click)="changePage('learn', 'lang=sem')"
       [ngClass]="{deactivated: !allFull()}">{{this.locale.add_lang[this.lang]}}</div>
   </div>

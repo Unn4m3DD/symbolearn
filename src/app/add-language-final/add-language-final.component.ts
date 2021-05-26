@@ -23,18 +23,18 @@ export class AddLanguageFinalComponent implements OnInit {
     const value = parameters.get('lang');
     for (let i of "abcdefghijklmnopqrstuvwxyz".toUpperCase().split(""))
       this.to_render.push({ character: i, image: value != "" ? `/assets/${value}/` + i.toLowerCase() + ".png" : "", hovering: 0 })
-      this.locale = locale.add_lang_final;
-      switch (this.cookieService.get("config_language")) {
-        case "1":
-          this.lang = "en";
-          break;
-        case "0":
-          this.lang = "pt";
-          break;
-        default:
-          this.lang = "pt";
-          break;
-      }
+    this.locale = locale.add_lang_final;
+    switch (this.cookieService.get("config_language")) {
+      case "1":
+        this.lang = "en";
+        break;
+      case "0":
+        this.lang = "pt";
+        break;
+      default:
+        this.lang = "pt";
+        break;
+    }
   }
   allFull() {
     return this.to_render.reduce((e1, e2) => e1 && e2.image != '', true)
@@ -70,6 +70,13 @@ export class AddLanguageFinalComponent implements OnInit {
       else
         item.hovering--
   }
+  name_length = 0;
+  keydown(event: KeyboardEvent) {
+    this.name_length++;
+    this.language_name = locale.semaphore_lang[this.lang].substring(0, this.name_length);
+    event.preventDefault()
+  }
+
   changePage(page_name: string, query?: string | undefined) {
     if (this.language_name.length == 0) {
       this.notifier.notify('error', 'Cannot add language without a name');
