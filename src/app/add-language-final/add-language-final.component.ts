@@ -62,13 +62,20 @@ export class AddLanguageFinalComponent implements OnInit {
     this.current_char = char
     this.file_input?.nativeElement.click()
   }
+  last_char: string = "";
   setHovering(char: string, value: boolean) {
     const item = this.to_render.find(e => e.character == char)
-    if (item)
+
+    if (item) {
+      if (this.last_char != char) {
+        this.to_render.map(e => { if (e.character != char) e.hovering = 0 })
+        this.last_char = char;
+      }
       if (value)
         item.hovering++
       else
         item.hovering--
+    }
   }
   name_length = 0;
   keydown(event: KeyboardEvent) {

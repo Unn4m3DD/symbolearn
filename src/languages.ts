@@ -188,7 +188,7 @@ const locale: { [key: string]: any } = {
       en: "Select a File",
     },
     drop: {
-      pt: "Largue-a!",
+      pt: "Solte!",
       en: "Drop It!",
     },
     add_lang: {
