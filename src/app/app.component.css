@@ -2,12 +2,14 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 100vh;
+  max-height: 70vh;
+  margin-top: 20vh;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1;
+  margin-bottom: 10vh;
 }
 
 app-top-nav {
@@ -16,12 +18,14 @@ app-top-nav {
   left: 0;
   right: 0;
   z-index: 2;
+  height: 20vh;
 }
 
 app-bottom-nav {
   position: absolute;
   bottom: 0;
   z-index: 2;
+  height: 10vh;
 }
 
 .bubble_container {
@@ -63,6 +67,7 @@ app-bottom-nav {
   clip-path: circle(225px);
   background: var(--bubbles-color);
 }
+
 .bubble4 {
   position: absolute;
   width: 330px;
