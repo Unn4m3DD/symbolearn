@@ -273,7 +273,7 @@ const locale: { [key: string]: any } = {
       pt: "Tema",
       en: "Theme",
       options: {
-        pt:  ["Default","Cor de rosa","Ciano","Pôr do Sol","Erva","Pastilha elástica","Cyber Punk","Mel"],
+        pt:  ["Default","Cor de rosa","Ciano","Pôr do Sol","Relva","Pastilha elástica","Cyber Punk","Mel"],
         en: ["Default","Pink","Cyan","Sunset","Grass","Bubble Gum","Cyber Punk","Honey"]
       }
     },
