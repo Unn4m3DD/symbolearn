@@ -3,7 +3,7 @@
   <app-bottom-nav [lang]="lang"></app-bottom-nav>
   <div class="content_container">
     <notifier-container></notifier-container>
-    <div [ngSwitch]="current_page">
+    <div class="outer-container" [ngSwitch]="current_page">
       <app-initial *ngSwitchCase="'initial'"></app-initial>
       <app-sign-in *ngSwitchCase="'sign-in'"></app-sign-in>
       <app-sign-up *ngSwitchCase="'sign-up'"></app-sign-up>

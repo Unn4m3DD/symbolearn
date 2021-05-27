@@ -4,11 +4,19 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700&display=swap');
+:root {}
 
-:root {
+@media (-webkit-device-pixel-ratio: 1.25) {
+  app-initial, app-sign-in, app-sign-up, app-exercises, app-dashboard, app-settings, app-learn-morse, app-add-language, app-add-language-final, app-create-exercise {
+    zoom: .8;
+  }
 }
 
-
+@media (-webkit-device-pixel-ratio: 1.00) {
+  app-initial, app-sign-in, app-sign-up, app-exercises, app-dashboard, app-settings, app-learn-morse, app-add-language, app-add-language-final, app-create-exercise {
+    zoom: 1.2;
+  }
+}
 
 .start {
   stop-color: var(--logo-grad-start);
@@ -79,24 +87,19 @@ app-root {
   background: var(--primary-button-color-active);
 }
 
-
-
-
 /* ANGULAR NOTIFIER */
-
-
-
-
 
 .notifier__container * {
   box-sizing: border-box;
 }
+
 .notifier__container-list {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
   list-style-type: none;
 }
+
 .notifier__notification {
   display: flex;
   align-items: center;
@@ -116,6 +119,7 @@ app-root {
   padding-bottom: 10px;
   padding-left: 26px;
 }
+
 .notifier__notification--material .notifier__notification-message {
   display: inline-block;
   margin-top: 0;
@@ -124,6 +128,7 @@ app-root {
   line-height: 32px;
   font-size: 15px;
 }
+
 .notifier__notification--material .notifier__notification-button {
   display: inline-block;
   transition: opacity 0.2s ease;
@@ -139,9 +144,11 @@ app-root {
   height: 32px;
   vertical-align: top;
 }
+
 .notifier__notification--material .notifier__notification-button:hover, .notifier__notification--material .notifier__notification-button:focus {
   opacity: 1;
 }
+
 .notifier__notification--material .notifier__notification-button:active {
   transform: scale(0.82);
   opacity: 1;
@@ -151,6 +158,7 @@ app-root {
   background-color: #444;
   color: #fff;
 }
+
 .notifier__notification--default .notifier__notification-button-icon {
   fill: #fff;
 }
@@ -159,6 +167,7 @@ app-root {
   background-color: #d9534f;
   color: #fff;
 }
+
 .notifier__notification--error .notifier__notification-button-icon {
   fill: #fff;
 }
@@ -167,6 +176,7 @@ app-root {
   background-color: #5bc0de;
   color: #fff;
 }
+
 .notifier__notification--info .notifier__notification-button-icon {
   fill: #fff;
 }
@@ -175,6 +185,7 @@ app-root {
   background-color: #5cb85c;
   color: #fff;
 }
+
 .notifier__notification--success .notifier__notification-button-icon {
   fill: #fff;
 }
@@ -183,6 +194,7 @@ app-root {
   background-color: #f0ad4e;
   color: #fff;
 }
+
 .notifier__notification--warning .notifier__notification-button-icon {
   fill: #fff;
 }
