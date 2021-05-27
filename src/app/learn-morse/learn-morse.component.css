@@ -1,6 +1,6 @@
 .text_input_container {
   display: flex;
-  width: 100vw;
+  width: 80vw;
   height: 50pt;
   background: var(--morse-input-color);
   clip-path: inset(0 25% 0 25%);
