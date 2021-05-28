@@ -58,6 +58,7 @@ export class SettingsComponent implements OnInit {
   }
 
   changeTheme(theme: string) {
+    this.dirtyChange();
     this.cookieService.set("temp_dirty", "true")
     this.current_theme_btn = theme
 
@@ -71,7 +72,7 @@ export class SettingsComponent implements OnInit {
     }
   }
   dirtyChange(){
-    this.save_button.nativeElement.style.display = "block"
+    this.save_button.nativeElement.style.visibility = "visible"
   }
   changeLang(current_lang: string) {
     if (current_lang == "pt")
@@ -114,7 +115,7 @@ export class SettingsComponent implements OnInit {
   }
 
   save() {
-    this.save_button.nativeElement.style.display = "none"
+    this.save_button.nativeElement.style.visibility = "hidden"
     this.cookieService.delete("temp_dirty")
     this.cookieService.set("theme", this.current_theme)
     this.cookieService.set("attempt_duration", this.attempt_duration + "")

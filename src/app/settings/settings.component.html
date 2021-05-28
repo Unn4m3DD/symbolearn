@@ -1,6 +1,6 @@
 <div class="container container-1">
   <div class="config">{{this.locale.attempt_duration[this.lang]}}</div>
-  <input type="number" min="0" [(ngModel)]="attempt_duration">
+  <input type="number" min="0" (keydown)="dirtyChange()" [(ngModel)]="attempt_duration">
 </div>
 <div class="container container-1">
   <div class="config">{{this.locale.theme[this.lang]}}</div>
@@ -15,4 +15,4 @@
   <div class="config">{{ setting.config }}</div>
   <app-config (config_changed)="changeLang($event)" (dirtyChange)="dirtyChange()" [setting]=setting></app-config>
 </div>
-<div class="button orange-button" #save_button style="display: none;" (click)="save()">{{this.locale.apply_button[this.lang]}}</div>
+<div class="button blue-button" #save_button style="visibility: hidden;" (click)="save()">{{this.locale.apply_button[this.lang]}}</div>
