@@ -34,8 +34,8 @@ const locale: { [key: string]: any } = {
         en: "Semaphore Language",
       },
       add_lang: {
-        pt: "Adicionar Linguagem...",
-        en: "Add Language...",
+        pt: "Adicionar Linguagem",
+        en: "Add Language",
       }
     },
     config: {
