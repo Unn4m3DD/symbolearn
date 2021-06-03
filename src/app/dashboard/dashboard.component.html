@@ -1,13 +1,26 @@
-<div class="container">
+<div class="time_constraint">
+  <div class="dropdown" (mouseover)="hide_container()" (mouseout)="show_container()">
+    <button class="dropbtn">{{ time_constraint }}</button>
+    <div class="dropdown-content">
+      <a *ngFor="let time of possible_time_constraints" (click)="update_time_constraint(time.days)">{{ time.value }}</a>
+    </div>
+  </div>
+</div>
+
+<div class="container animated-fade" #container>
   <div class="arrow arrow-left" (click)="slide('left')">
     <img src="/assets/left_arrow.png" #left_arrow>
   </div>
   <div class="visible-container">
-    <div class="smaller-grid-container animated" #smaller_slider>
       <div *ngFor="let card of small_cards_data">
-        <app-small-card [title]=card.title [value]=card.value></app-small-card>
+        <div *ngIf="card.days == days">
+          <div class="smaller-grid-container animated" #smaller_slider>
+            <div *ngFor="let c of card.content">
+              <app-small-card [title]=c.title [value]=c.value ></app-small-card>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
   </div>
   <div class="arrow arrow-right" (click)="slide('right')">
     <img src="/assets/right_arrow.png" #right_arrow>

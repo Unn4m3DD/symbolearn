@@ -17,12 +17,21 @@ export class DashboardComponent implements OnInit {
   @ViewChild('chart_slider') chart_slider: ElementRef | any;
   public big_cards_buffer: number = 0;
 
+  @ViewChild('container') container: ElementRef | any;
+  public time_constraint: string = '';
+  public days: string = '1';
+  public possible_time_constraints: Array<any> = []
+
   locale: any;
   lang: string;
   small_cards_data: any;
   charts: any;
   constructor(private cookieService: CookieService) {
     this.locale = locale.dashboard;
+    if(this.cookieService.check("time_constraint")) {
+      this.days = this.cookieService.get("time_constraint")
+    }
+
     switch (this.cookieService.get("config_language")) {
       case "0":
         this.lang = "pt";
@@ -34,38 +43,138 @@ export class DashboardComponent implements OnInit {
         this.lang = "pt";
         break;
     }
+
+    this.possible_time_constraints = [
+      {
+        days: "1",
+        value: this.locale.small_cards_data.daily[this.lang],
+      },
+      {
+        days: "7",
+        value: this.locale.small_cards_data.weekly[this.lang],
+      },
+      {
+        days: "30",
+        value: this.locale.small_cards_data.monthly[this.lang],
+      }
+    ]
+
+    this.update_time_constraint(this.days, false)
+
     this.small_cards_data = [
       {
-        title: this.locale.small_cards_data.today[this.lang],
-        value: "1 " + this.locale.small_cards_data.hour[this.lang]
+        days: "1",
+        content:
+        [
+          {
+            title: this.locale.small_cards_data.today[this.lang],
+            value: "1 " + this.locale.small_cards_data.hour[this.lang]
+          },
+          {
+            title: this.locale.small_cards_data.correct_chars[this.lang],
+            value: "273"
+          },
+          {
+            title: this.locale.small_cards_data.incorrect_chars[this.lang],
+            value: "40"
+          },
+          {
+            title: this.locale.small_cards_data.words[this.lang],
+            value: "98"
+          },
+          {
+            title: this.locale.small_cards_data.week[this.lang],
+            value: "5 " + this.locale.small_cards_data.hours[this.lang]
+          },
+          {
+            title: this.locale.small_cards_data.correct_chars[this.lang],
+            value: "1023"
+          },
+          {
+            title: this.locale.small_cards_data.incorrect_chars[this.lang],
+            value: "220"
+          },
+          {
+            title: this.locale.small_cards_data.words[this.lang],
+            value: "523"
+          }
+        ]
       },
       {
-        title: this.locale.small_cards_data.correct_chars[this.lang],
-        value: "273"
+        days: "7",
+        content:
+        [
+          {
+            title: this.locale.small_cards_data.week[this.lang],
+            value: "4 " + this.locale.small_cards_data.hour[this.lang]
+          },
+          {
+            title: this.locale.small_cards_data.correct_chars[this.lang],
+            value: "1823"
+          },
+          {
+            title: this.locale.small_cards_data.incorrect_chars[this.lang],
+            value: "92"
+          },
+          {
+            title: this.locale.small_cards_data.words[this.lang],
+            value: "193"
+          },
+          {
+            title: this.locale.small_cards_data.week[this.lang],
+            value: "11 " + this.locale.small_cards_data.hours[this.lang]
+          },
+          {
+            title: this.locale.small_cards_data.correct_chars[this.lang],
+            value: "1229"
+          },
+          {
+            title: this.locale.small_cards_data.incorrect_chars[this.lang],
+            value: "490"
+          },
+          {
+            title: this.locale.small_cards_data.words[this.lang],
+            value: "2034"
+          }
+        ]
       },
       {
-        title: this.locale.small_cards_data.incorrect_chars[this.lang],
-        value: "40"
-      },
-      {
-        title: this.locale.small_cards_data.words[this.lang],
-        value: "98"
-      },
-      {
-        title: this.locale.small_cards_data.week[this.lang],
-        value: "5 " + this.locale.small_cards_data.hours[this.lang]
-      },
-      {
-        title: this.locale.small_cards_data.correct_chars[this.lang],
-        value: "1023"
-      },
-      {
-        title: this.locale.small_cards_data.incorrect_chars[this.lang],
-        value: "220"
-      },
-      {
-        title: this.locale.small_cards_data.words[this.lang],
-        value: "523"
+        days: "30",
+        content:
+        [
+          {
+            title: this.locale.small_cards_data.month[this.lang],
+            value: "8 " + this.locale.small_cards_data.hour[this.lang]
+          },
+          {
+            title: this.locale.small_cards_data.correct_chars[this.lang],
+            value: "5412"
+          },
+          {
+            title: this.locale.small_cards_data.incorrect_chars[this.lang],
+            value: "341"
+          },
+          {
+            title: this.locale.small_cards_data.words[this.lang],
+            value: "530"
+          },
+          {
+            title: this.locale.small_cards_data.week[this.lang],
+            value: "19 " + this.locale.small_cards_data.hours[this.lang]
+          },
+          {
+            title: this.locale.small_cards_data.correct_chars[this.lang],
+            value: "2836"
+          },
+          {
+            title: this.locale.small_cards_data.incorrect_chars[this.lang],
+            value: "5306"
+          },
+          {
+            title: this.locale.small_cards_data.words[this.lang],
+            value: "3124"
+          }
+        ]
       }
     ]
 
@@ -145,14 +254,47 @@ export class DashboardComponent implements OnInit {
     ]
   }
 
+  update_time_constraint(days: string, refresh: boolean = true) {
+    for(let time of this.possible_time_constraints) {
+      if(time.days == days) {
+        this.time_constraint = time.value
+        this.days = days
+      }
+    }
+    if(refresh) {
+      this.update_small_cards()
+    }
+  }
 
+  hide_container() {
+    this.container.nativeElement.style.opacity = 0.5;
+    if(!this.container.nativeElement.className.includes('blured')) {
+      this.container.nativeElement.className = this.container.nativeElement.className + ' blured';
+    }
+  }
+
+  show_container() {
+    this.container.nativeElement.style.opacity = 1;
+    this.container.nativeElement.className = this.container.nativeElement.className.replace('blured', '');
+  }
+
+  update_small_cards() {
+    this.small_cards_buffer = 0;
+    this.left_arrow.nativeElement.style.display = 'none';
+    for(let card of this.small_cards_data) {
+      if(card.days == this.days) {
+        if (card.content.length <= 4) this.right_arrow.nativeElement.style.display = 'none';
+        else this.right_arrow.nativeElement.style.display = 'inline';
+      }
+    }
+  }
 
   ngAfterViewInit(): void {
-    this.left_arrow.nativeElement.style.display = 'none';
-    if (this.small_cards_data.length <= 4) this.right_arrow.nativeElement.style.display = 'none';
+    this.update_small_cards()
     this.left_arrow_bellow.nativeElement.style.display = 'none';
     if (this.charts.length <= 2) this.right_arrow_bellow.nativeElement.style.display = 'none';
   }
+
   ngOnInit(): void {
   }
 
@@ -162,7 +304,7 @@ export class DashboardComponent implements OnInit {
     else if (direction == "left") this.small_cards_buffer -= 1;
     if (this.small_cards_buffer == 0) this.left_arrow.nativeElement.style.display = 'none';
     else this.left_arrow.nativeElement.style.display = 'inline';
-    if (this.small_cards_buffer + 1 >= this.small_cards_data.length / 4) this.right_arrow.nativeElement.style.display = 'none';
+    if (this.small_cards_buffer >= this.small_cards_data.length / 4) this.right_arrow.nativeElement.style.display = 'none';
     else this.right_arrow.nativeElement.style.display = 'inline';
     this.smaller_slider.nativeElement.style.transform = `translate(-${this.small_cards_buffer * deltaX}px, 0)`;
   }
