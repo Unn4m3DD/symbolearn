@@ -4,7 +4,21 @@
       {{title_line}}
     </div>
   </div>
-  <div *ngIf="started" class="timer-text">{{getTimer()}}</div>
+  <div *ngIf="started">
+    <div class="box">
+      <div class="percent">
+        <svg class="round">
+          <circle cx="70" cy="70" r="70"></circle>
+          <circle cx="70" cy="70" r="70" [style.strokeDashoffset]="dashoffset"></circle>
+        </svg>
+        <div class="num">
+          <div class="timer-text">
+            {{getTimer()}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="morse_container_container_container">
     <div class="morse_container_container" #morse_div>
       <div class="morse_container" *ngFor='let _ of to_type_render; let i=index;'>

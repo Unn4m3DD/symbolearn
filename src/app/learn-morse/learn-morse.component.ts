@@ -10,6 +10,9 @@ import locale from "../../languages";
 export class LearnMorseComponent implements OnInit {
   @ViewChild('morse_div') morse_div: ElementRef | undefined;
   @ViewChild('modal') modal: ElementRef | any;
+
+  public dashoffset: any = this.calculate_completion_percentage(0);
+  
   current_language: string;
   lang:string;
   help_title: string;
@@ -56,6 +59,11 @@ export class LearnMorseComponent implements OnInit {
   current_char = "";
   current_offset = 0
   timer = 0;
+
+  calculate_completion_percentage(percentage: number) {
+    return (440 - (440 * percentage) / 100);
+  }
+
   getTimer() {
     return `${Math.floor(this.timer / 600000 % 10)}${Math.floor(this.timer / 10000 % 10)}:${Math.floor(this.timer / 1000 % 10)}${Math.floor(this.timer / 100 % 10)}:${Math.floor(this.timer / 10 % 10)}${Math.floor(this.timer % 10)}`
   }
@@ -65,15 +73,17 @@ export class LearnMorseComponent implements OnInit {
   timer_interval: any;
   onUserInput(event: KeyboardEvent) {
     event.preventDefault()
+    if (!this.started) {
+      this.started = true;
+      this.timer = 0
+      this.timer_interval = setInterval(() => {
+        this.timer++;
+      }, 10)
+    }
     if (event.key.length == 1) {
       if (this.current_char == "") {
         this.current_char = event.key
         return
-      }
-      if (!this.started) {
-        this.started = true;
-        this.timer = 0
-        this.timer_interval = setInterval(() => { this.timer++ }, 10)
       }
       if (this.current_char.toLowerCase() == this.to_type.charAt(this.correct_counter).toLowerCase()
         || this.current_char.toLowerCase() == "⍽" && " " == this.to_type.charAt(this.correct_counter).toLowerCase()) {
@@ -93,7 +103,8 @@ export class LearnMorseComponent implements OnInit {
       this.modal.nativeElement.style.opacity = '1';
       clearInterval(this.timer_interval)
     }
-    console.log(this.user_input)
+    this.dashoffset = this.calculate_completion_percentage(this.correct_counter/this.to_type.length*100)
+    console.log(this.correct_counter)
   }
   preventDelete(e: KeyboardEvent, text_input: HTMLInputElement) {
     if (e.key == "Backspace" && text_input == document.activeElement) {
