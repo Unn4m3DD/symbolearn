@@ -83,10 +83,6 @@ export class DashboardComponent implements OnInit {
             value: "98"
           },
           {
-            title: this.locale.small_cards_data.week[this.lang],
-            value: "5 " + this.locale.small_cards_data.hours[this.lang]
-          },
-          {
             title: this.locale.small_cards_data.correct_chars[this.lang],
             value: "1023"
           },
@@ -121,10 +117,6 @@ export class DashboardComponent implements OnInit {
             value: "193"
           },
           {
-            title: this.locale.small_cards_data.week[this.lang],
-            value: "11 " + this.locale.small_cards_data.hours[this.lang]
-          },
-          {
             title: this.locale.small_cards_data.correct_chars[this.lang],
             value: "1229"
           },
@@ -157,10 +149,6 @@ export class DashboardComponent implements OnInit {
           {
             title: this.locale.small_cards_data.words[this.lang],
             value: "530"
-          },
-          {
-            title: this.locale.small_cards_data.week[this.lang],
-            value: "19 " + this.locale.small_cards_data.hours[this.lang]
           },
           {
             title: this.locale.small_cards_data.correct_chars[this.lang],

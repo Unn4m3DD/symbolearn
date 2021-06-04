@@ -8,6 +8,10 @@
 </div>
 
 <div class="container animated-fade" #container>
+
+  <div class="arrow arrow-left" (click)="slide('left')">
+    <img src="/assets/left_arrow.png" #left_arrow>
+  </div>
   <div class="visible-container">
       <div *ngFor="let card of small_cards_data">
         <div *ngIf="card.days == days">
@@ -18,6 +22,9 @@
           </div>
         </div>
       </div>
+  </div>
+  <div class="arrow arrow-right" (click)="slide('right')">
+    <img src="/assets/right_arrow.png" #right_arrow>
   </div>
   <div class="arrow arrow-left bellow-left" (click)="slide_bellow('left')">
     <img src="/assets/left_arrow.png" #left_arrow_bellow>
@@ -32,3 +39,5 @@
     <img src="/assets/right_arrow.png" #right_arrow_bellow>
   </div>
 </div>
+
+
