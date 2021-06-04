@@ -221,20 +221,20 @@ const locale: { [key: string]: any } = {
         en: "This Month"
       },
       daily: {
-        pt: "Diariamente",
-        en: "Daily"
+        pt: "Hoje",
+        en: "Today"
       },
       weekly: {
-        pt: "Semanalmente",
-        en: "Weekly"
+        pt: "Esta Semana",
+        en: "This Week"
       },
       monthly: {
-        pt: "Mensalmente",
-        en: "Monthly"
+        pt: "Este Mês",
+        en: "This Month"
       },
       hour: {
-        pt: "hora",
-        en: "hour",
+        pt: "horas",
+        en: "hours",
       },
       hours: {
         pt: "horas",

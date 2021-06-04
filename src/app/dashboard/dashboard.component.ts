@@ -68,7 +68,7 @@ export class DashboardComponent implements OnInit {
         [
           {
             title: this.locale.small_cards_data.today[this.lang],
-            value: "1 " + this.locale.small_cards_data.hour[this.lang]
+            value: "2 " + this.locale.small_cards_data.hour[this.lang]
           },
           {
             title: this.locale.small_cards_data.correct_chars[this.lang],
