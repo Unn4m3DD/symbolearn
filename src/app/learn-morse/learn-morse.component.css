@@ -158,32 +158,6 @@
   font-weight: 700;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .round {
   transform: rotate(-90deg);
 }
@@ -200,10 +174,7 @@
   position:relative;
   flex-direction:column;
 }
-/* .box:hover
-{
- transform:scale(1.2);
-} */
+
 .box .percent
 {
   width:150px;
@@ -235,7 +206,7 @@
 }
 .box .percent svg circle:nth-child(2)
 {
-  stroke:#03a9f4;
+  stroke:var(--primary-button-color);
 }
 .box .percent .num
 {
@@ -249,12 +220,3 @@
   position:absolute;
   color:#111;
 }
-
-.box .text
-{
-  padding: 10px 0 0;
-  color:#999;
-  font-weight:700;
-  letter-spacing:1px;
-}
-
